@@ -3,10 +3,127 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
-    <p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Базовый HTML и CSS</a>».</p>
+    <!--<p>Репозиторий создан для обучения на интенсивном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">Базовый HTML и CSS</a>».</p>-->
+	<header class="block-header">
+		<nav class="block-header__menu"></nav>
+		<b class="block-header__title">Крем-брюле и пломбир с малиновым джемом</b>
+		<a class="btn btn-red btn-white-text btn-large">Давайте оба!</a>
+		<div class="block-header__slider"></div>
+	</header>
+	<section class="block-promo">		
+		<div class="block-promo__item">
+			<b class="block-promo__item-title">Малинка даром!</b>
+			<div class="block-promo__item-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</div>
+			<a class="block-promo__item-button btn btn-red btn-white-text btn-normal">Хочу варенье!</a>
+		</div>
+		<div class="block-promo__item ">
+			<b class="block-promo__item-title">Шоколадка даром</b>
+			<div class="block-promo__item-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</div>
+			<a class="block-promo__item-button btn btn-red btn-white-text btn-normal">Хочу шоколадки!</a>
+		</div>
+		<h2 class="block-promo-title hidden-title">Акции</h2>	
+	</section>
+
+	
+	<section class="block-catalog">
+		<div class="block-catalog__item">
+			<img class="block-catalog__item-img hit" width="224" height="220" src="img/ice-cream-1.jpg" alt="Не удалось зазрузить изображение">
+			<p class="block-catalog__item-price">
+				<span class="block-catalog__item-price-cost">310</span>
+				<span class="block-catalog__item-price-currency">Р</span>
+				<span>/</span>
+				<span class="block-catalog__item-price-unit">кг</span>
+			</p>
+			<p class="block-catalog__item-name">Сливочное с апельсиновым джемом и цитрусовой стружкой</p>			
+			<a class="btn btn-red-back btn-hidden btn-white-text">Быстрый просмотр</a>
+		</div>
+		<div class="block-catalog__item">
+			<img class="block-catalog__item-img" width="224" height="220" src="img/ice-cream-2.jpg"  alt="Не удалось зазрузить изображение">
+			<p class="block-catalog__item-price">
+				<span class="block-catalog__item-price-cost">380</span>
+				<span class="block-catalog__item-price-currency">Р</span>
+				<span>/</span>
+				<span class="block-catalog__item-price-unit">кг</span>
+			</p>
+			<p class="block-catalog__item-name">Сливочное-кофейное с кусочками шоколада </p>
+			<a class="btn btn-red-back btn-hidden btn-white-text">Быстрый просмотр</a>
+		</div>
+		<div class="block-catalog__item">
+			<img class="block-catalog__item-img" width="224" height="220" src="img/ice-cream-3.jpg"  alt="Не удалось зазрузить изображение">
+			<p class="block-catalog__item-price">
+				<span class="block-catalog__item-price-cost">355</span>
+				<span class="block-catalog__item-price-currency">Р</span>
+				<span>/</span>
+				<span class="block-catalog__item-price-unit">кг</span>
+			</p>
+			<p class="block-catalog__item-name">Сливочно-клубничное с присыпкой из белого шоколада</p>
+			<a class="btn btn-red-back btn-hidden btn-white-text">Быстрый просмотр</a>
+		</div>
+		<div class="block-catalog__item">
+			<img class="block-catalog__item-img" width="224" height="220" src="img/ice-cream-4.jpg"  alt="Не удалось зазрузить изображение">
+			<p class="block-catalog__item-price">
+				<span class="block-catalog__item-price-cost">415</span>
+				<span class="block-catalog__item-price-currency">Р</span>
+				<span>/</span>
+				<span class="block-catalog__item-price-unit">кг</span>
+			</p>
+			<p class="block-catalog__item-name">Сливочное крем-брюле с карамельной подсыпкой</p>
+			<a class="btn btn-red-back btn-hidden btn-white-text">Быстрый просмотр</a>
+		</div>
+		<h2 class="block-catalog-title hidden-title">Каталог. Хиты.</h2>	
+	</section>
+
+	<section class="block-about">
+		<h1 class="block-about__title">Магазин Глэйси - это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h1>
+		<p class="block-about__item">Phasellus luctus augue iaculis odio consequat, sed accumsan est ultricies.
+			 Sed diam ipsum, scelerisque sit amet consequat ac, elementum ac nunc.</p>
+		<p class="block-about__item">Sed a sapien quis diam tristique hendrerit. Phasellus feugiat posuere nulla eu egestas.</p>
+		<p class="block-about__item">Curabitur id aliquam est, ut molestie massa. S
+			ed accumsan, neque nec vulputate efficitur, felis ante commodo purus, vitae dapibus nulla urna a augue. </p>
+		<p class="block-about__item">Nunc arcu sem, bibendum id purus in, posuere tristique lorem. Fusce sed porttitor nibh. Donec lobortis pulvinar augue ut venenatis. 
+		</p>
+	</section>
+
+	<section class="block-other">		
+		<div class="block-other__item block-other__item-new">				
+		 	<h3 class="block-other__item-new-title">Новое в нашем блоге</h3>
+		 	<a href="#" class="block-other__item-new-details">10 способов сервировки фруктовых щербетов к столу</a>
+		 </div>					 
+		<form class="block-other__item block-other__item-subscribe">	
+			<div class="block-other__item-subscribe-text"> 
+				Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусого, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно=)
+			</div>	
+			<input type="email" class="block-other__item-subscribe-email" placeholder="Электронная почта">	
+			<input type="button" value="Отправить" class="btn btn-red block-other__item-subscribe-button">
+		</form>	
+		<h2 class="block-other-title hidden-title">Прочее</h2>	
+	</section>
+
+	<section class="block-map">
+		<h2 class="block-map-title hidden-title">Как найти</h2>	
+		<div class="block-map-address">
+			
+		</div>
+	</section>
+
+	<footer class="block-footer">
+		<div class="block-footer-part block-footer-social">
+			<a href="#" class="block-footer-social-item" title="Twitter">Twitter</a>
+			<a href="#" class="block-footer-social-item" title="Instagram">Instagram</a>
+			<a href="#" class="block-footer-social-item" title="Facebook">Facebook</a>
+			<a href="#" class="block-footer-social-item" title="B">B</a>
+		</div>
+		<div class="block-footer-part block-footer-center">
+		</div>
+		<div class="block-footer-part block-footer-right">
+		</div>		
+	</footer>
+
 
   </body>
 </html>
