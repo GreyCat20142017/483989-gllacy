@@ -1,148 +1,224 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<title>Каталог магазина Глэйси</title>
-	<link rel="stylesheet" href="css/style.css_">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Каталог магазина Глэйси</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
 
-	<header class="catalog-header">
-		<nav class="header__menu">
-			<h2 class="title-hidden">Главное меню, поиск, авторизация, корзина</h2>	
-			<a href="index.html" title="Главная страница">
-				<img class="header__menu-logo" src="img/logo.jpg" alt="Логотип Глэйси" width="156" height="60">
-			</a>		
+		<header class="catalog-header">
+			<nav class="header__menu">
+				<h2 class="title-hidden">Главное меню, поиск, авторизация, корзина</h2>	
+				<a href="index.html" title="Главная страница">
+					<img class="header__menu-logo" src="img/logo.svg" alt="Логотип Глэйси" width="156" height="60">
+				</a>		
 
-			<ul class="header__menu-main">
-				<li class="header__menu-main-item">
-					<a class="header__menu-main-link inline-link" href="catalog.html">Каталог</a>
+				<ul class="header__menu-main">
+					<li class="header__menu-main-item">
+						<a class="header__menu-main-link inline-link" href="catalog.html">Каталог</a>
+					</li>
+					<li class="header__main-item">
+						<a class="header__menu-main-link inline-link" href="delivery.html">Доставка и оплата</a>
+					</li>
+					<li class="header__main-menu-item">
+						<a class="header__menu-main-link inline-link" href="about-company.html">О компании</a>
+					</li>
+				</ul>
+
+				<div class="header__menu-personal">			
+					<a class="header__menu-personal-link inline-link" href="#" title="Поиск">&#xA0;</a>
+					<a class="header__menu-personal-link inline-link" href="#" title="Авторизация">Вход</a>			
+					<a class="header__menu-personal-link inline-link basket-red" href="#" title="Корзина">2 товара</a>			
+				</div>
+			</nav>
+
+			<div class="header__info">
+				<h2 class="title-hidden">Часы работы и телефон для связи</h2>	
+				<p>c 10 до 20, ежедневно</p>
+				<p>8 812 450-25-25</p>
+			</div>	
+		</header>
+
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link" href="index.html">Главная</a></li>
+			<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link" href="#">Каталог</a></li>
+			<li class="breadcrumbs-item"><a class="breadcrumbs-link breadcrumbs-link-current inline-link">Сливочное</a></li>
+		</ul>
+
+		<h1 class="catalog-title">Сливочное мороженое</h1>
+
+		<section class="filters">
+			<h2 class="title-hidden">Фильтры</h2>
+			<!--Здесь будет форма-->
+		</section>
+
+		<section class="catalog">
+			<h2 class="title-hidden">Каталог. Сливочное мороженое</h2>
+			<ul class="catalog__items">
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253"  src="img/1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">310</span>
+						<span class="catalog__item-price-currency">/</span>		
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>			
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
 				</li>
-				<li class="header__main-item">
-					<a class="header__menu-main-link inline-link" href="delivery.html">Доставка и оплата</a>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/2.jpg"  alt="Сливочное-кофейное  с кусочками шоколада">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">380</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name"  href="catalog-item.html">Сливочное-кофейное с кусочками шоколада</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
 				</li>
-				<li class="header__main-menu-item">
-					<a class="header__menu-main-link inline-link" href="about-company.html">О компании</a>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/3.jpg"  alt="Сливочно-клубничное с присыпкой из белого шоколада">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">355</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочно-клубничное с присыпкой из белого шоколада</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
 				</li>
-			</ul>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/4.jpg"  alt="Сливочное крем-брюле с карамельной подливкой">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">415</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочное крем-брюле с карамельной подливкой</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
 
-			<div class="header__menu-personal">			
-				<a class="header__menu-personal-link inline-link" href="#" title="Поиск">&#xA0;</a>
-				<a class="header__menu-personal-link inline-link" href="#" title="Авторизация">Вход</a>			
-				<a class="header__menu-personal-link inline-link" href="#" title="Корзина">Пусто</a>			
-			</div>
-		</nav>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253"  src="img/5.jpg" alt=">Сливочное с брусничным джемом">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">310</span>
+						<span class="catalog__item-price-currency">/</span>		
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочное с брусничным джемом</a>			
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/6.jpg"  alt="Сливочно-черничное с цельными ягодами черники">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">380</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name"  href="catalog-item.html">Сливочно-черничное с цельными ягодами черники</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/7.jpg"  alt="Сливочно-лимонное с карамельной присыпкой">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">355</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочно-лимонное с карамельной присыпкой</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/8.jpg"  alt="Сливочное с шоколадной стружкой">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">415</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочное с шоколадной стружкой</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
 
-		<div class="header--info">
-			<h2 class="title-hidden">Часы работы и телефон для связи</h2>	
-			<p>c 10 до 20, ежедневно</p>
-			<p>8 812 450-25-25</p>
-		</div>	
-	</header>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253"  src="img/9.jpg" alt="Сливочно-ванильное с кусочками шоколада">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">310</span>
+						<span class="catalog__item-price-currency">/</span>		
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочно-ванильное с кусочками шоколада</a>			
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/10.jpg"  alt="Сливочноe с ментоловым сиропом">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">380</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name"  href="catalog-item.html">Сливочноe с ментоловым сиропом</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/11.jpg"  alt="Сливочное с кусочками черного шоколада">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">355</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочное с кусочками черного шоколада</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/12.jpg"  alt="Сливочноe с мятным сиропом">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">415</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочноe с мятным сиропом</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+			</ul>	
 
-	<ul class="breadcrumbs">
-		<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link" href="index.html">Главная</a></li>
-		<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link" href="#">Каталог</a></li>
-		<li class="breadcrumbs-item"><a class="breadcrumbs-link breadcrumbs-link-current inline-link">Сливочное</a></li>
-	</ul>
+			<ul class="pagination">
+				<li class="pagination-item"><a class="pagination-link inline-link link-disabled">&#8249;</a></li>
+				<li class="pagination-item"><a class="pagination-link inline-link current">1</a></li>
+				<li class="pagination-item"><a class="pagination-link inline-link" href="#">2</a></li>
+				<li class="pagination-item"><a class="pagination-link inline-link" href="#">3</a></li>
+				<li class="pagination-item"><a class="pagination-link inline-link" href="#">4</a></li>
+				<li class="pagination-item"><a class="pagination-link inline-link" href="#">5</a></li>
+				<li class="pagination-item"><a class="pagination-link inline-link" href="#">&#8250;</a></li>
+			</ul>	
 
-	<h1 class="catalog-title">Сливочное мороженое</h1>
+			<footer class="footer">
 
-	<section class="filters">
-		<h2 class="title-hidden">Фильтры</h2>
-		<!--Здесь будет форма-->
-	</section>
+				<div class="footer__social footer__part">
+					<h2 class="title-hidden">Наш магазин в соцсетях</h2>	
+					<a class="footer__social-item footer__social-item-tw" href="#" title="Twitter">Twitter</a>
+					<a class="footer__social-item footer__social-item-in" href="#" title="Instagram">Instagram</a>
+					<a class="footer__social-item footer__social-item-fb" href="#" title="Facebook">Facebook</a>
+					<a class="footer__social-item footer__social-item-vk" href="#" title="В контакте">В контакте</a>
+				</div>
 
-	<section class="catalog">
-		<h2 class="title-hidden">Каталог. Сливочное мороженое</h2>
+				<div class="footer__menu footer__part">
+					<h2 class="title-hidden">Подробнее о нас</h2>
+					<a class="footer__menu-link" href="#">Для поставщиков</a>
+					<a class="footer__menu-link" href="#">Наши документы</a>
+					<a class="footer__menu-link" href="#">О производстве</a>
+					<a class="footer__menu-link" href="#">Экологические стандарты</a>
+				</div>
 
-		<ul class="catalog__items">
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230"  src="img/ice-cream-1.jpg" alt="Сливочное с апельсиновым джемом">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">310</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
-				</p>
-				<a class="catalog__item-name" href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>			
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="#">Быстрый просмотр</a>
-			</li>
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230" src="img/ice-cream-2.jpg"  alt="Сливочное-кофейное">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">380</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
-				</p>
-				<a class="catalog__item-name"  href="catalog-item.html">Сливочное-кофейное с кусочками шоколада</a>
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="#">Быстрый просмотр</a>
-			</li>
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230" src="img/ice-cream-33.jpg"  alt="Сливочно-клубничное">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">355</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
-				</p>
-				<a class="catalog__item-name" href="catalog-item.html">Сливочно-клубничное с присыпкой из белого шоколада</a>
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="#">Быстрый просмотр</a>
-			</li>
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230" src="img/ice-cream-4.jpg"  alt="Сливочное крем-брюле">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">415</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
-				</p>
-				<a class="catalog__item-name" href="catalog-item.html">Сливочное крем-брюле с карамельной подсыпкой</a>
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="catalog-item.html">Быстрый просмотр</a>
-			</li>
-		</ul>	
-	</section>
+				<div class="footer__right footer__part">			
+					<a class="footer__right-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
+						<img src="img/logo-htmlacademy-small.svg" alt="Логотип HTML Academy" width="120" height="39">
+					</a>
+					<p class="footer__right-copyright">Сделано в 
+						<a class="underlined" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
+						<span>@2017</span>
+					</p>
+				</div>		
 
-	<ul class="pagination">
-		<li class="pagination-item"><a class="pagination-link inline-link link-disabled">&#8249;</a></li>
-		<li class="pagination-item"><a class="pagination-link inline-link current">1</a></li>
-		<li class="pagination-item"><a class="pagination-link inline-link" href="#">2</a></li>
-		<li class="pagination-item"><a class="pagination-link inline-link" href="#">3</a></li>
-		<li class="pagination-item"><a class="pagination-link inline-link" href="#">4</a></li>
-		<li class="pagination-item"><a class="pagination-link inline-link" href="#">5</a></li>
-		<li class="pagination-item"><a class="pagination-link inline-link" href="#">&#8250;</a></li>
-	</ul>
+			</footer>
 
-	<footer class="footer">
-
-		<div class="footer__social footer__part">
-			<h2 class="title-hidden">Наш магазин в соцсетях</h2>	
-			<a class="footer__social-item" href="#" title="Twitter">Twitter</a>
-			<a class="footer__social-item" href="#" title="Instagram">Instagram</a>
-			<a class="footer__social-item" href="#" title="Facebook">Facebook</a>
-			<a class="footer__social-item" href="#" title="В контакте">В контакте</a>
-		</div>
-
-		<div class="footer__menu footer__part">
-			<h2 class="title-hidden">Подробнее о нас</h2>
-			<a class="footer__menu-link" href="#">Для поставщиков</a>
-			<a class="footer__menu-link" href="#">Наши документы</a>
-			<a class="footer__menu-link" href="#">О производстве</a>
-			<a class="footer__menu-link" href="#">Экологические стандарты</a>
-		</div>
-
-		<div class="footer__right footer__part">			
-			<a class="footer__right-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
-				<img src="img/logo-html-a.jpg" alt="Логотип HTML Academy" width="120" height="50">
-			</a>
-			<p class="footer__right-copyright">Сделано в 
-				<a class="underlined" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
-				<span>@2017</span>
-			</p>
-		</div>		
-
-	</footer>
-
-</body>
-</html>
+		</body>
+	</html>

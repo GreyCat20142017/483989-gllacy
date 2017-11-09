@@ -1,185 +1,187 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="UTF-8">
-	<title>Глэйси</title>
-	<link rel="stylesheet" href="css/style.css_">
-</head>
-<body >
-	<h1 class="title-hidden">Магазин мороженого Глэйси</h1>
+	<head>
+		<meta charset="UTF-8">
+		<title>Глэйси</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body >
+		<!--***-09-11 "отступы с каждым уровнем вложенности, начиная с первого тега html"  По вашему совету reindent на всё сделала. Но head - body reindent у меня не отталкивает. Сдвинула вручную tab'ом, но это как-то... Может, где-то есть настройка сдвига их автоматически при reindent'e в Sublime? -->
+		<h1 class="title-hidden">Магазин мороженого Глэйси</h1>
 
-	<header class="header">
-		<nav class="header__menu">
+		<header class="header">
+			<nav class="header__menu">
 
-			<h2 class="title-hidden">Главное меню, поиск, авторизация, корзина</h2>	
-			<img class="header__menu-logo" src="img/logo.jpg" alt="Логотип Глэйси" width="156" height="60">
+				<h2 class="title-hidden">Главное меню, поиск, авторизация, корзина</h2>	
+				<img class="header__menu-logo" src="img/logo.svg" alt="Логотип Глэйси" width="156" height="60">
 
-			<ul class="header__menu-main">
-				<li class="header__menu-main-item">
-					<a class="header__menu-main-link inline-link" href="catalog.html">Каталог</a>
-				</li>
-				<li class="header__main-item">
-					<a class="header__menu-main-link inline-link" href="delivery.html">Доставка и оплата</a>
-				</li>
-				<li class="header__main-menu-item">
-					<a class="header__menu-main-link inline-link" href="about-company.html">О компании</a>
-				</li>
-			</ul>
+				<ul class="header__menu-main">
+					<li class="header__menu-main-item">
+						<a class="header__menu-main-link inline-link" href="catalog.html">Каталог</a>
+					</li>
+					<li class="header__main-item">
+						<a class="header__menu-main-link inline-link" href="delivery.html">Доставка и оплата</a>
+					</li>
+					<li class="header__main-menu-item">
+						<a class="header__menu-main-link inline-link" href="about-company.html">О компании</a>
+					</li>
+				</ul>
 
-			<div class="header__menu-personal">			
-				<a class="header__menu-personal-link inline-link" href="#" title="Поиск">&#xA0;</a>
-				<a class="header__menu-personal-link inline-link" href="#" title="Авторизация">Вход</a>			
-				<a class="header__menu-personal-link inline-link" href="#" title="Корзина">Пусто</a>			
+				<div class="header__menu-personal">			
+					<a class="header__menu-personal-link inline-link" href="#" title="Поиск">&#xA0;</a>					
+					<a class="header__menu-personal-link inline-link" href="#" title="Авторизация">Вход</a>			
+					<a class="header__menu-personal-link inline-link" href="#" title="Корзина">Пусто</a>			
+				</div>
+			</nav>
+
+			<div class="header__info">
+				<h2 class="title-hidden">Часы работы и телефон для связи</h2>	
+				<p>c 10 до 20, ежедневно</p>
+				<p>8 812 450-25-25</p>		
 			</div>
-		</nav>
 
-		<div class="header--info">
-			<h2 class="title-hidden">Часы работы и телефон для связи</h2>	
-			<p>c 10 до 20, ежедневно</p>
-			<p>8 812 450-25-25</p>		
+			<b class="header__title">Крем-брюле и пломбир с малиновым джемом</b>
+			<a class="btn btn-red btn-white-text btn-large" href="#">Давайте оба!</a>	
+		</header>
+
+		<!--*** Где-то здесь (а может быть и не здесь) будут label'ы от option'ов	слайдера. Скорее всего, все содержимое body нужно будет обернуть в контейнер, а невидимые option'ы выкинуть за пределы этого контейнера. Если цвет скриптом менять нельзя по техзаданию... -->
+		<div class="slider-сontrol"></div>
+
+		<section class="promo">			
+			<h2 class="title-hidden">Акции</h2>	
+			<div class="promo__item">
+				<b class="promo__item-title">Малинка даром!</b>
+				<p class="promo__item-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+				<a class="promo__item-button btn btn-red btn-white-text btn-normal" href="#">Хочу варенье!</a>
+				<!--*** Наверное, если по нажатию promo__item-button подразумевался какой-нибудь скрипт, который добавляет в корзину 2 кг мороженого и нечто бесплатно, то лучше это разметить как кнопку, а если подразумевался просто переход на карточку мороженого - то ссылкой. -->
+			</div>
+			<div class="promo__item">
+				<b class="promo__item-title">Шоколадка даром</b>
+				<p class="promo__item-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+				<a class="promo__item-button btn btn-red btn-white-text btn-normal" href="#">Хочу шоколадки!</a>
+			</div>
+		</section>
+		<!--***-09-11 а может и без nth-child обойтись можно?  -   уже переделала на nth-of-type c нормальной нумерацией - вроде нормально. -->	
+
+		<!--***-09-11 Ну, тут вообще у меня какая-то полная ерунда в catalog__item. Нужно передумывать и переделывать почти полностью. Выглядит похоже, а на самом-то деле... -
+		"а что конкретно смущает?"
+		- Да там был адский ад и образец того, какая дичь может в голову чайникам забрести, когда они попытаются нарисовать то, что видят. На catalog__item:after {} была нарисована полная иллюзия: псевдокнопка, которaя ничего не делает, ибо нет там никакой кнопки – одна видимость. Сейчас уже исправила: докопалась до настоящих кнопки и ссылки и придумала, как сделать, чтобы ничего при наведении не дергалось и курсор наводился нормально. Для проверки добавила ссылки на несуществующие страницы. Есть там еще пара моментиков для выяснения, но на данном этапе это можно отнести к несущественным деталям.-->
+
+		<section class="catalog">
+			<h2 class="catalog-title title-hidden">Каталог. Хиты.</h2>	
+			<ul class="catalog__items">
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253"  src="img/1.jpg" alt="Сливочное с апельсиновым джемом">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">310</span>
+						<span class="catalog__item-price-currency">/</span>		
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>			
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/2.jpg"  alt="Сливочное-кофейное">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">380</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name"  href="catalog-item.html">Сливочно-кофейное с кусочками шоколада</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/3.jpg"  alt="Сливочно-клубничное">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">355</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочно-клубничное с присыпкой из белого шоколада</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+				<li class="catalog__item">
+					<img class="catalog__item-img" width="253" height="253" src="img/4.jpg"  alt="Сливочное крем-брюле">
+					<p class="catalog__item-price">
+						<span class="catalog__item-price-cost">415</span>
+						<span class="catalog__item-price-currency">/</span>						
+						<span class="catalog__item-price-unit">кг</span>
+					</p>
+					<a class="catalog__item-name" href="catalog-item.html">Сливочное крем-брюле с карамельной подливкой</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+				</li>
+			</ul>	
+		</section>
+
+		<section class="about">
+			<h2 class="about__title">Магазин Глэйси - это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
+			<p class="about__item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+			<p class="about__item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+			<p class="about__item">Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</p>
+			<p class="about__item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
+		</section>
+
+		<!--*** После повторного просмотра вебинара сложилось впечатление, что в один section не стоит объединять неоднородные  по смыслу блоки. Section заменен на div c заголовками в каждом смысловом блоке. Валидатор предупреждениями не кидается. Форму дооформлю после соответствующего вебинара, чтобы 2 раза не переделывать :-) -->
+		<div class="other">	
+
+			<article class="other__item-new other__item">				
+				<h2 class="other__item-new-title">Новое в нашем блоге</h2>
+				<a class="other__item-new-details" href="#">10 способов сервировки фруктовых щербетов к столу</a>	
+			</article>				 
+
+			<form class="other__item-subscribe other__item">
+				<h2 class="title-hidden">Подписка на рассылку</h2>			
+				<p class="other__item-subscribe-text">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не cпамить и не слать всякой ненужной ерунды. Честно=)
+				</p>	
+				<input class="other__item-subscribe-email" type="email" placeholder="Электронная почта">	
+				<input class="other__item-subscribe-button btn btn-red" type="submit" value="Отправить" title="Подписаться на рассылку">			
+			</form>		
+
 		</div>
+		<!---***-09-11 "Во всём проекте можно обойтись без использования тега br убрать br"
+		Вот убрала вчера br и шипела, как проколотая шина. Прочувствовала на своей шкуре слова с вебинара, что адрес - это единственное место, где br уместен. Еще как уместен : без него плохо, оказывается... В Хроме и FireFox'e еще нормально, хотя и грязновато, а в IE-11 внутренности этого блока вообще наплывают друг на друга. Сегодня пока вернула br. Вы точно это рекомендуете его убрать? :-) -->
+ 		<!---***-09-11 В материалах к вебинару вычитала, что изображение карты не должно быть фоном. Переделано-->
+		<section class="map">
+			<h2 class="map__title title-hidden">Как найти</h2>	
+			<img class="map__img" src="img/map.jpg" width="1200" height="430" alt="Наш магазин на карте (г.Санкт-Петербург, Ул. Большая Конюшенная, 19-8)">
+			<div class="map__info">
+				<p class="map__info-p">Адрес главного офиса <br>	и офлайн-магазина: </p>	
+				<p class="map__info-p">Ул. Большая Конюшенная <br> 19/8, Санкт-Петербург	</p>
+				<p class="map__info-p">Для заказов по телефону:</p>
+				<p class="map__info-p">8 812 450-25-25</p>
+				<p class="map__info-p">(c 10 до 20, ежедневно)</p>		
+				<a href="#" class="map__info-feedback btn btn-red">Форма обратной связи</a>
+			</div>
+		</section>
 
-		<b class="header__title">Крем-брюле и пломбир с малиновым джемом</b>
-		<a class="btn btn-red btn-white-text btn-large" href="#">Давайте оба!</a>	
-	</header>
+		<footer class="footer">
 
-	<!--*** Где-то здесь (а может быть и не здесь) будут label'ы от option'ов	слайдера. Скорее всего, все содержимое body нужно будет обернуть в контейнер, а невидимые option'ы выкинуть за пределы этого контейнера. Если цвет скриптом менять нельзя по техзаданию... -->
-	<div class="slider-сontrol"></div>
+			<div class="footer__social footer__part">
+				<h2 class="title-hidden">Наш магазин в соцсетях</h2>	
+				<a class="footer__social-item footer__social-item-tw" href="#" title="Twitter">Twitter</a>
+				<a class="footer__social-item footer__social-item-in" href="#" title="Instagram">Instagram</a>
+				<a class="footer__social-item footer__social-item-fb" href="#" title="Facebook">Facebook</a>
+				<a class="footer__social-item footer__social-item-vk" href="#" title="В контакте">В контакте</a>
+			</div>
 
-	<section class="promo">			
-		<h2 class="title-hidden">Акции</h2>	
-		<div class="promo__item">
-			<b class="promo__item-title">Малинка даром!</b>
-			<p class="promo__item-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-			<a class="promo__item-button btn btn-red btn-white-text btn-normal" href="#">Хочу варенье!</a>
-			<!--*** Наверное, если по нажатию promo__item-button подразумевался какой-нибудь скрипт, который добавляет в корзину 2 кг мороженого и нечто бесплатно, то лучше это разметить как кнопку, а если подразумевался просто переход на карточку мороженого - то ссылкой. -->
-		</div>
-		<div class="promo__item">
-			<b class="promo__item-title">Шоколадка даром</b>
-			<p class="promo__item-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-			<a class="promo__item-button btn btn-red btn-white-text btn-normal" href="#">Хочу шоколадки!</a>
-		</div>
-	</section>
-<!--*** Вещь, которую не могу для себя пока объяснить. Если добавить заголовок (скрытый или нет) в начале секции, то селектор promo__item:nth-child() работает со сдвигом, т.е. то, что является первым элементом такого класса, нужно нумеровать как 2, и т.д...	Как будто заголовок тоже этого класса. "Это не баг, это фича?"
-	Ну, или я что-то недопонимаю.	И без того грязноватый код становится еще хуже. Зато двигаюсь к "страница, как документ" :-) -->	
+			<div class="footer__menu footer__part">
+				<h2 class="title-hidden">Подробнее о нас</h2>
+				<a class="footer__menu-link" href="#">Для поставщиков</a>
+				<a class="footer__menu-link" href="#">Наши документы</a>
+				<a class="footer__menu-link" href="#">О производстве</a>
+				<a class="footer__menu-link" href="#">Экологические стандарты</a>
+			</div>
 
-	<!--***  Ну, тут вообще у меня какая-то полная ерунда в catalog__item. Нужно передумывать и переделывать почти полностью. Выглядит похоже, а на самом-то деле... -->
-	<section class="catalog">
-		<h2 class="catalog-title title-hidden">Каталог. Хиты.</h2>	
-		<ul class="catalog__items">
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230"  src="img/ice-cream-1.jpg" alt="Сливочное с апельсиновым джемом">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">310</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
+			<div class="footer__right footer__part">			
+				<a class="footer__right-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
+					<img src="img/logo-htmlacademy-small.svg" alt="Логотип HTML Academy" width="120" height="39">
+				</a>
+				<p class="footer__right-copyright">Сделано в 
+					<a class="underlined" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
+					<span>@2017</span>
 				</p>
-				<a class="catalog__item-name" href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>			
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="#">Быстрый просмотр</a>
-			</li>
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230" src="img/ice-cream-2.jpg"  alt="Сливочное-кофейное">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">380</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
-				</p>
-				<a class="catalog__item-name"  href="catalog-item.html">Сливочное-кофейное с кусочками шоколада</a>
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="#">Быстрый просмотр</a>
-			</li>
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230" src="img/ice-cream-33.jpg"  alt="Сливочно-клубничное">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">355</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
-				</p>
-				<a class="catalog__item-name" href="catalog-item.html">Сливочно-клубничное с присыпкой из белого шоколада</a>
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="#">Быстрый просмотр</a>
-			</li>
-			<li class="catalog__item">
-				<img class="catalog__item-img" width="200" height="230" src="img/ice-cream-4.jpg"  alt="Сливочное крем-брюле">
-				<p class="catalog__item-price">
-					<span class="catalog__item-price-cost">415</span>
-					<span class="catalog__item-price-currency">Р</span>
-					<span>/</span>
-					<span class="catalog__item-price-unit">кг</span>
-				</p>
-				<a class="catalog__item-name" href="catalog-item.html">Сливочное крем-брюле с карамельной подсыпкой</a>
-				<a class="btn btn-red-back btn-hidden btn-white-text" href="catalog-item.html">Быстрый просмотр</a>
-			</li>
-		</ul>	
-	</section>
+			</div>		
 
-	<section class="about">
-		<h2 class="about__title">Магазин Глэйси - это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
-		<p class="about__item">Phasellus luctus augue iaculis odio consequat, sed accumsan est ultricies.	Sed diam ipsum, scelerisque sit amet consequat ac, elementum ac nunc.</p>
-		<p class="about__item">Sed a sapien quis diam tristique hendrerit. Phasellus feugiat posuere nulla eu egestas.</p>
-		<p class="about__item">Curabitur id aliquam est, ut molestie massa. Sed accumsan, neque nec vulputate efficitur, felis ante commodo purus, vitae dapibus nulla urna a augue. </p>
-		<p class="about__item">Nunc arcu sem, bibendum id purus in, posuere tristique lorem. Fusce sed porttitor nibh. Donec lobortis pulvinar augue ut venenatis.</p>
-	</section>
-
-	<!--*** После повторного просмотра вебинара сложилось впечатление, что в один section не стоит объединять неоднородные  по смыслу блоки. Section заменен на div c заголовками в каждом смысловом блоке. Валидатор предупреждениями не кидается. Форму дооформлю после соответствующего вебинара, чтобы 2 раза не переделывать :-) -->
-	<div class="other">	
-
-		<article class="other__item-new other__item">				
-			<h2 class="other__item-new-title">Новое в нашем блоге</h2>
-			<a class="other__item-new-details" href="#">10 способов сервировки фруктовых щербетов к столу</a>	
-		</article>				 
-
-		<form class="other__item-subscribe other__item">
-			<h2 class="title-hidden">Подписка на рассылку</h2>			
-			<p class="other__item-subscribe-text">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не cпамить и не слать всякой ненужной ерунды. Честно=)
-			</p>	
-			<input class="other__item-subscribe-email" type="email" placeholder="Электронная почта">	
-			<input class="other__item-subscribe-button btn btn-red" type="submit" value="Отправить" title="Подписаться на рассылку">			
-		</form>		
-
-	</div>
-
-	<section class="map">
-		<h2 class="map__title title-hidden">Как найти</h2>	
-		<div class="map__info">
-			<p class="map__info-p">Адрес главного офиса <br>	и офлайн-магазина:</p>	
-			<p class="map__info-p">Ул. Большая Конюшенная <br> 19/8, Санкт-Петербург</p>
-			<p class="map__info-p">Для заказов по телефону:</p>
-			<p class="map__info-p">8 812 450-25-25</p>
-			<p class="map__info-p">(c 10 до 20, ежедневно)</p>		
-			<a class="map__info-feedback btn btn-red" href="#">Форма обратной связи</a>
-		</div>
-	</section>
-
-	<footer class="footer">
-
-		<div class="footer__social footer__part">
-			<h2 class="title-hidden">Наш магазин в соцсетях</h2>	
-			<a class="footer__social-item" href="#" title="Twitter">Twitter</a>
-			<a class="footer__social-item" href="#" title="Instagram">Instagram</a>
-			<a class="footer__social-item" href="#" title="Facebook">Facebook</a>
-			<a class="footer__social-item" href="#" title="В контакте">В контакте</a>
-		</div>
-
-		<div class="footer__menu footer__part">
-			<h2 class="title-hidden">Подробнее о нас</h2>
-			<a class="footer__menu-link" href="#">Для поставщиков</a>
-			<a class="footer__menu-link" href="#">Наши документы</a>
-			<a class="footer__menu-link" href="#">О производстве</a>
-			<a class="footer__menu-link" href="#">Экологические стандарты</a>
-		</div>
-
-		<div class="footer__right footer__part">			
-			<a class="footer__right-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
-				<img src="img/logo-html-a.jpg" alt="Логотип HTML Academy" width="120" height="50">
-			</a>
-			<p class="footer__right-copyright">Сделано в 
-				<a class="underlined" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
-				<span>@2017</span>
-			</p>
-		</div>		
-
-	</footer>
-</body>
+		</footer>
+	</body>
 </html>
