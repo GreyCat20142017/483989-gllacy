@@ -2,22 +2,28 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8">
-		<title>Глэйси</title>
-		<link rel="stylesheet" href="css/style.css">
+		<title>Глэйси</title>		
+		<link rel="stylesheet" href="css/style.css_">
 	</head>
-	<body >
-		<!--***-09-11 "отступы с каждым уровнем вложенности, начиная с первого тега html"  По вашему совету reindent на всё сделала. Но head - body reindent у меня не отталкивает. Сдвинула вручную tab'ом, но это как-то... Может, где-то есть настройка сдвига их автоматически при reindent'e в Sublime? -->
-		<h1 class="title-hidden">Магазин мороженого Глэйси</h1>
+	<body>
 
+		<h1 class="visually-hidden">Магазин мороженого Глэйси</h1>
 		<header class="header">
 			<nav class="header__menu">
 
-				<h2 class="title-hidden">Главное меню, поиск, авторизация, корзина</h2>	
-				<img class="header__menu-logo" src="img/logo.svg" alt="Логотип Глэйси" width="156" height="60">
+				<h2 class="visually-hidden">Главное меню, поиск, авторизация, корзина</h2>	
+				<img class="header__menu-logo" src="img/logo.svg" width="156" height="60" alt="Логотип Глэйси">
 
 				<ul class="header__menu-main">
-					<li class="header__menu-main-item">
+					<li class="header__menu-main-item with-submenu">
 						<a class="header__menu-main-link inline-link" href="catalog.html">Каталог</a>
+						<ul class="submenu" >
+							<li class="submenu-item"><a class="submenu-link separated" href="#">Новинки</a></li>						
+							<li class="submenu-item"><a class="submenu-link" href="catalog.html">Сливочное</a></li>	
+							<li class="submenu-item"><a class="submenu-link" href="#">Щербеты</a></li>	
+							<li class="submenu-item"><a class="submenu-link" href="#">Фруктовый лед</a></li>	
+							<li class="submenu-item"><a class="submenu-link" href="#">Мелорин</a></li>	
+						</ul>
 					</li>
 					<li class="header__main-item">
 						<a class="header__menu-main-link inline-link" href="delivery.html">Доставка и оплата</a>
@@ -28,14 +34,33 @@
 				</ul>
 
 				<div class="header__menu-personal">			
-					<a class="header__menu-personal-link inline-link" href="#" title="Поиск">&#xA0;</a>					
-					<a class="header__menu-personal-link inline-link" href="#" title="Авторизация">Вход</a>			
-					<a class="header__menu-personal-link inline-link" href="#" title="Корзина">Пусто</a>			
+					<a class="header__menu-personal-link inline-link link-search" href="#id-search-text" title="Поиск">Поиск</a>	
+					<form class="form-search gllacy-form" id="id-search-form">
+						<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
+						<input class="form-search-text text-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска">
+					</form>				
+
+					<a class="header__menu-personal-link inline-link btn link-entrance" href="#id-entrance-email" title="Авторизация">Вход</a>			
+					<form class="form-entrance gllacy-form" id="id-form-entrance">
+						<label class="visually-hidden" for="id-entrance-email">Электронная почта</label>
+						<input class="form-entrance-email text-field" type="email" id="id-entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
+						<label class="visually-hidden" for="id-entrance-password">Пароль</label>
+						<input class="form-entrance-password text-field" type="password" id="id-entrance-password" placeholder="Пароль" title="Введите пароль" required>								
+						<div class="form-entrance-wrapper">
+							<button class="form-entrance-button btn btn-red inline-link" type="submit" title="Выполнить вход">Войти</button>
+							<div class="form-entrance-link-wrapper vertical">
+								<a class="form-entrance-link" href="#" title="Восстановление забытого пароля">Забыли пароль</a>
+								<a class="form-entrance-link" href="#" title="Новая регистрация">Новая регистрация</a>							
+							</div>
+						</div>				
+					</form>		
+
+					<a class="header__menu-personal-link inline-link link-basket-empty btn" href="#" title="Корзина">Пусто</a>								
 				</div>
 			</nav>
 
 			<div class="header__info">
-				<h2 class="title-hidden">Часы работы и телефон для связи</h2>	
+				<h2 class="visually-hidden">Часы работы и телефон для связи</h2>	
 				<p>c 10 до 20, ежедневно</p>
 				<p>8 812 450-25-25</p>		
 			</div>
@@ -44,16 +69,22 @@
 			<a class="btn btn-red btn-white-text btn-large" href="#">Давайте оба!</a>	
 		</header>
 
-		<!--*** Где-то здесь (а может быть и не здесь) будут label'ы от option'ов	слайдера. Скорее всего, все содержимое body нужно будет обернуть в контейнер, а невидимые option'ы выкинуть за пределы этого контейнера. Если цвет скриптом менять нельзя по техзаданию... -->
-		<div class="slider-сontrol"></div>
+		<fieldset>  <!-- временно здесь и так -->
+			<legend class="visually-hidden">Переключатель слайдов</legend>
+			<input class="slider-radio" type="radio" id="id-slide-1" name="slider-control" checked> 
+			<input class="slider-radio" type="radio" id="id-slide-2" name="slider-control"> 
+			<input class="slider-radio" type="radio" id="id-slide-3" name="slider-control"> 
+			<label for="id-slide-1" title="Слайд-1">1</label>
+			<label for="id-slide-2" title="Слайд-1">2</label>
+			<label for="id-slide-3" title="Слайд-1">3</label>
+		</fieldset>
 
 		<section class="promo">			
-			<h2 class="title-hidden">Акции</h2>	
+			<h2 class="visually-hidden">Акции</h2>	
 			<div class="promo__item">
 				<b class="promo__item-title">Малинка даром!</b>
 				<p class="promo__item-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
 				<a class="promo__item-button btn btn-red btn-white-text btn-normal" href="#">Хочу варенье!</a>
-				<!--*** Наверное, если по нажатию promo__item-button подразумевался какой-нибудь скрипт, который добавляет в корзину 2 кг мороженого и нечто бесплатно, то лучше это разметить как кнопку, а если подразумевался просто переход на карточку мороженого - то ссылкой. -->
 			</div>
 			<div class="promo__item">
 				<b class="promo__item-title">Шоколадка даром</b>
@@ -61,54 +92,49 @@
 				<a class="promo__item-button btn btn-red btn-white-text btn-normal" href="#">Хочу шоколадки!</a>
 			</div>
 		</section>
-		<!--***-09-11 а может и без nth-child обойтись можно?  -   уже переделала на nth-of-type c нормальной нумерацией - вроде нормально. -->	
-
-		<!--***-09-11 Ну, тут вообще у меня какая-то полная ерунда в catalog__item. Нужно передумывать и переделывать почти полностью. Выглядит похоже, а на самом-то деле... -
-		"а что конкретно смущает?"
-		- Да там был адский ад и образец того, какая дичь может в голову чайникам забрести, когда они попытаются нарисовать то, что видят. На catalog__item:after {} была нарисована полная иллюзия: псевдокнопка, которaя ничего не делает, ибо нет там никакой кнопки – одна видимость. Сейчас уже исправила: докопалась до настоящих кнопки и ссылки и придумала, как сделать, чтобы ничего при наведении не дергалось и курсор наводился нормально. Для проверки добавила ссылки на несуществующие страницы. Есть там еще пара моментиков для выяснения, но на данном этапе это можно отнести к несущественным деталям.-->
 
 		<section class="catalog">
-			<h2 class="catalog-title title-hidden">Каталог. Хиты.</h2>	
+			<h2 class="catalog-title visually-hidden">Каталог. Хиты.</h2>	
 			<ul class="catalog__items">
 				<li class="catalog__item">
-					<img class="catalog__item-img" width="253" height="253"  src="img/1.jpg" alt="Сливочное с апельсиновым джемом">
+					<img class="catalog__item-img"  src="img/1.jpg" width="253" height="253" alt="Фото: мороженое Сливочное с апельсиновым джемом">
 					<p class="catalog__item-price">
 						<span class="catalog__item-price-cost">310</span>
 						<span class="catalog__item-price-currency">/</span>		
 						<span class="catalog__item-price-unit">кг</span>
 					</p>
 					<a class="catalog__item-name" href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>			
-					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="quick-view.html">Быстрый просмотр</a>
 				</li>
 				<li class="catalog__item">
-					<img class="catalog__item-img" width="253" height="253" src="img/2.jpg"  alt="Сливочное-кофейное">
+					<img class="catalog__item-img"  src="img/2.jpg" width="253" height="253" alt="Фото: мороженое Сливочное-кофейное">
 					<p class="catalog__item-price">
 						<span class="catalog__item-price-cost">380</span>
 						<span class="catalog__item-price-currency">/</span>						
 						<span class="catalog__item-price-unit">кг</span>
 					</p>
 					<a class="catalog__item-name"  href="catalog-item.html">Сливочно-кофейное с кусочками шоколада</a>
-					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="quick-view.html">Быстрый просмотр</a>
 				</li>
 				<li class="catalog__item">
-					<img class="catalog__item-img" width="253" height="253" src="img/3.jpg"  alt="Сливочно-клубничное">
+					<img class="catalog__item-img" src="img/3.jpg" width="253" height="253" alt="Фото: мороженое Сливочно-клубничное">
 					<p class="catalog__item-price">
 						<span class="catalog__item-price-cost">355</span>
 						<span class="catalog__item-price-currency">/</span>						
 						<span class="catalog__item-price-unit">кг</span>
 					</p>
 					<a class="catalog__item-name" href="catalog-item.html">Сливочно-клубничное с присыпкой из белого шоколада</a>
-					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="quick-view.html">Быстрый просмотр</a>
 				</li>
 				<li class="catalog__item">
-					<img class="catalog__item-img" width="253" height="253" src="img/4.jpg"  alt="Сливочное крем-брюле">
+					<img class="catalog__item-img" src="img/4.jpg" width="253" height="253" alt="Фото: мороженое Сливочное крем-брюле">
 					<p class="catalog__item-price">
 						<span class="catalog__item-price-cost">415</span>
 						<span class="catalog__item-price-currency">/</span>						
 						<span class="catalog__item-price-unit">кг</span>
 					</p>
 					<a class="catalog__item-name" href="catalog-item.html">Сливочное крем-брюле с карамельной подливкой</a>
-					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="fast-view.html">Быстрый просмотр</a>
+					<a class="catalog__item-btn btn btn-red btn-hidden btn-white-text" href="quick-view.html">Быстрый просмотр</a>
 				</li>
 			</ul>	
 		</section>
@@ -121,7 +147,6 @@
 			<p class="about__item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</p>
 		</section>
 
-		<!--*** После повторного просмотра вебинара сложилось впечатление, что в один section не стоит объединять неоднородные  по смыслу блоки. Section заменен на div c заголовками в каждом смысловом блоке. Валидатор предупреждениями не кидается. Форму дооформлю после соответствующего вебинара, чтобы 2 раза не переделывать :-) -->
 		<div class="other">	
 
 			<article class="other__item-new other__item">				
@@ -130,34 +155,32 @@
 			</article>				 
 
 			<form class="other__item-subscribe other__item">
-				<h2 class="title-hidden">Подписка на рассылку</h2>			
+				<h2 class="visually-hidden">Подписка на рассылку</h2>			
 				<p class="other__item-subscribe-text">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не cпамить и не слать всякой ненужной ерунды. Честно=)
 				</p>	
 				<input class="other__item-subscribe-email" type="email" placeholder="Электронная почта">	
-				<input class="other__item-subscribe-button btn btn-red" type="submit" value="Отправить" title="Подписаться на рассылку">			
+				<input class="other__item-subscribe-button btn btn-red on-white-back" type="submit" value="Отправить" title="Подписаться на рассылку">			
 			</form>		
 
 		</div>
-		<!---***-09-11 "Во всём проекте можно обойтись без использования тега br убрать br"
-		Вот убрала вчера br и шипела, как проколотая шина. Прочувствовала на своей шкуре слова с вебинара, что адрес - это единственное место, где br уместен. Еще как уместен : без него плохо, оказывается... В Хроме и FireFox'e еще нормально, хотя и грязновато, а в IE-11 внутренности этого блока вообще наплывают друг на друга. Сегодня пока вернула br. Вы точно это рекомендуете его убрать? :-) -->
- 		<!---***-09-11 В материалах к вебинару вычитала, что изображение карты не должно быть фоном. Переделано-->
+
 		<section class="map">
-			<h2 class="map__title title-hidden">Как найти</h2>	
+			<h2 class="map__title visually-hidden">Как найти</h2>	
 			<img class="map__img" src="img/map.jpg" width="1200" height="430" alt="Наш магазин на карте (г.Санкт-Петербург, Ул. Большая Конюшенная, 19-8)">
-			<div class="map__info">
+			<div class="map__info shadowed">
 				<p class="map__info-p">Адрес главного офиса <br>	и офлайн-магазина: </p>	
 				<p class="map__info-p">Ул. Большая Конюшенная <br> 19/8, Санкт-Петербург	</p>
 				<p class="map__info-p">Для заказов по телефону:</p>
 				<p class="map__info-p">8 812 450-25-25</p>
 				<p class="map__info-p">(c 10 до 20, ежедневно)</p>		
-				<a href="#" class="map__info-feedback btn btn-red">Форма обратной связи</a>
+				<a class="map__info-feedback btn btn-red on-white-back" href="#id-feedback-name">Форма обратной связи</a>
 			</div>
 		</section>
 
 		<footer class="footer">
 
 			<div class="footer__social footer__part">
-				<h2 class="title-hidden">Наш магазин в соцсетях</h2>	
+				<h2 class="visually-hidden">Наш магазин в соцсетях</h2>	
 				<a class="footer__social-item footer__social-item-tw" href="#" title="Twitter">Twitter</a>
 				<a class="footer__social-item footer__social-item-in" href="#" title="Instagram">Instagram</a>
 				<a class="footer__social-item footer__social-item-fb" href="#" title="Facebook">Facebook</a>
@@ -165,23 +188,40 @@
 			</div>
 
 			<div class="footer__menu footer__part">
-				<h2 class="title-hidden">Подробнее о нас</h2>
-				<a class="footer__menu-link" href="#">Для поставщиков</a>
-				<a class="footer__menu-link" href="#">Наши документы</a>
-				<a class="footer__menu-link" href="#">О производстве</a>
-				<a class="footer__menu-link" href="#">Экологические стандарты</a>
+				<h2 class="visually-hidden">Подробнее о нас и нашем производстве</h2>
+				<a class="footer__menu-link" href="#" title="Информация для поставщиков">Для поставщиков</a>
+				<a class="footer__menu-link" href="#" title="Наши документы">Наши документы</a>
+				<a class="footer__menu-link" href="#" title="Информация о производстве">О производстве</a>
+				<a class="footer__menu-link" href="#" title="Экологические стандарты">Экологические стандарты</a>
 			</div>
 
 			<div class="footer__right footer__part">			
 				<a class="footer__right-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
-					<img src="img/logo-htmlacademy-small.svg" alt="Логотип HTML Academy" width="120" height="39">
+					<img src="img/logo-htmlacademy-small.svg" width="120" height="39"  alt="Логотип HTML Academy" >
 				</a>
 				<p class="footer__right-copyright">Сделано в 
 					<a class="underlined" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
-					<span>@2017</span>
+					<span>@</span>
+					<time datetime="2017">2017</time>
 				</p>
 			</div>		
 
 		</footer>
+
+		<form class="gllacy-form form-feedback" id="id-form-feedback">
+			<h2 class="visually-hidden">Форма обратной связи</h2>
+			<button class="form-feedback-close" type="button" title="Закрыть форму обратной связи">
+				<img src="img/close.svg" width="17" height="17" alt="Закрыть">
+			</button>
+			<p class="form-feedback-title">Мы обязательно Вам ответим!</p>
+			<label class="visually-hidden" for="id-feedback-name">Ваше имя</label>	
+			<input class="form-feedback-name form-feedback-item text-field" type="text" id="id-feedback-name" placeholder="Как вас зовут?" title="Введите Ваше имя" required>	
+			<label class="visually-hidden" for="id-feedback-email">Адрес электронной почты</label>
+			<input class="form-feedback-email form-feedback-item text-field" type="email" id="id-feedback-email" placeholder="Ваша почта для ответа?" title="Введите адрес электронной почты" required>		
+			<label class="visually-hidden" for="id-feedback-text">Ваше сообщение</label>
+			<textarea class="form-feedback-text  form-feedback-item text-field" id="id-feedback-text" rows="8" placeholder="Напишите что-нибудь..." title="Введите текст Вашего сообщения" required></textarea>
+			<button class="form-feedback-button btn btn-red inline-link" type="submit" title="Отправить сообщение">Отправить</button>
+		</form>	
+
 	</body>
 </html>
