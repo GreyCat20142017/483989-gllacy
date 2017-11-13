@@ -35,13 +35,13 @@
 				<div class="header__menu-personal">		
 
 					<a class="header__menu-personal-link inline-link link-search" href="#id-search-text" title="Поиск">Поиск</a>
-					<form class="form-search gllacy-form">
+					<form class="form-search gllacy-form"  method="post" action="https://echo.htmlacademy.ru">
 						<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
 						<input class="form-search-text text-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска">
 					</form>			
 
 					<a class="header__menu-personal-link inline-link link-entrance" href="#id-entrance-email" title="Авторизация">Вход</a>
-					<form class="form-entrance gllacy-form"  id="id-form-entrance">
+					<form class="form-entrance gllacy-form"  id="id-form-entrance"  method="post" action="https://echo.htmlacademy.ru">
 						<label class="visually-hidden" for="id-entrance-email">Электронная почта</label>
 						<input class="form-entrance-email text-field" type="email" id="id-entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
 						<label class="visually-hidden" for="id-entrance-password">Пароль</label>
@@ -56,13 +56,13 @@
 					</form>				
 
 					<a class="header__menu-personal-link inline-link link-basket-full" href="#" title="Корзина">2 товара</a>
-					<form class="form-basket gllacy-form" id="id-form-basket">
+					<form class="form-basket gllacy-form" id="id-form-basket"  method="post" action="https://echo.htmlacademy.ru">
 						<h2 class="visually-hidden">Корзина. Цены и суммы - в рублях, количество - в килограммах.</h2>
 						<table class="form-basket-table">
 							<tr class="form-basket-row">
 								<td class="form-basket-cell">
-									<button class="form-basket-cell-btn btn" type="button" title="Удалить текущую строку в корзине">
-										<img src="img/close.svg" width="11" height="11" alt="Удалить строку">
+									<button class="form-basket-cell-btn btn btn-close" type="button" title="Удалить текущую строку в корзине">
+										<span class="visually-hidden">Удалить строку</span>
 									</button>
 								</td>
 								<td class="form-basket-cell">
@@ -75,8 +75,8 @@
 							</tr>							
 							<tr class="form-basket-row">
 								<td class="form-basket-cell">
-									<button class="form-basket-cell-btn btn" type="button" title="Удалить текущую строку в корзине">
-										<img src="img/close.svg" width="11" height="11" alt="Удалить строку">
+									<button class="form-basket-cell-btn btn btn-close" type="button" title="Удалить текущую строку в корзине">
+										<span class="visually-hidden">Удалить строку</span>
 									</button>
 								</td>
 								<td class="form-basket-cell">
@@ -109,7 +109,7 @@
 
 		<h1 class="catalog-title">Сливочное мороженое</h1>
 
-		<form class="filter">
+		<form class="filter"  method="post" action="https://echo.htmlacademy.ru">
 			<h2 class="visually-hidden">Фильтры</h2>
 			<div class="filter-row">
 

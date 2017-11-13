@@ -32,7 +32,7 @@
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
-  overflow: hidden;
+  overflow: hidden;  
 }
 
 h1,
@@ -197,6 +197,15 @@ body {
 
 .btn-hidden {
   display: none;
+}
+
+.btn-close {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background: url("../img/close.svg") no-repeat center center;
+  background-color: transparent;
+  background-size: 11px 11px;
 }
 
 :focus { 
@@ -1092,14 +1101,13 @@ body {
 }
 
 .form-basket-cell-btn {
-  background-color: transparent; 
-  width:13px;
-}
+  width: 11px;
+  height: 11px;
+}  
 
 .form-basket-row:hover {
   background-color rgba(255, 255, 255, 255, 0.2); 
 }
-
 
 .text-field {
   width: 100%;
@@ -1124,7 +1132,7 @@ body {
 }
 
 .form-feedback {
-  display: none;
+  display: none; /*flex;*/
   flex-direction: column;
   align-items: flex-end;
   width: 477px;
