@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Roboto";
-  font-weight: 600;
+  font-weight: 500;
   src: local("Roboto Medium"),
   url("../fonts/robotomedium.woff2") format("woff2"),
   url("../fonts/robotomedium.woff") format("woff");
@@ -39,9 +39,7 @@ html {
   margin: 0;
   padding: 0;
   color: black;
-  background-color: rgba(132, 157, 143, 1);
-  opacity: 1;
-  text-decoration-color: rgba(255, 255, 255, 0.3);
+  background-color: white; 
   webkit-box-sizing: border-box;
   moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -58,34 +56,62 @@ body {
   background-color: inherit;
 }
 
-.body-main-page {
-  background-color: inherit;
-  background-image: url("../img/header-ice-1.png"),
-  radial-gradient(at 50% 50%,rgba(207, 246, 225, 0.5) 0%,  rgba(132, 157, 143, 0.1) 60%,  rgba(132, 157, 143, 1) 100%);
-  background-repeat: no-repeat, no-repeat;
-  background-position: center 50px, center top;
-  background-size: 647px 584px, 900px 584px;
-}
-
 * {
   webkit-box-sizing: inherit;
   moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
-a {
-  font-size: 1em;
-  font-weight: 600;
-  color: black; 
+
+:focus {
+  outline-color:rgba(255, 255, 255, 0.3);   
 }
 
 a.on-dark {
   color: white;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+a.on-light {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color:  rgba(179, 179, 179, 1)
 }
 
 a:hover,
-a:active { 
+a:active,
+a:focus { 
   color: rgba(255, 188, 158, 1);
+  text-decoration-color: rgba(255, 188, 158, 0.3);
+}
+
+a.on-light:hover,
+a.on-light:active,
+a.on-light:focus { 
+  color:rgba(232, 77, 55, 1);
+  text-decoration-color: rgba(232, 77, 55, 1);
+}
+
+a.on-light:focus { 
+  outline-color: rgba(188, 188, 188, 1);
+}
+
+.catalog-body {
+    background-color: rgba(132, 157, 143, 1);
+    /*background-color: rgba(137, 150, 166, 1);
+    background-color: rgba(157, 139, 132, 1);*/
+}
+
+.main-wrapper {
+  width: 100%;
+  min-height: 600px;
+  background-color: rgba(132, 157, 143, 1);
+  background-image: url("../img/header-ice-1.png"),
+  radial-gradient(at 50% 50%,rgba(207, 246, 225, 0.5) 0%,  rgba(132, 157, 143, 0.1) 60%,  rgba(132, 157, 143, 1) 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 50px, center top;
+  background-size: 647px 584px, 900px 584px;
 }
 
 .gllacy-fieldset {
@@ -145,10 +171,29 @@ a:active {
 }
 
 .btn-large {
-  font-size: 2em;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 44px;
+  border-radius: 32px;
+  background-image: -webkit-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:    -moz-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:      -o-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:     -ms-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:         linear-gradient(0deg, #e74a35 0%, #f26843 100%);
 }
+
 .btn-normal {
-  font-size: 1.2em;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;  
+  border-radius: 18px;
+}
+
+.btn-narrow {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 16px;
 }
 
 .btn-trans-darker {
@@ -170,48 +215,53 @@ a:active {
 }
 
 .btn-red {
-  background-color: rgba(240, 100, 65, 1);
-  background-image:    -moz-linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  background-image:     -ms-linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  background-image:         linear-gradient( 90deg, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
-  box-shadow: 0 3px 3px 0 rgba(172, 16, 0, 0.64);
-  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+  background-image: -webkit-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:    -moz-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:      -o-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:     -ms-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:         linear-gradient(0deg, #e74a35 0%, #f26843 100%);
+  box-shadow: 0 2px 2px 0 rgba(172, 16, 0, 0.64);
 }
 
-.btn-red:hover { 
-  background-color: rgba(242, 128, 102, 0.2);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
-}  
+.btn-red:hover,
+.btn-red:focus {
+  background-image: -webkit-linear-gradient(90deg, #f26843 0%, #e74a35 100%);
+  background-image:    -moz-linear-gradient(90deg, #f26843 0%, #e74a35 100%);
+  background-image:      -o-linear-gradient(90deg, #f26843 0%, #e74a35 100%);
+  background-image:     -ms-linear-gradient(90deg, #f26843 0%, #e74a35 100%);
+  background-image:         linear-gradient(0deg,  #f26843 0%, #e74a35 100%);
+  /*~~~ - убрать белый цвет, если все-таки выяснится, что они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
+  color: white;
+  /*~~~*/
+  background-color:  rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 2px 0 #ac1000;  ;
+}
 
 .btn-red:active {
-  background-color: rgba(221, 86, 58, 1);
-  background-image:    -moz-linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  background-image: -webkit-linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  background-image:     -ms-linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  background-image:     linear-gradient( 90deg, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
-  box-shadow: 0 2px 2px 0 rgba(172, 16, 0, 0.004);
-  box-shadow: inset 0 2px 2px 0 rgba(148, 39, 24, 0.004);
-} 
+  background-image: -webkit-linear-gradient(90deg, #ca3824 0%, #f26843 100%);
+  background-image:    -moz-linear-gradient(90deg, #ca3824 0%, #f26843 100%);
+  background-image:      -o-linear-gradient(90deg, #ca3824 0%, #f26843 100%);
+  background-image:     -ms-linear-gradient(90deg, #ca3824 0%, #f26843 100%);
+  background-image:         linear-gradient(0deg, #ca3824 0%, #f26843 100%); 
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
 .btn-white-bordered {
   border: 2px solid white;  
-  font-weight: 600;
+  font-weight: 500;
 }
 
-.btn-1824 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
+.btn-white-bordered:hover,
+.btn-white-bordered:focus {
+  color: black;
+  background-color: white;
 }
 
-.btn-3244 {
-  font-size: 32px;
-  line-height: 44px;
-  font-weight: bold;
+.btn-white-bordered:active {
+  border: 2px solid rgba(238, 238, 238, 1);
+  color: black;
+  background-color: white;
 }
 
 .btn-hidden {
@@ -229,41 +279,50 @@ a:active {
   background-size: 11px 11px;
 }
 
-/*.btn:hover {
-  color:white;
-}*/
-.btn-close:hover {
+
+.btn-close {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background-color: transparent;
+  background-image: url("../img/close.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 11px 11px;
+}
+
+.btn-close:hover,
+.btn-close:focus {
   box-shadow: 0 0 1px 1px lightgrey;
   border-radius: 50%;
 }
 
-:focus { 
-  outline:none;
-  box-shadow: 0px 1px 2px 1px rgba(88, 88, 88, 0.8), 0px 4px 4px 4px rgba(222, 222, 222, 0.5);
-  border-radius: 1em;  
-}
 
-.on-white-back:focus { 
-  outline:none;
-  box-shadow: 0px 1px 2px 1px rgba(188, 188, 188, 0.8), 0px 4px 4px 4px rgba(0, 0, 0, 0.5);
-  border-radius: 1em;  
-}
-
-.on-white-back:hover {
+.on-white-back:hover,
+.on-white-back:focus {
   background-color: rgba(242, 128, 102, 0.5);
   box-shadow: 0px 2px 2px 2px rgba(88, 88, 88, 0.8), 0px 2px 2px 0px rgba(172, 16, 0, 0.004);
 }
 
-.on-dark-back:hover {
+.on-dark-back:hover,
+.on-dark-back:focus {
   background-color: rgba(242, 128, 102, 0.5);
-  box-shadow:  0px 3px 3px 3px rgba(188, 188, 188, 0.8);
+  box-shadow:  0px 0px 2px 2px rgba(88, 88, 88, 1), 0px 2px 2px 2px rgba(188, 188, 188, 0.5);
+}
+
+.underlined-main {
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;  
+  padding: 0.2em;
+  display: inline-block;
 }
 
 .underlined {
   cursor: pointer;
   text-decoration: none;
-  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
-  color: white;
+  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;   
+  display: inline-block;
 }
 
 .header p,
@@ -286,7 +345,7 @@ a:active {
   padding: 1em;
 }
 
-.header__menu {
+.navigation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -294,9 +353,10 @@ a:active {
   width: 100%;
 }
 
-.header__menu-logo {
+.logo {
   flex-basis: 10%;
-}*/
+}
+*/
 
 .main-menu,
 .personal-menu,
@@ -330,9 +390,8 @@ a:active {
 }
 
 .main-menu .menu-link {
-  padding: 0.5em;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.3);  
+  padding: 0.5em; 
+  border-radius: 16px;
 }
 
 .main-menu .menu-link.current {
@@ -340,10 +399,11 @@ a:active {
   background-color: rgba(240, 100, 65,1);
 }
 
-.main-menu .menu-link:hover {
+.main-menu .menu-link:hover,
+.main-menu .menu-link:focus {
   text-decoration: none;
   color: black;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .submenu {
@@ -369,7 +429,6 @@ a:active {
   border-radius: 0;
   color: black;
   background-color: rgba(248, 247, 244, 1);
-  opacity: 1;
 }
 
 .submenu-link.current {
@@ -377,10 +436,18 @@ a:active {
   background-color: rgba(208, 112, 88, 1);
 }
 
-.submenu-link:hover {
+.submenu-link:hover,
+.submenu-link:focus {
   color: black;
   background-color: rgba(251, 222, 215, 1);
 }
+
+.submenu-link:focus {
+  color: black;
+  background-color: rgba(251, 222, 215, 1);
+  box-shadow: 0px 0px 2px 2px white inset;
+}
+
 .submenu-link:active {
   color: black;
   background-color: rgba(246, 181, 165, 1);
@@ -398,7 +465,8 @@ a:active {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.personal-menu .menu-link:hover {
+.personal-menu .menu-link:hover,
+.personal-menu .menu-link:focus {
   color: black;
   background-color: white;
 }
@@ -424,7 +492,8 @@ a:active {
   background-image: url("../img/menu-loupe-white.svg");
 }
 
-.link-search:hover:before {
+.link-search:hover:before,
+.link-search:focus:before {
   background-image: url("../img/menu-loupe-black.svg");
 }
 
@@ -440,7 +509,8 @@ a:active {
   background-image: url("../img/menu-entrance-white.svg");
 }
 
-.link-entrance:hover:before {
+.link-entrance:hover:before,
+.link-entrance:focus:before {
   background-image: url("../img/menu-entrance-black.svg");
 }
 
@@ -452,11 +522,13 @@ a:active {
   background-image: url("../img/menu-basket-full-white.svg");
 }
 
-.link-basket-empty:hover:before {
+.link-basket-empty:hover:before,
+.link-basket-empty:focus:before {
   background-image: url("../img/menu-basket-empty-black.svg");
 }
 
-.link-basket-full:hover:before {
+.link-basket-full:hover:before,
+.link-basket-full:focus:before {
   background-image: url("../img/menu-basket-full-black.svg");
 }
 
@@ -611,12 +683,20 @@ a:active {
   height: 3em;
   margin-top: -1em;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 22px;
   text-align: center;
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.3);
   color: white;
+}
+
+ /*~~~ - убрать белый цвет, если все-таки выяснится, что они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
+ .catalog-item-name:hover, 
+ .catalog-item-name:focus {
+  color:  rgba(255, 255, 255, 0.7);
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  /*~~~*/
 }
 
 .catalog-item.hit:before {
@@ -648,21 +728,24 @@ a:active {
   box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
   opacity: 0.2;
 }
-
-.catalog-item:hover.catalog-item:after {
+/*!!!!!!*/
+.catalog-item:hover.catalog-item:after,
+.catalog-item:focus.catalog-item:after {
   z-index: 1;
   display: inline-block;
 }
 
-.catalog-item:hover > .catalog-item-btn {
+.catalog-item:hover > .catalog-item-btn,
+.catalog-item:focus > .catalog-item-btn {
   position: absolute;
   z-index: 5;
-  right: 1.8em;
+  right: 1.5em;
   bottom: -2.5em;
   display: inline-block;
 }
 
-.catalog-item:hover > .catalog-item-name {
+.catalog-item:hover > .catalog-item-name,
+.catalog-item:focus > .catalog-item-name {
   z-index: 5;
 }
 
@@ -703,7 +786,7 @@ a:active {
   margin-top: 1em;
   padding-left: 4em;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 22px;
 }
 
@@ -778,7 +861,7 @@ a:active {
   max-width: 60%;
   padding: 0 0.5em;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 22px;
   text-align: left;
   vertical-align: top;
@@ -894,7 +977,8 @@ a:active {
   align-items: stretch;
   flex-wrap: nowrap;
   min-height: 50px;
-  font-size: 0.8em;  
+  font-size: 13px;  
+  line-height: 18px;
 }
 
 .footer-part {
@@ -940,7 +1024,8 @@ a:active {
   background-image: url("../img/soc-vk.svg");
 }
 
-.social-item:hover {
+.social-item:hover,
+.social-item:focus {
   opacity: 0.7;
 }
 
@@ -960,16 +1045,12 @@ a:active {
   font-weight: normal;
   line-height: 18px;
   white-space: nowrap;
-  text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.3);
-  color: white;
 }
 
 .footer-menu-link.iconed {
   position: relative;
   font-weight: bold;
 }
-
 
 .footer-menu-link.iconed:before {
   content: "";
@@ -992,8 +1073,7 @@ a:active {
   justify-content: stretch;
   align-items: center;
   padding: 1em;
-  background-color: inherit;
-  opacity: 0.7;
+  background-color: inherit; 
 }*/
 
 .catalog-title {
@@ -1023,13 +1103,13 @@ a:active {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 1.1em;
+  font-size: 18px;
 }
 
-.filter-option,
-.filter-radio {
+.filter-option-check,
+.filter-option-radio {
   display: inline-block;
-  padding: 0.5em 0 0.5em 1.5em;
+  padding: 0.5em 0.5em 0.5em 1em;
 }
 
 .filter-sorting {
@@ -1040,7 +1120,15 @@ a:active {
   border-radius: 1em;
   color: white;
   background-color: rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 18px;
 }
+
+.filter-sorting:hover,
+.filter-sorting:focus {
+  color: black;
+} 
 
 .gllacy-fieldset-sorting {
   flex-basis: 20%;
@@ -1062,7 +1150,7 @@ a:active {
 
 .filter-sorting-item {
   color: white;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2); 
 }
 
 .footer-logo {
@@ -1155,7 +1243,8 @@ a:active {
   left: 0.5em;
 }
 
-.breadcrumbs-link.current:hover {
+.breadcrumbs-link.current:hover,
+.breadcrumbs-link.current:focus {
   color:white;
 }
 
@@ -1172,7 +1261,8 @@ a:active {
   border-radius: 50%;
 }
 
-.pagination-link:hover {
+.pagination-link:hover,
+.pagination-link:focus {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1184,11 +1274,12 @@ a:active {
 .gllacy-field {
   width: 100%;
   padding: 0.5em;
-  border: 1px  solid rgba(178, 178, 178, 1);
+  border: 2px  solid rgba(178, 178, 178, 0.3);
   border-radius: 5px;
   color: rgba(153, 153, 153, 1);
   background-color: rgb(255, 255, 255, 1);
   font-size:16px;
+  line-height: 18px;
 }
 
 .gllacy-field:hover {
@@ -1233,7 +1324,7 @@ a:active {
   margin: -1em 0 1em;
   align-self: flex-start;
   font-size: 1.5em;
-  font-weight: 600px;
+  font-weight: 500px;
   text-align: left;
   color: black;
 }
@@ -1248,3 +1339,119 @@ a:active {
   cursor: default;
   background-color: transparent;
 }
+
+.slider-button {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.filter-option-check label,
+.filter-option-radio label {
+  padding-left: 20px;
+}
+
+.filter-checkbox,
+.filter-radio {
+  position: relative; 
+  /*visibility: hidden;*/
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;  
+  clip: rect(0 0 0 0);  
+}
+
+.filter-checkbox:before,
+.filter-radio:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -10px;
+  display: inline-block;
+  visibility: visible;
+  width: 22px;
+  height: 22px;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;  
+ } 
+
+.filter-checkbox:not(:checked):before {
+  background-image: url("../img/checkbox-off.svg");
+}
+
+.filter-checkbox:checked:before {
+  background-image: url("../img/checkbox-on.svg");
+}
+
+.filter-checkbox:checked:disabled:before {
+  background-image: url("../img/checkbox-on-disabled.svg");
+}
+
+.filter-checkbox:disabled:before {
+  background-image: url("../img/checkbox-off-disabled.svg");
+}
+
+.filter-checkbox:not(:disabled):hover:before,
+.filter-checkbox:not(:disabled):focus:before {  
+  background-color: rgba( 255, 255, 255, 0.2);
+}
+
+.filter-radio:not(:checked):before {
+  background-image: url("../img/radio-off.svg");
+}
+
+.filter-radio:checked:before {
+  background-image: url("../img/radio-on.svg");
+}
+
+.filter-radio:checked:disabled:before {
+  background-image: url("../img/radio-on-disabled.svg");
+}
+
+.filter-radio:disabled:before {
+  background-image: url("../img/radio-off-disabled.svg");
+}
+
+.filter-radio:not(:disabled):hover:before,
+.filter-radio:not(:disabled):focus:before {  
+  background-color: rgba( 255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.slider-button:hover,
+.slider-button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.slider-radio:nth-of-type(1):checked ~ .main-wrapper .slider-button-1 {
+  background-color: white;
+}
+.slider-radio:nth-of-type(2):checked ~ .main-wrapper .slider-button-2 {
+  background-color: white;
+}
+.slider-radio:nth-of-type(3):checked ~ .main-wrapper .slider-button-3 {
+  background-color: white;
+}
+
+.slider-radio:nth-of-type(1):checked ~ .main-wrapper {
+  background-color: rgba(132, 157, 143, 1);
+  background-image: url("../img/header-ice-1.png"), radial-gradient(at 50% 50%,rgba(207, 246, 225, 0.5) 0%,  rgba(132, 157, 143, 0.1) 60%,  rgba(132, 157, 143, 1) 100%);
+}
+.slider-radio:nth-of-type(2):checked ~ .main-wrapper {
+  background-color: rgba(137, 150, 166, 1);
+  background-image: url("../img/header-ice-2.png"), radial-gradient(at 50% 50%,rgba(214, 235, 252, 0.5) 0%,  rgba(137, 150, 166, 1) 60%,  rgba(137, 150, 166, 1) 100%);
+}
+.slider-radio:nth-of-type(3):checked ~ .main-wrapper {
+  background-color: rgba(157, 139, 132, 1);
+  background-image: url("../img/header-ice-3.png"), radial-gradient(at 50% 50%,rgba(250, 228, 219, 0.5) 0%,  rgba(157, 139, 132, 1) 60%,  rgba(157, 139, 132, 1) 100%);
+}
+
+
