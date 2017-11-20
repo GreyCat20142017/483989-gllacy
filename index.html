@@ -17,7 +17,7 @@
 				<nav class="navigation">
 
 					<h2 class="visually-hidden">Главное меню, поиск, авторизация, корзина</h2>	
-					<img class="logo" src="img/logo.svg" width="156" height="60" alt="Логотип Глэйси">
+					<img class="logo" src="img/logo.svg" width="154" height="64" alt="Логотип Глэйси">
 
 					<ul class="main-menu">
 						<li class="submenu-entrance">
@@ -27,7 +27,7 @@
 								<li><a class="submenu-link" href="catalog.html">Сливочное</a></li>	
 								<li><a class="submenu-link" href="#">Щербеты</a></li>	
 								<li><a class="submenu-link" href="#">Фруктовый лед</a></li>	
-								<li><a class="submenu-link" href="#">Мелорин</a></li>	
+								<li><a class="submenu-link" href="#">Мелорин</a></li>									
 							</ul>
 						</li>
 						<li>
@@ -39,7 +39,7 @@
 					</ul>
 
 					<div class="personal-menu">			
-						<a class="menu-link link-search btn" href="#id-search-text" title="Поиск"><span class="visually-hidden">Поиск</span></a>
+						<a class="menu-link link-search" href="#id-search-text" title="Поиск"><span class="visually-hidden">Поиск</span></a>
 						<form class="form-search gllacy-form" id="id-search-form" method="post" action="https://echo.htmlacademy.ru">
 							<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
 							<input class="form-search-text gllacy-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска">
@@ -80,19 +80,20 @@
 				<label class="slider-button slider-button-3" for="id-slide-3" title="Слайд-3"><span class="visually-hidden">Слайд-3</span></label>
 			</div>	
 
-
 			<section class="promo">			
-				<h2 class="visually-hidden">Акции</h2>	
-				<div class="promo-item">
-					<b class="promo-item-title">Малинка даром!</b>
-					<p class="promo-item-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-					<a class="promo-item-button btn btn-red btn-normal btn-white-text on-dark-back" href="#">Хочу варенье!</a>
-				</div>
-				<div class="promo-item">
-					<b class="promo-item-title">Шоколадка даром</b>
-					<p class="promo-item-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-					<a class="promo-item-button btn btn-red btn-normal btn-white-text on-dark-back " href="#">Хочу шоколадки!</a>
-				</div>
+				<h2 class="visually-hidden">Акции</h2>
+				<ul class="promo-items">	
+					<li class="promo-item">
+						<b class="promo-item-title">Малинка даром!</b>
+						<p class="promo-item-text">При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+						<a class="promo-item-button btn btn-red btn-normal btn-white-text on-dark-back" href="#">Хочу варенье!</a>
+					</li>
+					<li class="promo-item">
+						<b class="promo-item-title">Шоколадка даром</b>
+						<p class="promo-item-text">При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+						<a class="promo-item-button btn btn-red btn-normal btn-white-text on-dark-back " href="#">Хочу шоколадки!</a>
+					</li>
+				</ul>
 			</section>
 
 			<section class="catalog">
@@ -172,10 +173,15 @@
 				<h2 class="map-title visually-hidden">Как найти</h2>	
 				<img class="map-img" src="img/map.jpg" width="1200" height="430" alt="Наш магазин на карте (г.Санкт-Петербург, Ул. Большая Конюшенная, 19-8)">
 				<div class="map-info shadowed">
-					<p class="map-info-p">Адрес главного офиса <br>	и офлайн-магазина: </p>	
-					<p class="map-info-p">Ул. Большая Конюшенная <br> 19/8, Санкт-Петербург	</p>
+					<p class="map-info-p">
+						<span>Адрес главного офиса</span>
+						<span>и офлайн-магазина: </span>
+					</p>		
+					<p class="map-info-p-bold">
+						<span>Ул. Большая Конюшенная</span>
+						<span>19/8, Санкт-Петербург</span>
 					<p class="map-info-p">Для заказов по телефону:</p>
-					<p class="map-info-p">8 812 450-25-25</p>
+					<p class="map-info-p-bold">8 812 450-25-25</p>
 					<p class="map-info-p">(c 10 до 20, ежедневно)</p>		
 					<a class="map-info-feedback btn btn-red btn-normal on-white-back" href="#id-feedback-name">Форма обратной связи</a>
 				</div>
@@ -183,7 +189,7 @@
 
 			<footer class="footer">
 
-				<div class="social footer-part">
+				<div class="footer-part social">
 					<h2 class="visually-hidden">Наш магазин в соцсетях</h2>	
 					<a class="social-item social-item-tw inline-link" href="#" title="Twitter"><span class="visually-hidden">Twitter</span></a>
 					<a class="social-item social-item-in inline-link" href="#" title="Instagram"><span class="visually-hidden">Instagram</span></a>

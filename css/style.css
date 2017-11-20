@@ -24,32 +24,33 @@
 
 .visually-hidden:not(:focus):not(:active) {
   position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
   width: 1px;
   height: 1px;
   margin: -1px;
-  border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;  
+  border: 0;
 }
 
 html {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
   color: black;
-  background-color: white; 
-  webkit-box-sizing: border-box;
-  moz-box-sizing: border-box;
-  box-sizing: border-box;
+  background-color: white;
 }
 
 body {
+  min-width: 900px;
   max-width: 1200px;
   margin: 0 auto;
   font-family: "Roboto","Arial", sans-serif;
-  font-size: 1em; 
+  font-size: 1em;
   font-weight: normal;
   line-height: 1.2em;
   color: white;
@@ -57,49 +58,50 @@ body {
 }
 
 * {
-  webkit-box-sizing: inherit;
-  moz-box-sizing: inherit;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
 }
-
 
 :focus {
-  outline-color:rgba(255, 255, 255, 0.3);   
+  outline-color: rgba(255, 255, 255, 0.3);
 }
 
+img {max-width: 100%;}
+
 a.on-dark {
-  color: white;
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.3);
+  color: white;
 }
 
 a.on-light {
-  color: black;
   text-decoration: underline;
-  text-decoration-color:  rgba(179, 179, 179, 1)
+  text-decoration-color: rgba(179, 179, 179, 1);
+  color: black;
 }
 
 a:hover,
 a:active,
-a:focus { 
-  color: rgba(255, 188, 158, 1);
+a:focus {
   text-decoration-color: rgba(255, 188, 158, 0.3);
+  color: rgba(255, 188, 158, 1);
 }
 
 a.on-light:hover,
 a.on-light:active,
-a.on-light:focus { 
-  color:rgba(232, 77, 55, 1);
+a.on-light:focus {
   text-decoration-color: rgba(232, 77, 55, 1);
+  color: rgba(232, 77, 55, 1);
 }
 
-a.on-light:focus { 
+a.on-light:focus {
   outline-color: rgba(188, 188, 188, 1);
 }
 
 .catalog-body {
-    background-color: rgba(132, 157, 143, 1);
-    /*background-color: rgba(137, 150, 166, 1);
+  background-color: rgba(132, 157, 143, 1);
+  /*background-color: rgba(137, 150, 166, 1);
     background-color: rgba(157, 139, 132, 1);*/
 }
 
@@ -130,9 +132,9 @@ a.on-light:focus {
 
 .gllacy-fieldset-legend {
   position: absolute;
-  left:0;
   top: -1.7em;
-  font-size: 0.88em;  
+  left: 0;
+  font-size: 0.88em;
 }
 
 .gllacy-hr {
@@ -170,32 +172,6 @@ a.on-light:focus {
   color: white;
 }
 
-.btn-large {
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 44px;
-  border-radius: 32px;
-  background-image: -webkit-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
-  background-image:    -moz-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
-  background-image:      -o-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
-  background-image:     -ms-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
-  background-image:         linear-gradient(0deg, #e74a35 0%, #f26843 100%);
-}
-
-.btn-normal {
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 24px;  
-  border-radius: 18px;
-}
-
-.btn-narrow {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 18px;
-  border-radius: 16px;
-}
-
 .btn-trans-darker {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 0.6;
@@ -230,7 +206,7 @@ a.on-light:focus {
   background-image:      -o-linear-gradient(90deg, #f26843 0%, #e74a35 100%);
   background-image:     -ms-linear-gradient(90deg, #f26843 0%, #e74a35 100%);
   background-image:         linear-gradient(0deg,  #f26843 0%, #e74a35 100%);
-  /*~~~ - убрать белый цвет, если все-таки выяснится, что они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
+  /*~~~ - убрать белый цвет, если все-таки выяснится, что при наведении они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
   color: white;
   /*~~~*/
   background-color:  rgba(255, 255, 255, 0.2);
@@ -245,6 +221,32 @@ a.on-light:focus {
   background-image:         linear-gradient(0deg, #ca3824 0%, #f26843 100%); 
   color: white;
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-large {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 44px;
+  border-radius: 32px;
+  background-image: -webkit-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:    -moz-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:      -o-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:     -ms-linear-gradient(90deg, #e74a35 0%, #f26843 100%);
+  background-image:         linear-gradient(0deg, #e74a35 0%, #f26843 100%);
+}
+
+.btn-normal {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;  
+  border-radius: 18px;
+}
+
+.btn-narrow {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 16px;
 }
 
 .btn-white-bordered {
@@ -272,18 +274,7 @@ a.on-light:focus {
   display: inline-block;
   width: 11px;
   height: 11px;
-  background-color: transparent;
-  background-image: url("../img/close.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 11px 11px;
-}
-
-
-.btn-close {
-  display: inline-block;
-  width: 11px;
-  height: 11px;
+  vertical-align: middle;
   background-color: transparent;
   background-image: url("../img/close.svg");
   background-repeat: no-repeat;
@@ -296,7 +287,6 @@ a.on-light:focus {
   box-shadow: 0 0 1px 1px lightgrey;
   border-radius: 50%;
 }
-
 
 .on-white-back:hover,
 .on-white-back:focus {
@@ -328,7 +318,6 @@ a.on-light:focus {
 .header p,
 .promo p,
 .footer p,
-.map p,
 .catalog-header p {
   margin:0;
   padding:0;
@@ -361,6 +350,7 @@ a.on-light:focus {
 .main-menu,
 .personal-menu,
 .submenu, 
+.promo-items,
 .catalog-items,
 .about-items,
 .footer-menu,
@@ -481,15 +471,12 @@ a.on-light:focus {
   background-repeat: no-repeat;
 }
 
-.link-search {
-  overflow: hidden;
-  color:transparent;
-  width: 2.5em;
-  min-height: 2.5em;
+.link-search {  
+  min-height: 2.5em;   
 }  
 
 .link-search:before {
-  background-image: url("../img/menu-loupe-white.svg");
+  background-image: url("../img/menu-loupe-white.svg");  
 }
 
 .link-search:hover:before,
@@ -557,7 +544,7 @@ a.on-light:focus {
   text-align: center;  
 }
 
-.promo {
+.promo-items {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -598,9 +585,8 @@ a.on-light:focus {
   font-size: 18px;
   font-weight: bold;
   line-height: 22px;
-  vertical-align: top;
+  vertical-align: top; 
 }
-
 
 .promo-item-button {
   margin-top: 1em;
@@ -691,12 +677,12 @@ a.on-light:focus {
   color: white;
 }
 
- /*~~~ - убрать белый цвет, если все-таки выяснится, что они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
+ /*~~~ - убрать белый цвет, если все-таки выяснится, что при наведении они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
  .catalog-item-name:hover, 
  .catalog-item-name:focus {
   color:  rgba(255, 255, 255, 0.7);
   text-decoration-color: rgba(255, 255, 255, 0.3);
-  /*~~~*/
+ /*~~~*/
 }
 
 .catalog-item.hit:before {
@@ -728,7 +714,7 @@ a.on-light:focus {
   box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
   opacity: 0.2;
 }
-/*!!!!!!*/
+
 .catalog-item:hover.catalog-item:after,
 .catalog-item:focus.catalog-item:after {
   z-index: 1;
@@ -739,9 +725,13 @@ a.on-light:focus {
 .catalog-item:focus > .catalog-item-btn {
   position: absolute;
   z-index: 5;
-  right: 1.5em;
+  right: 0;
   bottom: -2.5em;
+  left: 0;
   display: inline-block;
+  width: 200px;
+  margin: 0 auto;
+  white-space: nowrap;
 }
 
 .catalog-item:hover > .catalog-item-name,
@@ -869,7 +859,6 @@ a.on-light:focus {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-
 .other-item-new-details {
   display: inline-block;
   max-width: 60%;
@@ -941,33 +930,40 @@ a.on-light:focus {
   z-index: 1;
   top: 64px;
   right: 2.2%;
-  display: flex;
-  flex-direction: column;
   width: 302px;
   height: 305px;
-  padding: 2em 1.6em;
+  padding: 2em 1.5em;
   border-radius: 0.7em;
   color: black;
   background-color: white;
 }
 
 .map-info-p {
-  margin: 0.2em;
+  margin: 0.2em 0 0;
+  font-size: 14px;
+  line-height: 1.4em;
   text-align: left;
 }
-.map-info-p:nth-child(n) {
-  font-size: 14px;
-  line-height: 20px;
-}
-.map-info-p:nth-child(2n) {
+
+.map-info-p-bold {
+  display: block;
+  margin: 0.2em 0;
   font-size: 18px;
-  line-height: 22px;
   font-weight: bold;
-  margin:0.3em 0;
+  line-height: 1.3em;
+  text-align: left;
+}
+
+.map-info-p span,
+.map-info-p-bold span {
+  white-space: nowrap;
 }
 
 .map-info-feedback {
-  margin: 2em auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 1.2em 1em;
 }
 
 .footer {
@@ -983,13 +979,30 @@ a.on-light:focus {
 
 .footer-part {
   display: flex;
-  flex-direction: row;
-  flex-basis: 25%;
+  flex-direction: row; 
   justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: center;  
   padding: 1.5em;
   color: white;
+}
+
+.footer-part:nth-child(1) {
+  flex-basis: 25%;
+  flex-wrap: nowrap;
+}
+
+.footer-part:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50%;
+  flex-wrap: wrap;
+}
+
+.footer-part:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  flex-wrap: nowrap;
 }
 
 .social-item {
@@ -1033,12 +1046,7 @@ a.on-light:focus {
   box-shadow: 1px 1px 0 2px rgba(136, 136, 136, 1) inset;   
 }
 
-.footer-menu {
-  flex-basis: 50%;
-}
-
 .footer-menu-link {
-  position: relative;
   flex-basis: 40%;
   margin: 0 0.5em;
   font-size: 13px;
@@ -1067,6 +1075,8 @@ a.on-light:focus {
   background-image: url("../img/heart.svg ");  
 }
 
+.footer-copyright {white-space: nowrap;}
+
 /*.catalog-header {
   display: flex;
   flex-direction: column;
@@ -1078,6 +1088,12 @@ a.on-light:focus {
 
 .catalog-title {
   margin: 1em;
+}
+
+.filter div,
+.filter input[type="range"] {
+  margin: 0;
+  padding: 0;
 }
 
 .filter {
@@ -1094,63 +1110,307 @@ a.on-light:focus {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: 2em;
-  vertical-align: middle;
 }
 
-.filter-options,
-.filter-radios {
-  margin: 0;
-  padding: 0;
+.filter-section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 0.5em;
+  padding: 0.5em;
   list-style: none;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.filter-option-check,
-.filter-option-radio {
-  display: inline-block;
-  padding: 0.5em 0.5em 0.5em 1em;
+.filter-section:before {
+  content: attr(data-title);
+  position: absolute;
+  z-index: 1;
+  top: -1.5em;
+  left: 0.5em;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 .filter-sorting {
   align-self: stretch;
   width: 100%;
-  padding: 0.5em 0;
-  border: 1px solid transparent;
+  min-height: 2.5em;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  padding-left:0.5em;  
+  border-radius: 1em;
+  border-color: transparent;
+  color: white;
+  background-color: transparent;
+  background-image: url("../img/select-white.svg");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+      -ms-appearance: none;
+       -o-appearance: none;
+          appearance: none;
+}
+
+.filter-sorting::-ms-expand {
+  display: none;
+}
+
+.filter-sorting::-ms-value {
   border-radius: 1em;
   color: white;
-  background-color: rgba(255, 255, 255, 0.2);
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 18px;
+  background-color: transparent;
+  background-image: url("../img/select-white.svg");
+  background-repeat: no-repeat;
+  background-position: 95% center;
 }
 
-.filter-sorting:hover,
-.filter-sorting:focus {
+.filter-sorting::-ms-value:hover {
+  border-radius: 1em;
   color: black;
-} 
-
-.gllacy-fieldset-sorting {
-  flex-basis: 20%;
+  background-image: url("../img/select-black.svg");
+  background-repeat: no-repeat;
+  background-position: 95% center;
 }
 
-.gllacy-fieldset-price {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 20%;
-}
-
-.gllacy-fieldset-fatness {
-  flex-basis: 60%;
-}
-
-.filter-range {
-  width: 100%;
+.filter-sorting:hover {
+  color: black;
+  background-image: url("../img/select-black.svg");
 }
 
 .filter-sorting-item {
+  color: black;
+  background-color: white;
+}
+
+.filter-sorting-item:checked {
   color: white;
-  background-color: rgba(0, 0, 0, 0.2); 
+  background-color: rgba(0, 100, 200, 1);
+}
+
+.filter-sorting-item:hover {
+  color: white;
+  background-color: rgba(30, 144, 255, 1);
+}
+
+.gllacy-fieldset-sorting {
+  flex-basis: 25%;
+}
+
+.gllacy-fieldset-price {
+  display: inline-block;
+  display: flex;
+  flex-basis: 25%;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 2.5em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-ranges {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0;
+  padding: 1em 0;  
+}
+
+.filter-range {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  vertical-align: baseline;
+  width: 100%;
+  min-height: 14px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+
+.filter-range {
+  outline: none;
+}
+
+.filter-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-range::-webkit-slider-thumb {
+  box-sizing: content-box;
+  width: 4px;
+  height: 4px;
+  margin: -10px;
+  cursor: pointer;
+  border: 10px solid white;
+  border-radius: 50%;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+.filter-range:focus::-webkit-slider-thumb {
+  border: 10px solid rgba(255, 255, 255, 0.6);
+}
+
+.filter-range::-moz-range-track {
+  position: relative;
+  top: 10px;
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-range::-moz-range-thumb {
+  box-sizing: content-box;
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  border: 10px solid white;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.filter-range:focus::-moz-range-thumb {
+  border: 10px solid rgba(255, 255, 255, 0.6);
+}
+
+.filter-range::-ms-track { 
+  z-index: 0;
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  border-width: 14px 0;
+  border-color: transparent;
+  color: transparent;
+  background-color: transparent;
+}
+
+.filter-range::-ms-fill-lower {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.filter-range::-ms-fill-upper {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-range::-ms-thumb {
+  z-index: 2;
+  box-sizing: content-box;
+  width: 4px;
+  height: 4px;
+  cursor: pointer;
+  border: 10px solid white;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.filter-range:focus::-ms-thumb {
+  border: 10px solid rgba(255, 255, 255, 0.6);
+}
+
+.filter-checkboxes {
+  flex-basis: 80%;
+}
+
+.filter-radios {
+  flex-basis: 50%;
+}
+
+.filter-option label {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight:500;
+}
+
+.filter-checkbox,
+.filter-radio {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -12px;
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0;
+}
+
+.filter-checkbox+label:before,
+.filter-radio+label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  display: inline-block;
+  visibility: visible;
+  width: 25px;
+  height: 25px;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;  
+ } 
+
+.filter-checkbox:not(:checked)+label:before {
+  background-image: url("../img/checkbox-off.svg");
+}
+
+.filter-checkbox:checked+label:before {
+  background-image: url("../img/checkbox-on.svg");
+}
+
+.filter-checkbox:checked:disabled+label:before {
+  background-image: url("../img/checkbox-on-disabled.svg");
+}
+
+.filter-checkbox:disabled+label:before {
+  background-image: url("../img/checkbox-off-disabled.svg");
+}
+
+.filter-checkbox:not(:disabled):hover+label:before,
+.filter-checkbox:not(:disabled):focus+label:before {  
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.filter-radio:not(:checked)+label:before {
+  background-image: url("../img/radio-off.svg");
+}
+
+.filter-radio:checked+label:before {
+  background-image: url("../img/radio-on.svg");
+}
+
+.filter-radio:checked:disabled+label:before {
+  background-image: url("../img/radio-on-disabled.svg");
+}
+
+.filter-radio:disabled+label:before {
+  background-image: url("../img/radio-off-disabled.svg");
+}
+
+.filter-radio:not(:disabled):hover+label:before,
+.filter-radio:not(:disabled):focus+label:before {  
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
 }
 
 .footer-logo {
@@ -1264,11 +1524,25 @@ a.on-light:focus {
 .pagination-link:hover,
 .pagination-link:focus {
   background-color: rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
-.pagination-link.current {
+.pagination-link:focus {
+ border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.pagination-link.current,
+.pagination-link:active {
   color: black;
   background-color: white;  
+}
+
+
+.link-disabled,
+.link-disabled:hover {
+  color:lightgrey;
+  cursor: default;
+  background-color: transparent;
 }
 
 .gllacy-field {
@@ -1333,13 +1607,6 @@ a.on-light:focus {
   width: 100%;
 }
 
-.link-disabled,
-.link-disabled:hover {
-  color:lightgrey;
-  cursor: default;
-  background-color: transparent;
-}
-
 .slider-button {
   display: inline-block;
   width: 21px;
@@ -1349,83 +1616,15 @@ a.on-light:focus {
   background-color: inherit;
 }
 
-.filter-option-check label,
-.filter-option-radio label {
+.filter-option label {
+  font-size: 14px;
+  line-height: 22px;
+  display: block;
   padding-left: 20px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
 }
-
-.filter-checkbox,
-.filter-radio {
-  position: relative; 
-  /*visibility: hidden;*/
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;  
-  clip: rect(0 0 0 0);  
-}
-
-.filter-checkbox:before,
-.filter-radio:before {
-  content: "";
-  position: absolute;
-  top: -15px;
-  left: -10px;
-  display: inline-block;
-  visibility: visible;
-  width: 22px;
-  height: 22px;
-  background-color: inherit;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;  
- } 
-
-.filter-checkbox:not(:checked):before {
-  background-image: url("../img/checkbox-off.svg");
-}
-
-.filter-checkbox:checked:before {
-  background-image: url("../img/checkbox-on.svg");
-}
-
-.filter-checkbox:checked:disabled:before {
-  background-image: url("../img/checkbox-on-disabled.svg");
-}
-
-.filter-checkbox:disabled:before {
-  background-image: url("../img/checkbox-off-disabled.svg");
-}
-
-.filter-checkbox:not(:disabled):hover:before,
-.filter-checkbox:not(:disabled):focus:before {  
-  background-color: rgba( 255, 255, 255, 0.2);
-}
-
-.filter-radio:not(:checked):before {
-  background-image: url("../img/radio-off.svg");
-}
-
-.filter-radio:checked:before {
-  background-image: url("../img/radio-on.svg");
-}
-
-.filter-radio:checked:disabled:before {
-  background-image: url("../img/radio-on-disabled.svg");
-}
-
-.filter-radio:disabled:before {
-  background-image: url("../img/radio-off-disabled.svg");
-}
-
-.filter-radio:not(:disabled):hover:before,
-.filter-radio:not(:disabled):focus:before {  
-  background-color: rgba( 255, 255, 255, 0.2);
-  border-radius: 50%;
-}
-
 .slider-button:hover,
 .slider-button:focus {
   background-color: rgba(255, 255, 255, 0.2);
@@ -1454,4 +1653,27 @@ a.on-light:focus {
   background-image: url("../img/header-ice-3.png"), radial-gradient(at 50% 50%,rgba(250, 228, 219, 0.5) 0%,  rgba(157, 139, 132, 1) 60%,  rgba(157, 139, 132, 1) 100%);
 }
 
+@media screen and (max-width:1200px) {
+  .header__title {
+    font-size: font-size: 60px;
+  }
+}
 
+@media screen and (max-width:900px) {
+  .catalog-item-name {
+    height: 4.5em;
+  }
+  .catalog-item-img {
+    width: 200px;
+    height: 200px;
+  }
+  .catalog-item:hover > .catalog-item-btn,
+  .catalog-item:focus > .catalog-item-btn {
+    width: 193px;   
+  }
+  .filter {width: 100%;}
+}
+
+
+@media screen and (max-width:600px) {
+}
