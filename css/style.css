@@ -315,13 +315,6 @@ a.on-light:focus {
   display: inline-block;
 }
 
-.header p,
-.promo p,
-.footer p,
-.catalog-header p {
-  margin:0;
-  padding:0;
-}
 
 /*.header {
   display: flex;
@@ -386,7 +379,12 @@ a.on-light:focus {
 
 .main-menu .menu-link.current {
   text-decoration: none;
-  background-color: rgba(240, 100, 65,1);
+  background-color: rgba(240, 100, 65, 1);
+  border-bottom: none;
+}
+
+.menu-link.current > .underlined-main {
+  border-bottom: none;
 }
 
 .main-menu .menu-link:hover,
@@ -525,12 +523,16 @@ a.on-light:focus {
   margin-left: auto;
   text-align: right;
   vertical-align: top;
+  margin:0;
+  padding:0;
 }
 
 .header-info > p {
   font-size: 14px;
   font-weight: bold;
   line-height: 16px;
+  margin:0;
+  padding:0;
 }
 
 .header-info > p:nth-of-type(2) {
@@ -558,14 +560,15 @@ a.on-light:focus {
   display: flex;
   flex-direction: column;
   flex-basis: 46.7%;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
   max-width: 46.7%;
   margin-left: 2.2%;
-  padding:1em; 
+  padding:0.5em; 
   border-radius: 0.7em;
   background-color: inherit;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
+  background-size:cover; 
 }
 
 .promo-item:nth-of-type(2n) {
@@ -573,7 +576,8 @@ a.on-light:focus {
 }
 
 .promo-item-title {
-  margin: 0 0 0.5em;
+  margin:0;
+  margin-left:0.2em;
   padding: 0;
   font-size: 35px;
   font-weight: bold;
@@ -585,21 +589,22 @@ a.on-light:focus {
   font-size: 18px;
   font-weight: bold;
   line-height: 22px;
-  vertical-align: top; 
+  vertical-align: top;    
+  margin-bottom: 1em;
 }
 
 .promo-item-button {
-  margin-top: 1em;
+  margin: auto 0.5em 0.5em;
   flex-grow: 0;
   align-self: flex-end;  
 }
 
 .promo-item:nth-of-type(1) {
-  background-image:  url("../img/pattern-1.jpg");  
+  background-image:  url("../img/promo-1.jpg");  
 }
 
 .promo-item:nth-of-type(2) {
-  background-image: url("../img/pattern-2.jpg");  
+  background-image: url("../img/promo-2.jpg");  
 }
 
 .catalog-items {
@@ -680,7 +685,7 @@ a.on-light:focus {
  /*~~~ - убрать белый цвет, если все-таки выяснится, что при наведении они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
  .catalog-item-name:hover, 
  .catalog-item-name:focus {
-  color:  rgba(255, 255, 255, 0.7);
+  color:  rgba(255, 255, 255, 0.8);
   text-decoration-color: rgba(255, 255, 255, 0.3);
  /*~~~*/
 }
@@ -709,25 +714,27 @@ a.on-light:focus {
   width: 100%;
   height: 100%;
   padding-bottom: 55px;
-  border-radius: 0.7em;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.5);
-  opacity: 0.2;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .catalog-item:hover.catalog-item:after,
 .catalog-item:focus.catalog-item:after {
   z-index: 1;
   display: inline-block;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .catalog-item:hover > .catalog-item-btn,
 .catalog-item:focus > .catalog-item-btn {
   position: absolute;
   z-index: 5;
+  left: 0;
   right: 0;
   bottom: -2.5em;
-  left: 0;
   display: inline-block;
   width: 200px;
   margin: 0 auto;
@@ -739,6 +746,7 @@ a.on-light:focus {
   z-index: 5;
 }
 
+
 .about {
   margin: 1.5em auto;
   padding: 1em;
@@ -746,7 +754,7 @@ a.on-light:focus {
   border-radius: 0.7em;
   color: black;
   background-color: inherit;
-  background-image: url("../img/pattern-3.jpg");
+  background-image: url("../img/about-pattern.jpg");
   background-repeat: repeat;
 }
 
@@ -922,7 +930,7 @@ a.on-light:focus {
   position: relative;
   display: block;
   min-height: 430px;
-  padding-right: 2.2%;
+ 
 }
 
 .map-info {
@@ -1075,7 +1083,11 @@ a.on-light:focus {
   background-image: url("../img/heart.svg ");  
 }
 
-.footer-copyright {white-space: nowrap;}
+.footer-copyright {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
 
 /*.catalog-header {
   display: flex;
@@ -1083,6 +1095,7 @@ a.on-light:focus {
   justify-content: stretch;
   align-items: center;
   padding: 1em;
+  margin:0;
   background-color: inherit; 
 }*/
 
@@ -1372,45 +1385,52 @@ a.on-light:focus {
 
 .filter-checkbox:not(:checked)+label:before {
   background-image: url("../img/checkbox-off.svg");
+  opacity: 0.8;
 }
 
 .filter-checkbox:checked+label:before {
   background-image: url("../img/checkbox-on.svg");
+  opacity: 0.8;
 }
 
 .filter-checkbox:checked:disabled+label:before {
-  background-image: url("../img/checkbox-on-disabled.svg");
+  background-image: url("../img/checkbox-on.svg");
+  opacity: 0.4;
 }
 
-.filter-checkbox:disabled+label:before {
-  background-image: url("../img/checkbox-off-disabled.svg");
+.filter-checkbox:not(:checked):disabled+label:before {
+  background-image: url("../img/checkbox-off.svg");
+  opacity: 0.4;
 }
 
 .filter-checkbox:not(:disabled):hover+label:before,
 .filter-checkbox:not(:disabled):focus+label:before {  
-  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
 }
 
 .filter-radio:not(:checked)+label:before {
   background-image: url("../img/radio-off.svg");
+  opacity: 0.8;
 }
 
 .filter-radio:checked+label:before {
   background-image: url("../img/radio-on.svg");
+  opacity: 0.8;
 }
 
 .filter-radio:checked:disabled+label:before {
-  background-image: url("../img/radio-on-disabled.svg");
+  background-image: url("../img/radio-on.svg");
+  opacity: 0.4;
 }
 
 .filter-radio:disabled+label:before {
-  background-image: url("../img/radio-off-disabled.svg");
+  background-image: url("../img/radio-off.svg");
+  opacity: 0.4;
 }
 
 .filter-radio:not(:disabled):hover+label:before,
 .filter-radio:not(:disabled):focus+label:before {  
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+  opacity: 1;
 }
 
 .footer-logo {
