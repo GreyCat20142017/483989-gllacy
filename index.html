@@ -14,7 +14,7 @@
 		<div class="main-wrapper">
 			<h1 class="visually-hidden">Магазин мороженого Глэйси</h1>
 			<header class="header">
-				<nav class="navigation">
+				<nav class="header-navigation container">
 
 					<h2 class="visually-hidden">Главное меню, поиск, авторизация, корзина</h2>	
 					<img class="logo" src="img/logo.svg" width="154" height="64" alt="Логотип Глэйси">
@@ -74,13 +74,14 @@
 				<a class="btn btn-red btn-large btn-white-text" href="#">Давайте оба!</a>	
 			</header>
 
-			<div>			
+			<div class="slider-controls">			
+				<h2 class="visually-hidden">Переключение декоративного слайдера</h2>
 				<label class="slider-button slider-button-1" for="id-slide-1" title="Слайд-1"><span class="visually-hidden">Слайд-1</span></label>
 				<label class="slider-button slider-button-2" for="id-slide-2" title="Слайд-2"><span class="visually-hidden">Слайд-2</span></label>
 				<label class="slider-button slider-button-3" for="id-slide-3" title="Слайд-3"><span class="visually-hidden">Слайд-3</span></label>
 			</div>	
 
-			<section class="promo">			
+			<section class="promo container">			
 				<h2 class="visually-hidden">Акции</h2>
 				<ul class="promo-items">	
 					<li class="promo-item">
@@ -96,11 +97,11 @@
 				</ul>
 			</section>
 
-			<section class="catalog">
+			<section class="catalog container">
 				<h2 class="catalog-title visually-hidden">Каталог. Хиты.</h2>	
 				<ul class="catalog-items">
 					<li class="catalog-item hit">
-						<img class="catalog-item-img"  src="img/1.jpg" width="253" height="253" alt="Фото: мороженое Сливочное с апельсиновым джемом">
+						<img class="catalog-item-img"  src="img/1.jpg" width="267" height="267" alt="Фото: мороженое Сливочное с апельсиновым джемом">
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">310</span>
 							<span class="catalog-item-price-currency">/</span>		
@@ -110,7 +111,7 @@
 						<a class="catalog-item-btn btn btn-red btn-normal btn-hidden btn-white-text" href="quick-view.html">Быстрый просмотр</a>
 					</li>
 					<li class="catalog-item hit">
-						<img class="catalog-item-img"  src="img/2.jpg" width="253" height="253" alt="Фото: мороженое Сливочное-кофейное">
+						<img class="catalog-item-img"  src="img/2.jpg" width="267" height="267" alt="Фото: мороженое Сливочное-кофейное">
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">380</span>
 							<span class="catalog-item-price-currency">/</span>						
@@ -120,7 +121,7 @@
 						<a class="catalog-item-btn btn btn-red btn-normal btn-hidden btn-white-text" href="quick-view.html">Быстрый просмотр</a>
 					</li>
 					<li class="catalog-item hit">
-						<img class="catalog-item-img" src="img/3.jpg" width="253" height="253" alt="Фото: мороженое Сливочно-клубничное">
+						<img class="catalog-item-img" src="img/3.jpg" width="267" height="267" alt="Фото: мороженое Сливочно-клубничное">
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">355</span>
 							<span class="catalog-item-price-currency">/</span>						
@@ -130,7 +131,7 @@
 						<a class="catalog-item-btn btn btn-red btn-normal btn-hidden btn-white-text" href="quick-view.html">Быстрый просмотр</a>
 					</li>
 					<li class="catalog-item hit">
-						<img class="catalog-item-img" src="img/4.jpg" width="253" height="253" alt="Фото: мороженое Сливочное крем-брюле">
+						<img class="catalog-item-img" src="img/4.jpg" width="267" height="267" alt="Фото: мороженое Сливочное крем-брюле">
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">415</span>
 							<span class="catalog-item-price-currency">/</span>						
@@ -142,23 +143,21 @@
 				</ul>	
 			</section>
 
-			<section class="about">
+			<section class="about container">
 				<h2 class="about-title">Магазин Глэйси - это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h2>
 				<ul class="about-items">
 					<li class="about-item">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
-					<li class="about-item">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
 					<li class="about-item">Закупка ингредиентов  производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
+					<li class="about-item">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>					
 					<li class="about-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
 				</ul>		
 			</section>
 
-			<div class="other">	
-
+			<div class="other container">	
 				<article class="other-item-new other-item">				
 					<h2 class="other-item-new-title">Новое в нашем блоге</h2>
 					<a class="other-item-new-details on-light" href="#">10 способов сервировки фруктовых щербетов к столу</a>	
 				</article>				 
-
 				<form class="other-item-subscribe other-item"  method="post" action="https://echo.htmlacademy.ru">
 					<h2 class="visually-hidden">Подписка на рассылку</h2>			
 					<p class="other-item-subscribe-text">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не cпамить и не слать всякой ненужной ерунды. Честно=)
@@ -166,7 +165,6 @@
 					<input class="other-item-subscribe-email gllacy-field" type="email" placeholder="Электронная почта" required>	
 					<input class="other-item-subscribe-button btn btn-red btn-normal on-white-back" type="submit" value="Отправить" title="Подписаться на рассылку">			
 				</form>		
-
 			</div>
 
 			<section class="map">
@@ -180,6 +178,7 @@
 					<p class="map-info-p-bold">
 						<span>Ул. Большая Конюшенная</span>
 						<span>19/8, Санкт-Петербург</span>
+					</p>	
 					<p class="map-info-p">Для заказов по телефону:</p>
 					<p class="map-info-p-bold">8 812 450-25-25</p>
 					<p class="map-info-p">(c 10 до 20, ежедневно)</p>		
@@ -197,7 +196,7 @@
 					<a class="social-item social-item-vk inline-link" href="#" title="В контакте"><span class="visually-hidden">В контакте</span></a>
 				</div>
 
-				<div class="footer-part">
+				<div class="footer-part footer-navigation">
 					<h2 class="visually-hidden">Подробнее о нас и нашем производстве</h2>
 					<ul class="footer-menu">
 						<li><a class="footer-menu-link menu-link on-dark iconed" href="#" title="Информация для поставщиков">Для поставщиков</a></li>
@@ -207,7 +206,7 @@
 					</ul>			
 				</div>
 
-				<div class="footer-part">			
+				<div class="footer-part footer-info">			
 					<a class="footer-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
 						<img src="img/logo-htmlacademy-small.svg" width="120" height="39"  alt="Логотип HTML Academy" >
 					</a>
