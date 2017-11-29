@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Roboto";
-  font-weight: 500;
+  font-weight: bolder;
   src: local("Roboto Medium"),
   url("../fonts/robotomedium.woff2") format("woff2"),
   url("../fonts/robotomedium.woff") format("woff");
@@ -111,7 +111,7 @@ a.on-light:focus {
   background-repeat: no-repeat, no-repeat;
   background-position: center 80px, center top;
   background-size: 647px 584px, 900px 584px;
-  min-height: 600px;
+  min-height: bolder;
 }  
 
 .gllacy-wrapper {
@@ -119,8 +119,7 @@ a.on-light:focus {
   max-width: 1200px;
   margin: 0 auto;   
   background-color: transparent;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);  
-  border-right: 1px solid rgba(255, 255, 255, 0.1);  
+  box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.2);    
 }
 
 .resizer { 
@@ -128,21 +127,19 @@ a.on-light:focus {
 }
 
 .gllacy-fieldset {
-  display: flex; 
-  position: relative;
+  display: flex;   
+  flex-direction: column;
   margin: 0 14px 0 0;
   padding: 0; /*Это нужно*/
   font-size: 16px;
-  border: 1px solid transparent;
-  border-radius: 1em;
-  background-color: rgba(255, 255, 255, 0.2);
+  border: none; 
 }
 
-.gllacy-fieldset-legend {
-  position: absolute;
-  top: -1.7em;
-  left: 0;
-  font-size: 0.88em;
+.gllacy-fieldset-legend { 
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  padding: 6px 16px;
 }
 
 .gllacy-hr {
@@ -199,8 +196,7 @@ a.on-light:focus {
 }
 
 .btn-red {
-  background-color: #f26843;
-  background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%)
+  background-color: #f26843;  
   background-image: -webkit-linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   background-image:    -moz-linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
   background-image:      -o-linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
@@ -250,13 +246,13 @@ a.on-light:focus {
 
 .btn-narrow {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 18px;
   border-radius: 16px;
 }
 
 .btn-white-bordered {
-  font-weight: 500;
+  font-weight: 600;
   border: 2px solid white;
 }
 
@@ -645,7 +641,6 @@ a.on-light:focus {
   background-image: url("../img/promo-2.jpg");
 }
 
-
 .catalog-items {
   display: flex;
   flex-direction: row;
@@ -662,8 +657,7 @@ a.on-light:focus {
   display: flex;
   flex-direction: column;
   flex-basis: 22.2%;
-  justify-content: flex-start;
-  align-content: center;
+  justify-content: stretch;  
   width: 22.2%; 
   margin: 40px 2.2% 0 0;
   padding: 0;
@@ -684,44 +678,51 @@ a.on-light:focus {
 .catalog-item-price {
   position: relative;
   z-index: 5;
-  top: -1.5em;
+  top: -55px;
   left: 0;
+  align-self: flex-start;
   margin: 0;
-  padding: 0;
-  font-size: 45px;
+  padding: 0 0.2em;
   font-weight: bold;
-  letter-spacing: -2px;
+  line-height: 45px;
+  letter-spacing: -1px;
 }
+
+.catalog-item-price-cost {
+  font-size: 45px;  
+ }
 
 .catalog-item-price-currency::before {
   content: "";
   position: relative;
-  top: 0.5em;
+  top: 5px;  
   display: inline-block;
-  width: 45px;
-  height: 45px;
-  vertical-align: bottom;
+  width: 40px;
+  height: 40px; 
   background-image: url("../img/ruble.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.catalog-item-unit,
-.catalog-item-price-currency {
-  font-size: 30px;
+.catalog-item-price-unit {
+  position: relative;
+  left: -5px;
+  font-size: 30px; 
+  line-height: 32px;
 }
 
 .catalog-item-name {
   overflow: hidden;
-  height: 2.85em;
-  margin-top: -2em;
+  min-height: 2.85em;
+  margin: -2.85em 0 0.2em;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 22px;
   text-align: center;
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.3);
   color: white;
+  padding: 0 0.2em;
 }
 
 
@@ -824,7 +825,7 @@ a.on-light:focus {
   margin-top: 22px;
   padding-left: 60px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 22px;
 }
 
@@ -895,7 +896,7 @@ a.on-light:focus {
   max-width: 60%; /* потому, что просматривается желание дизайнера предотвратить наползание текста на пестрый фон */
   margin: 23px 0 0 20px;  
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 22px;  
 }
 
@@ -1162,23 +1163,17 @@ a.on-light:focus {
 }
 
 .page-catalog-title {
-  margin: 0 0 45px;
+  margin: 0;
   font-size: 35px;
   line-height: 41px;
   font-weight: bold;
 }
 
-.filter div,
-.filter input[type="range"] {
-  margin: 0;
-  padding: 0;
-}
-
 .filter {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 80px; 
+  justify-content: flex-start;
+  margin-top: 15px;
 }
 
 .filter-row {
@@ -1188,26 +1183,26 @@ a.on-light:focus {
   align-items: center;
 }
 
-.filter-row:nth-of-type(2) {
-  margin-top: 37px;
-}
 
 .filter-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 98%;
-  margin: 6px 0; 
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 0;
+  width: 98%;   
   list-style: none;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 18px;
   border-radius: 16px;
   background-color: transparent;
+  padding: 0.4em;
+  margin: 0;
 }
 
 .filter-option {  
-  white-space: nowrap;
+  white-space: nowrap; 
 } 
 
 .filter-sorting {
@@ -1216,7 +1211,7 @@ a.on-light:focus {
   min-height: 37px;
   padding-left: 0.5em;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 18px;
   border-color: transparent;
   border-radius: 1em;
@@ -1273,44 +1268,45 @@ a.on-light:focus {
   background-color: rgba(30, 144, 255, 1);
 }
 
-.gllacy-fieldset-sorting {
-  flex-basis: 194px;  
-}
-
-.gllacy-fieldset-price { 
-  flex-basis: 220px; 
-  min-height: 37px;   
-}
-
-.gllacy-fieldset-fillers {
-  flex-basis: 703px;
+.gllacy-filter-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
   min-height: 37px;
+  border-radius: 1em;  
+  padding: 0;
 }
 
-.gllacy-fieldset-fatness {
-  flex-basis: 415px;
-  min-height: 37px;
+.gllacy-fieldset-sorting>.gllacy-filter-wrapper {
+  min-width: 194px;  
+}
+
+.gllacy-fieldset-price>.gllacy-filter-wrapper { 
+  min-width: 220px;   
+}
+
+.gllacy-fieldset-fillers>.gllacy-filter-wrapper{
+  min-width: 703px; 
+}
+
+.gllacy-fieldset-fatness>.gllacy-filter-wrapper {
+  min-width:  415px;  
 }
 
 .filter-apply {
-  flex-basis: 144px;
-  max-width: 144px; /*Для ИЕ-11, который, судя по всему, склонен растягивать последний флекс-элемент */
-  min-height: 37px;
+  min-width: 144px;
+  min-height: 37px;  
 }
 
 .filter-ranges {
   position: relative;
   width: 90%;
-  height: auto;  
 }
 
 .filter-range {
   position: absolute;
   z-index: 1; 
-  left: 5%;  
-  top: 10px;    
+  left: 5%;     
   width: 100%;
-  min-height: 14px; 
+  min-height: 37px; 
   background-color: transparent;
   -webkit-appearance: none;
   outline: none;  
@@ -1363,15 +1359,16 @@ a.on-light:focus {
 }
 
 .filter-range::-ms-track {
-  z-index: 0;
+  z-index: 1;
   width: 100%;
   height: 1px;
   cursor: pointer;
-  border-width: 10px 0;
+  border-width: 10px;
   border-color: transparent;
   color: transparent;
   background-color: transparent;
   position: absolute;    
+  top:-10px;
 }
 
 .filter-range::-ms-fill-lower {
@@ -1391,7 +1388,7 @@ a.on-light:focus {
   border: 8px solid white;
   border-radius: 50%;
   background: transparent;  
-  position: absolute;
+  position: absolute;   
 }
 
 .filter-range:focus::-ms-thumb {
@@ -1400,7 +1397,7 @@ a.on-light:focus {
 
 .filter-option label {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 18px;
 }
 
@@ -1687,7 +1684,7 @@ a.on-light:focus {
   align-self: flex-start;
   margin: -1em 0 1em;
   font-size: 1.5em;
-  font-weight: 500px;
+  font-weight: bolder;
   text-align: left;
   color: rgba(50, 50, 50, 1);
 }
@@ -1742,7 +1739,10 @@ a.on-light:focus {
   background-image: url("../img/header-ice-3.png"), radial-gradient(at 50% 50%,rgba(250, 228, 219, 0.5) 0%,  rgba(157, 139, 132, 1) 60%,  rgba(157, 139, 132, 1) 100%);
 }
 
-.slide {display: none; text-align: center;}
+.slide {
+  display: none;
+  text-align: center;
+}
 
 .slider-radio:nth-of-type(1):checked ~ .gllacy-wrapper-wide #li-slide-1,
 .slider-radio:nth-of-type(2):checked ~ .gllacy-wrapper-wide #li-slide-2, 
@@ -1750,15 +1750,11 @@ a.on-light:focus {
   display: block;
 }
 
-
 @media screen and (max-width: 900px) {
   .catalog-item-img {
     width: 200px;
     height: 200px;
   }
 
-  .catalog-item-img-wrapper {
-    min-height: 200px; /*для того чтобы попадать в PixelPerfect'ный вид при сжатии изображения height:auto; */
-  }
 }
 
