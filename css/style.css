@@ -180,7 +180,7 @@ a:focus {
   box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.2);    
 }
 
-.resizer { 
+.outer-paddingator { 
   padding: 0 2.3%; 
 }
 
@@ -201,13 +201,27 @@ a:focus {
 .gllacy-form {
   position: absolute;
   z-index: 15;
-  top: 2.7em;
-  display: none;
+  top: 2.7em;  
   padding: 0.5em;
   border-radius: 6px;
   background-color: rgba(248, 247, 244, 1);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
   opacity: 1;
+  font: inherit;
+  display: none;
+}
+
+.gllacy-flex-hide,
+.gllacy-block-hide {
+  display: none;
+}
+
+.gllacy-flex-show {
+  display: flex;
+}
+
+.gllacy-block-show {
+  display: block;
 }
 
 .current:hover {
@@ -324,10 +338,9 @@ a:focus {
 }
 
 .btn-close {
-  display: inline-block;
+  display: block;
   width: 11px;
-  height: 11px;
-  vertical-align: middle;
+  height: 11px;  
   background-color: transparent;
   background-image: url("../img/close.svg");
   background-repeat: no-repeat;
@@ -353,19 +366,18 @@ a:focus {
   box-shadow: 0 0 2px 2px rgba(88, 88, 88, 1), 0 2px 2px 2px rgba(188, 188, 188, 0.5);
 }
 
-.underlined-main {
-  display: inline-block;
-  padding: 0.2em;
-  cursor: pointer;
+.underlined-main { /*столько кривых костылей, чтобы подчеркнуть ссылки в ИЕ нужным цветом. */
   text-decoration: none;
-  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
-}
-
-.underlined {
-  display: inline-block;
+  background-image:    -moz-linear-gradient(top,transparent 0, rgba(255, 255, 255, 0.5) 100%);
+  background-image: -webkit-linear-gradient(top,transparent 0, rgba(255, 255, 255, 0.5) 100%);
+  background-image:      -o-linear-gradient(top,transparent 0, rgba(255, 255, 255, 0.5) 100%);
+  background-image:     -ms-linear-gradient(top,transparent 0, rgba(255, 255, 255, 0.5) 100%);
+  background-image:         linear-gradient(to bottom,transparent 0, rgba(255, 255, 255, 0.5) 100%);
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 1px 1px;
+  color: white;
   cursor: pointer;
-  text-decoration: none;
-  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
 }
 
 .header {
@@ -397,6 +409,8 @@ a:focus {
 .personal-menu {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;  
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -404,10 +418,14 @@ a:focus {
 
 .main-menu {
   margin-left: 5px;
+  max-width: 45%;
+  justify-content: flex-start; 
 }
 
 .personal-menu {
   margin-left: auto;
+  justify-content: flex-end;
+  max-width: 40%;  
 }
 
 .menu-link,
@@ -416,7 +434,7 @@ a:focus {
   margin-left: 0.3em;
   cursor: pointer;
   text-align: left;
-  vertical-align: middle;
+  vertical-align: top;
   text-decoration: none;
   border-radius: 16px;
   color: white;
@@ -430,38 +448,38 @@ a:focus {
 }
 
 .main-menu .menu-link {
-  padding: 0.3em 0.5em 0.3em 0.5em;
-  border-radius: 16px;
+  padding: 0.3em 0.8em;  
 }
 
-.main-menu .menu-link.current {
+.main-menu .current {
   text-decoration: none;
   border-bottom: none;
   background-color: rgba(209, 112, 87, 1);
 }
 
-.menu-link.current > .underlined-main {
-  border-bottom: none;
-}
-
 .main-menu .menu-link:hover,
 .main-menu .menu-link:focus {
   text-decoration: none;
+  border-bottom: none;
   color: rgba(50, 50, 50, 1);
   background-color: rgba(255, 255, 255, 1);
 }
 
 .submenu {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 1em;
   display: none;
   overflow: hidden;
   width: 143px;
-  border-radius: 5px;
-  color: rgba(50, 50, 50, 1);
-  background-color: rgba(248, 247, 244, 1);
-  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
   margin: 0;
   padding: 0;
   list-style: none;
+  border-top: 2em transparent solid;
+  border-radius: 5px;
+  color: rgba(50, 50, 50, 1);  
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .submenu-link {
@@ -470,13 +488,18 @@ a:focus {
   padding: 0.5em 1em;
   font-size: 14px;
   line-height: 16px;
-  vertical-align: middle;
+  vertical-align: top;
   white-space: nowrap;
   text-decoration: none;
-  word-wrap: none;
+  white-space: none;
   border-radius: 0;
   color: rgba(50, 50, 50, 1);
   background-color: rgba(248, 247, 244, 1);
+}
+
+.submenu-link.separated {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;  
 }
 
 .submenu-link.current {
@@ -507,12 +530,26 @@ a:focus {
   border-bottom: 1px solid rgba(80, 80, 80, 0.2);
 }
 
+
+.submenu-entrance, 
+.personal-menu {
+  position: relative;
+}
+
+
+.submenu-entrance:hover > .submenu,
+.submenu-entrance:focus > .submenu,
+.submenu-entrance:active > .submenu {
+   display: block; 
+}
+
 .personal-menu .menu-link {
   position: relative;
-  margin-left: 9px;
-  padding: 0.3em 0.5em 0.2em 2em;
-  text-align: center;
+  margin: 3px 0 3px 5px;  
+  min-height: 32px;
+  text-align: right;
   background-color: rgba(255, 255, 255, 0.2);
+  background-repeat: no-repeat;  
 }
 
 .personal-menu .menu-link:hover,
@@ -521,71 +558,65 @@ a:focus {
   background-color: white;
 }
 
-.personal-menu .menu-link::before {
-  content: "";
-  position: absolute;
-  left: 8px;
-  width: 20px;
-  height: 20px;
-  background-repeat: no-repeat;
-  background-position: left center;
-}
-
 .link-search {
-  width: 32px;
-  height: 32px;
-  padding: 0;
+  width: 32px;  
+  background-image: url("../img/menu-loupe-white.svg");  
+  background-position: center center;
+  padding: 0; 
 }
 
-.link-search::before {
-  left: 0;
-  background-image: url("../img/menu-loupe-white.svg");
-}
-
-.link-search:hover::before,
-.link-search:focus::before {
+.link-search:hover,
+.link-search:focus {
   background-image: url("../img/menu-loupe-black.svg");
 }
 
-
-/*.link-search:hover+.form-search,
-  .link-entrance:hover+.form-entrance {
-  display: block;    
-}
-.link-basket-full:hover+.form-basket {
-  display: flex; z-index: 50;
-}  */
-
-.link-entrance::before {
-  background-image: url("../img/menu-entrance-white.svg");
+.link-search:hover + .form-search,
+.link-entrance:hover + .form-entrance {
+  display: block;   
+  right: 0;  
+  margin-top: 10px;
 }
 
-.link-entrance:hover::before,
-.link-entrance:focus::before {
+.link-basket-full:hover + .form-basket {  
+  display: flex; 
+  right: 0;  
+  margin-top: 10px;
+}
+
+.link-entrance {
+  background-image: url("../img/menu-entrance-white.svg");  
+  min-width: 90px; 
+  padding: 0.3em 1em 0.3em 40px;
+  background-position: 10px center;
+}
+
+.link-entrance:hover,
+.link-entrance:focus {
   background-image: url("../img/menu-entrance-black.svg");
 }
 
 .link-basket-full,
 .link-basket-empty {
-  min-width: 117px;
-  flex-shrink: 0;
+  min-width: 117px;  
+  padding: 0.3em 1em 0.3em 40px;
+  background-position: 10px center; 
 }
 
-.link-basket-empty::before {
+.link-basket-empty {
   background-image: url("../img/menu-basket-empty-white.svg");
 }
 
-.link-basket-full::before {
+.link-basket-full {
   background-image: url("../img/menu-basket-full-white.svg");
 }
 
-.link-basket-empty:hover::before,
-.link-basket-empty:focus::before {
+.link-basket-empty:hover,
+.link-basket-empty:focus {
   background-image: url("../img/menu-basket-empty-black.svg");
 }
 
-.link-basket-full:hover::before,
-.link-basket-full:focus::before {
+.link-basket-full:hover,
+.link-basket-full:focus {
   background-image: url("../img/menu-basket-full-black.svg");
 }
 
@@ -631,7 +662,7 @@ a:focus {
 }
 
 .promo {
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .promo-items {
@@ -648,21 +679,24 @@ a:focus {
 .promo-item {
   display: flex;
   flex-direction: column;
-  flex-basis: 48.9%;
+  flex-basis: 46.6%;
   justify-content: flex-start;
   align-items: stretch;
-  max-width: 48.9%;
+  max-width: 46.6%;
   min-height: 230px;
   padding: 21px;
-  border-radius: 0.7em;
-  background-color: inherit;
+  border-radius: 0.7em;  
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 15px 21px 28px;
+  padding: 15px 21px 28px;  
 }
 
-.promo-item:nth-of-type(2n) {
+.promo-item:nth-child(2n-1) {
+  margin-left: 2.3%;
+}
+.promo-item:nth-child(2n) {
   margin-left: 2.2%;
+  margin-right: 2.3%;
 }
 
 .promo-item-title { 
@@ -685,10 +719,12 @@ a:focus {
 }
 
 .promo-item:nth-of-type(1) {
+  background-color: rgba(94, 0, 16, 0.7);
   background-image: url("../img/promo-1.jpg");
 }
 
 .promo-item:nth-of-type(2) {
+  background-color: rgba(68, 0, 16, 0.7);
   background-image: url("../img/promo-2.jpg");
 }
 
@@ -710,8 +746,9 @@ a:focus {
   flex-basis: 22.2%;
   justify-content: stretch;  
   width: 22.2%; 
-  margin: 40px 2.2% -2px 0;
+  margin: 23px 2.2% -7px 0;
   padding: 0;
+  max-width: 22.2%; /* в этот раз для ФФ из-за пустой картинки, которая 267px, a 22.22% - это 266.х */  
 }
 
 .catalog-item:nth-child(4n) {
@@ -722,14 +759,20 @@ a:focus {
   margin-left: 2.3%; 
 }
 
+.catalog-item-img-wrapper { /*заведен из-за различного поведения элементов каталога в разных браузерах при отсутствии изображения+наличии глобального тега img, удачно предотвращающего искажения */
+  min-height: 267px;
+  text-align: center; 
+}
+
 .catalog-item-img {
-  border-radius: 50%;  
+  border-radius: 50%;    
+  min-height: 200px;  
 }
 
 .catalog-item-price {
   position: relative;
   z-index: 5;
-  top: -55px;
+  top: -85px;
   left: 0;
   align-self: flex-start;
   margin: 0;
@@ -748,6 +791,7 @@ a:focus {
   position: relative;
   top: 5px;  
   display: inline-block;
+  vertical-align: baseline;
   width: 40px;
   height: 40px; 
   background-image: url("../img/ruble.svg");
@@ -764,13 +808,11 @@ a:focus {
 
 .catalog-item-name {
   min-height: 2.7em;
-  margin: -2.7em 0 0.2em;
+  margin: -3.7em 0 0.2em;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
-  text-align: center;
-  /*text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.3);*/
+  text-align: center;  
   color: white;
   padding: 0 0.2em;  
 }
@@ -797,7 +839,7 @@ a:focus {
   content: "";
   position: absolute;
   z-index: 3;
-  top: 0;
+  top: 20px;
   left: 0;  
   width: 61px;
   height: 61px;
@@ -840,6 +882,7 @@ a:focus {
   margin: 0 auto;
   white-space: nowrap;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .catalog-item:hover > .catalog-item-name,
@@ -856,6 +899,7 @@ a:focus {
   background-color: inherit;
   background-image: url("../img/about-pattern.jpg");
   background-repeat: repeat;
+  background-color: rgba(237, 230, 201, 1); 
 }
 
 .about-items {
@@ -879,13 +923,17 @@ a:focus {
 
 .about-item {
   position: relative;
-  flex-basis: 50%;
-  max-width: 50%;
+  flex-basis: 48.9%;
+  max-width:  48.9%;
   margin-top: 22px;
   padding-left: 60px;
   font-size: 16px;
   font-weight: 600;
-  line-height: 22px;
+  line-height: 22px;  
+}
+
+.about-item:nth-of-type(2n) {
+  margin-left: 2.2%;
 }
 
 .about-item::before {
@@ -931,24 +979,29 @@ a:focus {
 .other-item {
   display: flex;
   flex-direction: column;
-  flex-basis: 48.9%; 
-  max-width: 48.9%; 
+  flex-basis: 46.6%; 
+  max-width: 46.6%; 
   border-radius: 0.7em;
   color: rgba(50, 50, 50, 1);
   background-color: white;
   min-height: 220px;
 }
 
+.other-item:nth-child(2n-1) {
+  margin-left: 2.3%;
+}
 .other-item:nth-child(2n) {
   margin-left: 2.2%;
+  margin-right: 2.3%;
 }
 
-.other-item-new { 
-  background-image: url("../img/other-strawberry.png");
-  background-repeat: no-repeat;
-  background-position: 20% 45%;
-  background-size: 200% 300%;
+.other-item-new {
+  background-image: url("../img/other-strawberry.png"), linear-gradient(135deg, transparent 0, transparent 30%,  rgba(237, 230, 201, 1) 90%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: 20% 45%, 20% 45%;
+  background-size: 200% 300%, 100% 100%;
 }
+
 
 .other-item-new-title { 
   max-width: 60%; /* потому, что просматривается желание дизайнера предотвратить наползание текста на пестрый фон */
@@ -991,8 +1044,8 @@ a:focus {
 }
 
 .other-item-subscribe-email {
-  flex-basis: 65%;
-  max-width:  65%; 
+  flex-basis: 64%;
+  max-width:  64%; 
   min-height: 44px;
   margin: auto 0 35px 21px;
   padding: 1.5em;
@@ -1006,6 +1059,7 @@ a:focus {
 
 .other-item-subscribe-button {
   flex-basis: 23%;
+  max-width:  23%;
   min-height: 44px;
   margin: auto 21px 35px auto;
   padding: 0.3em;
@@ -1017,6 +1071,14 @@ a:focus {
   position: relative;
   overflow: hidden;
   max-height: 430px;
+  min-height: 350px;
+  text-align: center; /*на случай, если изображение не загрузится.*/
+  background-color: rgba(237, 230, 201, 1); /*Хоть оно и контекстное. А то блок с информацией странно в пустоте повисает.*/
+  color: rgba(50, 50, 50, 1);
+}
+
+.map-img {
+  width: 100%;   
 }
 
 .map-info-wrapper {
@@ -1031,11 +1093,6 @@ a:focus {
   max-width: 1200px;  
   min-height: 305px;  
   margin: auto;  
-}
-
-
-.map-img {
-  width: 100%;   
 }
 
 .map-info {
@@ -1053,7 +1110,6 @@ a:focus {
   color: rgba(50, 50, 50, 1);
   background-color: white;
 }
-
 
 .map-info-p {
   margin: 4px 0 0;
@@ -1129,10 +1185,12 @@ a:focus {
 }
 
 .social-item {
+  display: inline-block;
   width: 38px;
   height: 38px;
-  margin-right: 5px;
+  margin: 2px 10px 2px 0;
   cursor: pointer;
+  vertical-align: middle;
   text-decoration: none;
   border: 1px solid white;
   border-radius: 50%;
@@ -1211,8 +1269,7 @@ a:focus {
 
 .footer-copyright {
   margin: 0;
-  padding: 0;
-  white-space: nowrap;
+  padding: 0; 
 }
 
 .page-catalog-header {
@@ -1242,9 +1299,12 @@ a:focus {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
+.filter-row:nth-of-type(1) {
+  margin-top: 20px;
+}
 
 .filter-section {
   display: flex;
@@ -1335,128 +1395,28 @@ a:focus {
   background-color: rgba(255, 255, 255, 0.2);
   min-height: 37px;
   border-radius: 1em;  
-  /*padding: 0;  */
 }
 
-.gllacy-fieldset-sorting>.gllacy-filter-wrapper {
-  min-width: 194px;  
+.gllacy-fieldset-sorting > .gllacy-filter-wrapper {
+  min-width: 194px;
 }
 
-.gllacy-fieldset-price>.gllacy-filter-wrapper { 
-  min-width: 220px;      
+.gllacy-fieldset-price > .gllacy-filter-wrapper {
+  min-width: 220px;
 }
 
-.gllacy-fieldset-fillers>.gllacy-filter-wrapper{
-  min-width: 703px; 
+.gllacy-fieldset-fillers > .gllacy-filter-wrapper {
+  min-width: 703px;
 }
 
-.gllacy-fieldset-fatness>.gllacy-filter-wrapper {
-  min-width:  415px;  
+.gllacy-fieldset-fatness > .gllacy-filter-wrapper {
+  min-width: 415px;
 }
 
 .filter-apply {
   min-width: 144px;
-  min-height: 37px;  
+  min-height: 37px;
 }
-
-/*.filter-ranges {
-  position: relative;
-  width: 90%;
-}
-
-.filter-range {
-  position: absolute;
-  z-index: 1; 
-  left: 5%;     
-  width: 100%;
-  min-height: 37px; 
-  background-color: transparent;
-  -webkit-appearance: none;
-  outline: none;  
-}
-
-.filter-range::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 1px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.filter-range::-webkit-slider-thumb {
-  box-sizing: content-box;
-  width: 4px;
-  height: 4px;
-  margin: -10px;
-  cursor: pointer;
-  border: 10px solid white;
-  border-radius: 50%;
-  background: transparent;
-  -webkit-appearance: none;
-}
-
-.filter-range:focus::-webkit-slider-thumb {
-  border: 10px solid rgba(255, 255, 255, 0.6);
-}
-
-.filter-range::-moz-range-track {
-  position: relative;
-  top: 10px;
-  width: 100%;
-  height: 1px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.filter-range::-moz-range-thumb {
-  box-sizing: content-box;
-  width: 4px;
-  height: 4px;
-  cursor: pointer;
-  border: 10px solid white;
-  border-radius: 50%;
-  background: transparent;
-}
-
-.filter-range:focus::-moz-range-thumb {
-  border: 10px solid rgba(255, 255, 255, 0.6);
-}
-
-.filter-range::-ms-track {
-  z-index: 1;
-  width: 100%;
-  height: 1px;
-  cursor: pointer;
-  border-width: 10px;
-  border-color: transparent;
-  color: transparent;
-  background-color: transparent;
-  position: absolute;    
-  top:-10px;
-}
-
-.filter-range::-ms-fill-lower {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.filter-range::-ms-fill-upper {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.filter-range::-ms-thumb {
-  z-index: 2;
-  box-sizing: content-box;
-  width: 4px;
-  height: 4px;
-  cursor: pointer;
-  border: 8px solid white;
-  border-radius: 50%;
-  background: transparent;  
-  position: absolute;   
-}
-
-.filter-range:focus::-ms-thumb {
-  border: 8px solid rgba(255, 255, 255, 0.6);
-}*/
 
 .filter-option label {
   font-size: 16px;
@@ -1470,7 +1430,7 @@ a:focus {
   position: absolute;
   top: 0;
   left: -10px;
-  width: 25px;
+  width: 27px;
   height: 25px;
   background-color: inherit;
   background-repeat: no-repeat;
@@ -1478,25 +1438,31 @@ a:focus {
   background-size: contain;
 }
 
-.filter-checkbox:not(:checked) + label::before {
-  background-image: url("../img/checkbox-off.svg");
-  opacity: 0.8;
-}
-
 .filter-checkbox:checked + label::before {
-  background-image: url("../img/checkbox-on.svg");
+  background-image: url("../img/checkbox-on.svg"),
+  linear-gradient(to bottom,  transparent,  transparent 2px, rgba(255, 255, 255, 0.8) 2px, rgba(255, 255, 255, 0.8) 3px, transparent 3px, transparent),
+  linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
+  linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
+  linear-gradient(to top, transparent,  transparent 2px, rgba(255, 255, 255, 0.8) 2px, rgba(255, 255, 255, 0.8) 3px, transparent 3px, transparent),
+  radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px,  transparent);
+  background-position: center center, top center, left center, 70% center, bottom center, center 70%;
+  background-size: contain, 50% , 50% , 50%, 50%, 70%;
   opacity: 0.8;
-  width: 27px;
 }
 
-.filter-checkbox:checked:disabled + label::before {
-  background-image: url("../img/checkbox-on.svg");
-  opacity: 0.4;
-  width: 27px;
+.filter-checkbox:not(:checked) + label::before {
+  background-image: url("../img/checkbox-off.svg"),
+  linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
+  linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
+  linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
+  linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent);
+  background-position: center center, top center, 10% center, 90% center, bottom center;
+  background-size: contain, 50% , 50% , 50%, 50%;
+  opacity: 0.8;
 }
 
-.filter-checkbox:not(:checked):disabled + label::before {
-  background-image: url("../img/checkbox-off.svg");
+.filter-checkbox:disabled + label::before {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.4) inset;
   opacity: 0.4;
 }
 
@@ -1506,22 +1472,18 @@ a:focus {
 }
 
 .filter-radio:not(:checked) + label::before {
-  background-image: url("../img/radio-off.svg");
+  background-image: url("../img/radio-off.svg"),
+  radial-gradient(transparent, transparent 46%, rgba(255, 255, 255, 0.8) 46%, rgba(255, 255, 255, 0.8) 50%, transparent 50%, transparent);
   opacity: 0.8;
 }
 
 .filter-radio:checked + label::before {
-  background-image: url("../img/radio-on.svg");
+  background-image: url("../img/radio-on.svg") ,
+  radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px,  transparent 46%, rgba(255, 255, 255, 0.8) 46%, rgba(255, 255, 255, 0.8) 50%, transparent 50%, transparent);
   opacity: 0.8;
 }
 
 .filter-radio:checked:disabled + label::before {
-  background-image: url("../img/radio-on.svg");
-  opacity: 0.4;
-}
-
-.filter-radio:disabled + label::before {
-  background-image: url("../img/radio-off.svg");
   opacity: 0.4;
 }
 
@@ -1535,13 +1497,13 @@ a:focus {
 }
 
 .form-search {
-  left: -3.5em;
-  width: 341px;
+  position: absolute; 
+  width: 341px;    
 }
 
 .form-entrance {
-  left: 10em;
-  width: 241px;
+  position: absolute;  
+  width: 241px;  
 }
 
 .form-entrance-password {
@@ -1569,6 +1531,7 @@ a:focus {
 
 .form-entrance-link {
   display: inline-block;
+  vertical-align: baseline;
   flex-basis: 100%;
   font-size: 0.81em;
   line-height: 1.5em;
@@ -1576,27 +1539,36 @@ a:focus {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.form-basket {
-  left: -2em;
+.form-basket {  
   flex-direction: column;
   align-items: flex-end;
   width: 541px;
-  padding: 1em;
-  font-size: 0.81em;
-  color: rgba(50, 50, 50, 1);
+  min-height: 242px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight:  normal;
+  color: rgba(50, 50, 50, 1);   
 }
-
 
 .form-basket-table {
   width: 100%;
-  border-spacing: 0.5em;
+  border-spacing: 1px 15px;
   border-collapse: separate;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(150, 150, 150, 0.5);
 }
 
 .form-basket-cell-img {
-  width: 35px;
+  max-width: 33px;
   border-radius: 50%;
+}
+
+.form-basket-cell.name {
+  max-width: 215px;
+}
+
+.form-basket-cell.price {
+ color: rgba(150, 150, 150, 1);   
 }
 
 .form-basket-total {
@@ -1604,6 +1576,17 @@ a:focus {
   font-weight: bold;
   text-align: right;
   letter-spacing: 0.05em;
+}
+
+.form-basket-cell.amount::after {
+  content:" кг  x";
+  position: relative; 
+}
+
+.form-basket-cell.sum::after,
+.form-basket-cell.price::after {
+  content:" руб.";
+  position: relative;
 }
 
 .breadcrumbs {
@@ -1644,7 +1627,7 @@ a:focus {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin: 80px 0 26px;  
+  margin: 80px 0 35px;  
   list-style: none;
   position: relative;
 }
@@ -1678,7 +1661,7 @@ a:focus {
 .pagination::after {
   content: "";
   position: absolute;
-  top: 50px;
+  top: 58px;
   left: 2.3%;
   right: 2.3%;
   width: auto;
@@ -1722,10 +1705,16 @@ a:focus {
 }
 
 .form-feedback {
-  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
   flex-direction: column;
   align-items: flex-end;
-  width: 477px;
+  width: 478px;
+  min-height: 366px;
+  margin-top: -183px;
+  margin-left: -239px;
   padding: 1.5em;
 }
 
@@ -1757,6 +1746,7 @@ a:focus {
 
 .slider-button {
   display: inline-block;
+  vertical-align: middle;
   width: 21px;
   height: 21px;
   margin-right: 4px;
@@ -1854,6 +1844,19 @@ a:focus {
   left: 50%;
 }
 
+.darken {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  z-index: 9;
+  position: fixed;
+  top:0;
+  right: 0;
+  left:0;
+  bottom:0;  
+}
+
 @media screen and (max-width: 1115px) {
   .footer-menu {
     flex-basis: 80%;
@@ -1869,8 +1872,13 @@ a:focus {
     max-width: 80%;
   }
 
-  
+ .other-item-subscribe-button {  
+  font-size: 16px;
+  border-radius: 32px;
 }
-
-
+  
+ .catalog-item-img-wrapper {
+    min-height: 200px;
+  }
+}
 
