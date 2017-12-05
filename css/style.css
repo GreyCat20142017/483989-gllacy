@@ -208,20 +208,24 @@ a:focus {
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.4);
   opacity: 1;
   font: inherit;
-  display: none;
+  display: none;  
 }
 
 .gllacy-flex-hide,
 .gllacy-block-hide {
-  display: none;
+  display: none; 
 }
 
 .gllacy-flex-show {
   display: flex;
+  right: 0;
+  margin-top: 10px;
 }
 
 .gllacy-block-show {
   display: block;
+  right: 0;
+  margin-top: 10px;
 }
 
 .current:hover {
@@ -354,18 +358,6 @@ a:focus {
   box-shadow: 0 0 1px 1px lightgrey;
 }
 
-.on-white-back:hover,
-.on-white-back:focus {
-  background-color: rgba(242, 128, 102, 0.5);
-  box-shadow: 0 2px 2px 2px rgba(88, 88, 88, 0.8), 0 2px 2px 0 rgba(172, 16, 0, 0.004);
-}
-
-.on-dark-back:hover,
-.on-dark-back:focus {
-  background-color: rgba(242, 128, 102, 0.5);
-  box-shadow: 0 0 2px 2px rgba(88, 88, 88, 1), 0 2px 2px 2px rgba(188, 188, 188, 0.5);
-}
-
 .underlined-main { /*столько кривых костылей, чтобы подчеркнуть ссылки в ИЕ нужным цветом. */
   text-decoration: none;
   background-image:    -moz-linear-gradient(top,transparent 0, rgba(255, 255, 255, 0.5) 100%);
@@ -376,9 +368,9 @@ a:focus {
   background-repeat: repeat-x;
   background-position: 0 100%;
   background-size: 1px 1px;
-  color: white;
   cursor: pointer;
 }
+
 
 .header {
   display: flex;
@@ -458,6 +450,7 @@ a:focus {
 }
 
 .main-menu .menu-link:hover,
+.main-menu .menu-link:focus,
 .main-menu .menu-link:focus {
   text-decoration: none;
   border-bottom: none;
@@ -530,17 +523,22 @@ a:focus {
   border-bottom: 1px solid rgba(80, 80, 80, 0.2);
 }
 
-
 .submenu-entrance, 
 .personal-menu {
   position: relative;
 }
 
+.submenu-entrance:hover > .menu-link,
+.submenu-entrance:focus > .menu-link,
+.submenu-entrance:active > .menu-link {
+  color: rgba(50, 50, 50, 1);
+  background-color: rgba(255, 255, 255, 1);
+}
 
 .submenu-entrance:hover > .submenu,
 .submenu-entrance:focus > .submenu,
 .submenu-entrance:active > .submenu {
-   display: block; 
+  display: block;
 }
 
 .personal-menu .menu-link {
@@ -563,6 +561,7 @@ a:focus {
   background-image: url("../img/menu-loupe-white.svg");  
   background-position: center center;
   padding: 0; 
+  position: relative;
 }
 
 .link-search:hover,
@@ -571,16 +570,12 @@ a:focus {
 }
 
 .link-search:hover + .form-search,
-.link-entrance:hover + .form-entrance {
-  display: block;   
-  right: 0;  
-  margin-top: 10px;
+.link-entrance:hover + .form-entrance { 
+  display: block; 
 }
 
 .link-basket-full:hover + .form-basket {  
-  display: flex; 
-  right: 0;  
-  margin-top: 10px;
+  display: flex;   
 }
 
 .link-entrance {
@@ -996,12 +991,11 @@ a:focus {
 }
 
 .other-item-new {
-  background-image: url("../img/other-strawberry.png"), linear-gradient(135deg, transparent 0, transparent 30%,  rgba(237, 230, 201, 1) 90%);
+  background-image: url("../img/other-strawberry.jpg"), linear-gradient(135deg, transparent 0, transparent 30%, rgba(237, 230, 201, 1) 90%);
   background-repeat: no-repeat, no-repeat;
-  background-position: 20% 45%, 20% 45%;
-  background-size: 200% 300%, 100% 100%;
+  
+  background-size: cover;
 }
-
 
 .other-item-new-title { 
   max-width: 60%; /* потому, что просматривается желание дизайнера предотвратить наползание текста на пестрый фон */
@@ -1078,12 +1072,34 @@ a:focus {
 }
 
 .map-img {
-  width: 100%;   
+  width: 100%;    
+}
+
+.map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;  
+  width: 100%;
+  z-index: 1;
+}
+
+.map-iframe-hide {
+  display: none;
+}
+
+.map-iframe-show {
+  display: block; 
+}
+
+.map-link {
+  cursor: pointer;
 }
 
 .map-info-wrapper {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   right: 0;
@@ -1097,7 +1113,7 @@ a:focus {
 
 .map-info {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   right: 2.2%;
   bottom: 0;
@@ -1136,7 +1152,7 @@ a:focus {
   position: absolute;
   left: 0;
   right: 0;
-  margin: 24px;
+  margin: 24px;  
 }
 
 .footer {
@@ -1429,35 +1445,48 @@ a:focus {
   content: "";
   position: absolute;
   top: 0;
-  left: -10px;
-  width: 27px;
-  height: 25px;
+  left: -10px;  
   background-color: inherit;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
 }
 
+.filter-checkbox:checked + label::before {  
+  width: 27px;
+  height: 23px; 
+}
+
+.filter-checkbox:not(:checked) + label::before {  
+  width: 23px;
+  height: 23px; 
+}
+
+.filter-radio + label::before {  
+  width: 25px;
+  height: 25px; 
+}
+
 .filter-checkbox:checked + label::before {
   background-image: url("../img/checkbox-on.svg"),
-  linear-gradient(to bottom,  transparent,  transparent 2px, rgba(255, 255, 255, 0.8) 2px, rgba(255, 255, 255, 0.8) 3px, transparent 3px, transparent),
-  linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
-  linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
-  linear-gradient(to top, transparent,  transparent 2px, rgba(255, 255, 255, 0.8) 2px, rgba(255, 255, 255, 0.8) 3px, transparent 3px, transparent),
-  radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px,  transparent);
+  linear-gradient(to bottom,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
+  linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
+  linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
+  linear-gradient(to top,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
+  radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px,  transparent);  
   background-position: center center, top center, left center, 70% center, bottom center, center 70%;
-  background-size: contain, 50% , 50% , 50%, 50%, 70%;
+  background-size: contain, 50% 50%, 50% 50% , 50% 50%, 50% 50%, 50% 50%;
   opacity: 0.8;
 }
 
 .filter-checkbox:not(:checked) + label::before {
   background-image: url("../img/checkbox-off.svg"),
-  linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
-  linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
-  linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent),
-  linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 1px, transparent 1px, transparent);
-  background-position: center center, top center, 10% center, 90% center, bottom center;
-  background-size: contain, 50% , 50% , 50%, 50%;
+  linear-gradient(to bottom,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
+  linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
+  linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
+  linear-gradient(to top,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent);
+  background-position: center center, top center, left center, right center, bottom center, center 70%;
+  background-size: contain, 50% 50%, 50% 50% , 50% 50%, 50% 50%, 50% 50%;
   opacity: 0.8;
 }
 
@@ -1498,12 +1527,18 @@ a:focus {
 
 .form-search {
   position: absolute; 
-  width: 341px;    
+  /*width: 341px; */   
+  width: 321px;  
+  right: 0;   
+  margin-top: 10px; 
 }
 
 .form-entrance {
   position: absolute;  
-  width: 241px;  
+  /*width: 241px; */ 
+  width: 321px;
+  right: 0;   
+  margin-top: 10px; 
 }
 
 .form-entrance-password {
@@ -1514,41 +1549,49 @@ a:focus {
   display: flex;
   flex-direction: row;
   flex-basis: 100%;
-  justify-content: space-between;
+/*  justify-content: space-between;*/
   align-items: center;
   padding: 0.2em;
 }
 
 .form-entrance-button {
   margin: 0 auto;
-  flex-shrink: 0;
+  flex-basis: 30%;  
+  text-align: center;
 }
 
 .form-entrance-link-wrapper {
   flex-direction: column;
+  flex-basis: 60%;
+  max-width: 60%; 
+  margin-left: 10%;
   padding: 0.5em;
 }
 
 .form-entrance-link {
   display: inline-block;
-  vertical-align: baseline;
   flex-basis: 100%;
-  font-size: 0.81em;
-  line-height: 1.5em;
-  white-space: nowrap;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 24px;
+  vertical-align: baseline;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.form-basket {  
+
+.form-basket {    
   flex-direction: column;
   align-items: flex-end;
   width: 541px;
   min-height: 242px;
-  padding: 10px 12px;
+  /*padding: 10px 12px;*/
+  padding: 10px 15px;
   font-size: 13px;
   line-height: 18px;
   font-weight:  normal;
   color: rgba(50, 50, 50, 1);   
+  right: 0;   
+  margin-top: 10px;   
 }
 
 .form-basket-table {
@@ -1685,6 +1728,7 @@ a:focus {
   border-radius: 5px;
   color: rgba(153, 153, 153, 1);
   background-color: rgb(255, 255, 255, 1);
+  height: 44px;
 }
 
 .gllacy-field:hover {
@@ -1715,7 +1759,7 @@ a:focus {
   min-height: 366px;
   margin-top: -183px;
   margin-left: -239px;
-  padding: 1.5em;
+  padding: 1.5em;  
 }
 
 .form-feedback-item {
@@ -1742,6 +1786,8 @@ a:focus {
 
 .form-feedback-text {
   width: 100%;
+  height: 155px;
+  overflow: auto;
 }
 
 .slider-button {
@@ -1802,7 +1848,6 @@ a:focus {
   display: block;
 }
 
-
 .range-controls {
   position: relative;  
   min-height: 37px; 
@@ -1845,17 +1890,66 @@ a:focus {
 }
 
 .darken {
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-  z-index: 9;
   position: fixed;
-  top:0;
+  z-index: 9;
+  top: 0;
+  left: 0;
   right: 0;
-  left:0;
-  bottom:0;  
+  bottom: 0;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.3);
 }
+
+@keyframes spinning {
+  from {
+    -moz-transform: rotateY(0deg);
+     -ms-transform: rotateY(0deg);
+         transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(-360deg);
+     -ms-transform: rotateY(-360deg);
+         transform: rotateY(-360deg);
+  }
+}
+
+@keyframes transformation {
+  from {
+    top: 99%;
+    left: 99%;    
+    margin-top: 0;
+    margin-left: 0;        
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    margin-top: -183px;
+    margin-left: -239px;        
+  }
+}
+
+@keyframes coloration {
+  from {
+    background-color: rgba(50, 50, 50, 1);
+  }
+  90% {
+    background-color: rgba(50, 50, 50, 0.3);
+  }
+  100% {
+    background-color: rgba(248, 247, 244, 1);
+  }
+}
+
+.effect {
+  position: fixed;   
+  animation-name: transformation, spinning, coloration;
+  animation-duration: 2s, 2s, 2.5s;
+  animation-fill-mode: backwards;
+}
+
+
 
 @media screen and (max-width: 1115px) {
   .footer-menu {
