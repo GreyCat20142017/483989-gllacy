@@ -31,67 +31,69 @@
 						<li><a class="menu-link" href="about-company.html"><span class="underlined-main">О компании</span></a></li>
 					</ul>
 
-					<div class="personal-menu">			
-						<a class="menu-link link-search btn" href="search.html" title="Поиск"><span class="visually-hidden">Поиск</span></a>	
-
-						<form class="form-search gllacy-form gllacy-block-hide" id="id-search-form" method="post" action="https://echo.htmlacademy.ru">
-							<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
-							<input class="form-search-text gllacy-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска">
-						</form>				
-
-						<a class="menu-link link-entrance btn" href="entrance.html" title="Авторизация">Вход</a>			
-
-						<form class="form-entrance gllacy-form gllacy-block-hide" id="id-form-entrance" method="post" action="https://echo.htmlacademy.ru">
-							<label class="visually-hidden" for="id-entrance-email">Электронная почта</label>
-							<input class="form-entrance-email gllacy-field" type="email" id="id-entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
-							<label class="visually-hidden" for="id-entrance-password">Пароль</label>
-							<input class="form-entrance-password gllacy-field" type="password" id="id-entrance-password" placeholder="Пароль" title="Введите пароль" required>								
-							<div class="form-entrance-controls">
-								<button class="form-entrance-button btn btn-red btn-normal inline-link on-white-back" type="submit" title="Выполнить вход">Войти</button>
-								<div class="form-entrance-link-wrapper vertical">
-									<a class="form-entrance-link" href="#" title="Восстановление забытого пароля">Забыли пароль</a>
-									<a class="form-entrance-link" href="#" title="Новая регистрация">Новая регистрация</a>							
-								</div>
-							</div>				
-						</form>		
-
-						<a class="menu-link link-basket-full" href="basket-full.html" title="Корзина">2 товара</a>
-						<form class="form-basket gllacy-form gllacy-flex-hide" id="id-form-basket"  method="post" action="https://echo.htmlacademy.ru">
-							<h2 class="visually-hidden">Корзина. Цены и суммы - в рублях, количество - в килограммах.</h2>							
-							<table class="form-basket-table">
-								<tr class="form-basket-row">
-									<td class="form-basket-cell">
-										<button class="form-basket-cell-btn btn btn-close" type="button" title="Удалить текущую строку в корзине">
-											<span class="visually-hidden">Удалить строку</span>
-										</button>
-									</td>
-									<td class="form-basket-cell">
-										<img class="form-basket-cell-img" src="img/1.jpg" width="33" height="33" alt="Фото">
-									</td>
-									<td class="form-basket-cell name">Пломбир с апельсиновым джемом</td>
-									<td class="form-basket-cell amount" title="Количество">1.5</td>
-									<td class="form-basket-cell price"  title="Цена">200</td>
-									<td class="form-basket-cell sum"  title="Сумма">300</td>
-								</tr>							
-								<tr class="form-basket-row">
-									<td class="form-basket-cell">
-										<button class="form-basket-cell-btn btn btn-close" type="button" title="Удалить текущую строку в корзине">
-											<span class="visually-hidden">Удалить строку</span>
-										</button>
-									</td>
-									<td class="form-basket-cell">
-										<img class="form-basket-cell-img" src="img/3.jpg" width="33" height="33" alt="Фото">
-									</td>
-									<td class="form-basket-cell name">Клубничный пломбир с присыпкой из белого шоколада</td>
-									<td class="form-basket-cell amount" title="Количество">1.5</td>
-									<td class="form-basket-cell price"  title="Цена">300</td>
-									<td class="form-basket-cell sum" title="Сумма">450</td>
-								</tr>							
-							</table>
-							<p class="form-basket-total">Итого: 750 руб</p>
-							<button class="form-basket-btn btn btn-red btn-normal inline-link on-white-back" type="submit" id="id-basket-submit" title="Оформить заказ по содержимому корзины">Оформить заказ</button>					
-						</form>			
-					</div>
+					<ul class="personal-menu">			
+						<li class="personal-menu-item link-search-item">	
+							<a class="menu-link link-search btn" href="search.html" title="Поиск"><span class="visually-hidden">Поиск</span></a>
+							<form class="form-search gllacy-form gllacy-block-hide" id="id-search-form" method="post" action="https://echo.htmlacademy.ru">
+								<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
+								<input class="form-search-text gllacy-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска">
+							</form>		
+						</li>		
+						<li class="personal-menu-item link-entrance-item">		
+							<a class="menu-link link-entrance btn" href="entrance.html" title="Авторизация">Вход</a>
+							<form class="form-entrance gllacy-form gllacy-block-hide" id="id-form-entrance" method="post" action="https://echo.htmlacademy.ru">
+								<label class="visually-hidden" for="id-entrance-email">Электронная почта</label>
+								<input class="form-entrance-email gllacy-field" type="email" id="id-entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
+								<label class="visually-hidden" for="id-entrance-password">Пароль</label>
+								<input class="form-entrance-password gllacy-field" type="password" id="id-entrance-password" placeholder="Пароль" title="Введите пароль" required>								
+								<div class="form-entrance-controls">
+									<button class="form-entrance-button btn btn-red btn-normal inline-link on-white-back" type="submit" title="Выполнить вход">Войти</button>
+									<div class="form-entrance-link-wrapper vertical">
+										<a class="form-entrance-link" href="#" title="Восстановление забытого пароля">Забыли пароль</a>
+										<a class="form-entrance-link" href="#" title="Новая регистрация">Новая регистрация</a>							
+									</div>
+								</div>				
+							</form>		
+						</li>
+						<li class="personal-menu-item link-basket-full-item">	
+							<a class="menu-link link-basket-full" href="basket-full.html" title="Корзина">2 товара</a>
+							<form class="form-basket gllacy-form gllacy-flex-hide" id="id-form-basket"  method="post" action="https://echo.htmlacademy.ru">
+								<h2 class="visually-hidden">Корзина. Цены и суммы - в рублях, количество - в килограммах.</h2>							
+								<table class="form-basket-table">
+									<tr class="form-basket-row">
+										<td class="form-basket-cell">
+											<button class="form-basket-cell-btn btn btn-close" type="button" title="Удалить текущую строку в корзине">
+												<span class="visually-hidden">Удалить строку</span>
+											</button>
+										</td>
+										<td class="form-basket-cell">
+											<img class="form-basket-cell-img" src="img/1.jpg" width="33" height="33" alt="Фото">
+										</td>
+										<td class="form-basket-cell name">Пломбир с апельсиновым джемом</td>
+										<td class="form-basket-cell amount" title="Количество">1.5</td>
+										<td class="form-basket-cell price"  title="Цена">200</td>
+										<td class="form-basket-cell sum"  title="Сумма">300</td>
+									</tr>							
+									<tr class="form-basket-row">
+										<td class="form-basket-cell">
+											<button class="form-basket-cell-btn btn btn-close" type="button" title="Удалить текущую строку в корзине">
+												<span class="visually-hidden">Удалить строку</span>
+											</button>
+										</td>
+										<td class="form-basket-cell">
+											<img class="form-basket-cell-img" src="img/3.jpg" width="33" height="33" alt="Фото">
+										</td>
+										<td class="form-basket-cell name">Клубничный пломбир с присыпкой из белого шоколада</td>
+										<td class="form-basket-cell amount" title="Количество">1.5</td>
+										<td class="form-basket-cell price"  title="Цена">300</td>
+										<td class="form-basket-cell sum" title="Сумма">450</td>
+									</tr>							
+								</table>
+								<p class="form-basket-total">Итого: 750 руб</p>
+								<button class="form-basket-btn btn btn-red btn-normal inline-link on-white-back" type="submit" id="id-basket-submit" title="Оформить заказ по содержимому корзины">Оформить заказ</button>					
+							</form>			
+						</li>
+					</ul>
 				</nav>
 
 				<div class="header-info">
@@ -195,7 +197,7 @@
 					</fieldset>
 					<fieldset class="gllacy-fieldset">
 						<legend class="gllacy-fieldset-legend">&nbsp;</legend> 
-						<button class="filter-apply btn btn-trans-lighter btn-white-bordered btn-narrow" type="submit" name="apply" title="Применить выбранные фильтры">Применить</button>
+						<button class="filter-apply btn btn-white-bordered btn-narrow" type="submit" name="apply" title="Применить выбранные фильтры">Применить</button>
 					</fieldset>
 				</div>		
 			</form>
@@ -391,6 +393,6 @@
 				</div>		
 			</footer>
 		</div>
-		<script src="js/script.js"></script>
+
 	</body>
 </html>

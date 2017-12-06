@@ -39,32 +39,35 @@
 							</li>
 						</ul>
 
-						<div class="personal-menu">			
-						<a class="menu-link link-search btn" href="search.html" title="Поиск"><span class="visually-hidden">Поиск</span></a>	
+						<ul class="personal-menu">			
+							<li class="personal-menu-item link-search-item">	
+								<a class="menu-link link-search btn" href="search.html" title="Поиск"><span class="visually-hidden">Поиск</span></a>	
+								<form class="form-search gllacy-form gllacy-block-hide" id="id-search-form" method="post" action="https://echo.htmlacademy.ru">
+									<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
+									<input class="form-search-text gllacy-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска">
+								</form>				
+							</li>
 
-						<form class="form-search gllacy-form gllacy-block-hide" id="id-search-form" method="post" action="https://echo.htmlacademy.ru">
-							<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
-							<input class="form-search-text gllacy-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска">
-						</form>				
-
-						<a class="menu-link link-entrance btn" href="entrance.html" title="Авторизация">Вход</a>			
-
-						<form class="form-entrance gllacy-form gllacy-block-hide" id="id-form-entrance" method="post" action="https://echo.htmlacademy.ru">
-							<label class="visually-hidden" for="id-entrance-email">Электронная почта</label>
-							<input class="form-entrance-email gllacy-field" type="email" id="id-entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
-							<label class="visually-hidden" for="id-entrance-password">Пароль</label>
-							<input class="form-entrance-password gllacy-field" type="password" id="id-entrance-password" placeholder="Пароль" title="Введите пароль" required>								
-							<div class="form-entrance-controls">
-								<button class="form-entrance-button btn btn-red btn-normal inline-link on-white-back" type="submit" title="Выполнить вход">Войти</button>
-								<div class="form-entrance-link-wrapper vertical">
-									<a class="form-entrance-link" href="#" title="Восстановление забытого пароля">Забыли пароль</a>
-									<a class="form-entrance-link" href="#" title="Новая регистрация">Новая регистрация</a>							
-								</div>
-							</div>				
-						</form>		
-
-							<a class="menu-link link-basket-empty btn"  title="Корзина">Пусто</a>								
-						</div>
+							<li class="personal-menu-item link-entrance-item">	
+								<a class="menu-link link-entrance btn" href="entrance.html" title="Авторизация">Вход</a>			
+								<form class="form-entrance gllacy-form gllacy-block-hide" id="id-form-entrance" method="post" action="https://echo.htmlacademy.ru">
+									<label class="visually-hidden" for="id-entrance-email">Электронная почта</label>
+									<input class="form-entrance-email gllacy-field" type="email" id="id-entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
+									<label class="visually-hidden" for="id-entrance-password">Пароль</label>
+									<input class="form-entrance-password gllacy-field" type="password" id="id-entrance-password" placeholder="Пароль" title="Введите пароль" required>	
+									<div class="form-entrance-controls">
+										<button class="form-entrance-button btn btn-red btn-normal inline-link on-white-back" type="submit" title="Выполнить вход">Войти</button>
+										<div class="form-entrance-link-wrapper vertical">
+											<a class="form-entrance-link" href="#" title="Восстановление забытого пароля">Забыли пароль</a>
+											<a class="form-entrance-link" href="#" title="Новая регистрация">Новая регистрация</a>							
+										</div>
+									</div>				
+								</form>		
+							</li>
+							<li class="personal-menu-item link-basket-empty-item">	
+								<a class="menu-link link-basket-empty btn"  title="Корзина">Пусто</a>			
+							</li>					
+						</ul>
 					</nav>
 
 					<div class="header-info">
@@ -244,22 +247,21 @@
 					</div>	
 					<div class="footer-part footer-info">			
 						<div>
-						<a class="footer-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
-							<img src="img/logo-htmlacademy.svg" width="108" height="38"  alt="Логотип HTML Academy" >
-						</a>
-						<p class="footer-copyright">Сделано в 
-							<a  class="on-dark" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
-							<span>@</span>
-							<time datetime="2017">2017</time>
-						</p>
-					</div>
+							<a class="footer-logo" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">
+								<img src="img/logo-htmlacademy.svg" width="108" height="38"  alt="Логотип HTML Academy" >
+							</a>
+							<p class="footer-copyright">Сделано в 
+								<a  class="on-dark" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
+								<span>@</span>
+								<time datetime="2017">2017</time>
+							</p>
+						</div>
 					</div>		
 				</footer>
 			</div>
-
 		</div>
 
-		<form class="form-feedback gllacy-form gllacy-flex-hide" id="id-form-feedback"  method="post" action=""> <!---action="https://echo.htmlacademy.ru"> -->
+		<form class="form-feedback gllacy-form gllacy-flex-hide" id="id-form-feedback"  method="post" action="https://echo.htmlacademy.ru">
 			<h2 class="visually-hidden">Форма обратной связи</h2>
 			<button class="form-feedback-close btn-close" type="button" title="Закрыть форму обратной связи">
 				<span class="visually-hidden">Закрыть</span>			
@@ -273,6 +275,6 @@
 			<textarea class="form-feedback-text  form-feedback-item gllacy-field" id="id-feedback-text" rows="8" placeholder="Напишите что-нибудь..." title="Введите текст Вашего сообщения" required></textarea>
 			<button class="form-feedback-button btn btn-red btn-normal inline-link" type="submit" title="Отправить сообщение">Отправить</button>
 		</form>	
-	  <script src="js/script.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>

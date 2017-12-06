@@ -20,16 +20,6 @@ var mapIFrame = document.querySelector(".map-iframe");
 var feedbackLink = document.querySelector(".map-info-feedback");
 var feedbackForm = document.querySelector(".form-feedback");
 
-var searchLink = document.querySelector(".link-search");
-var searchForm = document.querySelector(".form-search");
-
-var entranceLink = document.querySelector(".link-entrance");
-var entranceForm = document.querySelector(".form-entrance");
-
-var basketLink = document.querySelector(".link-basket-full");
-var basketForm = document.querySelector(".form-basket");
-
-
 var darkenArea;
 
 window.addEventListener("keydown", function (e) {
@@ -46,17 +36,6 @@ window.addEventListener("keydown", function (e) {
 			}		
 		}
 
-		if  (!(searchForm === null) && (searchForm.classList.contains("gllacy-block-show"))) {
-			searchForm.classList.remove("gllacy-block-show");     
-		}
-
-		if  (!(entranceForm === null) && (entranceForm.classList.contains("gllacy-block-show"))) {
-			entranceForm.classList.remove("gllacy-block-show");     
-		}
-
-		if  (!(basketForm === null) && (basketForm.classList.contains("gllacy-flex-show"))) {
-			basketForm.classList.remove("gllacy-flex-show");     
-		}
 	}
 });
 
@@ -129,28 +108,3 @@ if (!(feedbackLink === null) && !(feedbackForm === null))  {
 
 }
 
-
-if (!(searchLink === null) && !(searchForm === null))  {
-	searchLink.addEventListener("click", function (e) {
-		e.preventDefault();
-		searchForm.classList.add("gllacy-block-show");  
-		searchForm[0].focus();
-	});
-}
-
-if (!(entranceLink === null) && !(entranceForm === null))  {
-	entranceLink.addEventListener("click", function (e) {
-		e.preventDefault();	 
-		entranceForm.classList.toggle("gllacy-block-hide");  
-		entranceForm.classList.toggle("gllacy-block-show");  
-		entranceForm[0].focus();
-	});
-}
-
-if (!(basketLink === null) && !(basketForm === null))  {
-	basketLink.addEventListener("click", function (e) {
-		e.preventDefault();					
-		basketForm.classList.toggle("gllacy-flex-hide");
-		basketForm.classList.toggle("gllacy-flex-show");
-	});
-}
