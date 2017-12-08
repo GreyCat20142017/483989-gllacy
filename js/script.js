@@ -16,6 +16,7 @@ function isLocalStorageAvailable() {
 //Адский ад. Нельзя ж так-то. Но разбираться с JS прямо сейчас времени точно нет. 
 var mapLink = document.querySelector(".map-link");
 var mapIFrame = document.querySelector(".map-iframe");
+var mapImg = document.querySelector(".map-img");
 
 var feedbackLink = document.querySelector(".map-info-feedback");
 var feedbackForm = document.querySelector(".form-feedback");
@@ -40,11 +41,13 @@ window.addEventListener("keydown", function (e) {
 });
 
 
-if (!(mapLink === null) && !(mapIFrame === null))  {
+if (!(mapLink === null) && !(mapIFrame === null)  && !(mapImg === null))  {
 	mapLink.addEventListener("dblclick", function (e) {	
 		e.preventDefault();	    	
-		mapIFrame.classList.toggle("map-iframe-hide");
-		mapIFrame.classList.toggle("map-iframe-show");
+		mapIFrame.classList.toggle("map-hide");
+		mapIFrame.classList.toggle("map-show");
+		mapImg.classList.toggle("map-hide");
+		mapImg.classList.toggle("map-show");
 	});
 }
 
