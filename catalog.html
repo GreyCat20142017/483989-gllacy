@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Каталог магазина Глэйси</title>	
 		<link rel="stylesheet" href="css/normalize.css">
+		<!-- <link rel="stylesheet" href="css/style-min.css"> -->
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 
@@ -49,8 +50,8 @@
 								<div class="form-entrance-controls">
 									<button class="form-entrance-button btn btn-red btn-normal" type="submit" title="Выполнить вход">Войти</button>
 									<div class="form-entrance-link-wrapper vertical">
-										<a class="form-entrance-link" href="#" title="Восстановление забытого пароля">Забыли пароль</a>
-										<a class="form-entrance-link" href="#" title="Новая регистрация">Новая регистрация</a>							
+										<a class="form-entrance-link on-light" href="#" title="Восстановление забытого пароля">Забыли пароль?</a>
+										<a class="form-entrance-link on-light" href="#" title="Новая регистрация">Новая регистрация</a>							
 									</div>
 								</div>				
 							</form>		
@@ -119,21 +120,18 @@
 				<div class="filter-row">
 
 					<fieldset class="gllacy-fieldset gllacy-fieldset-sorting">							  
-						<legend class="gllacy-fieldset-legend">Сортировка:</legend>		
-						<div class="gllacy-filter-wrapper">
-							<select class="filter-sorting" name="sorting" id="id-filter-sorting">
+						<legend class="gllacy-fieldset-legend">Сортировка:</legend>							
+							<select class="filter-sorting gllacy-filter-style" name="sorting" id="id-filter-sorting">
 								<option class="filter-sorting-item" value="by-popular">по популярности</option>
 								<option class="filter-sorting-item" value="by-price">по цене</option>
 								<option class="filter-sorting-item" value="by-filler">по наполнителю</option>
 								<option class="filter-sorting-item" value="by-fatness">по жирности</option>
-							</select>	
-						</div>		
+							</select>						
 					</fieldset>
 
 					<fieldset class="gllacy-fieldset gllacy-fieldset-price">
 						<legend class="gllacy-fieldset-legend"><output id="id-filter-range-output">Цена: 100 руб. - 500 руб.</output></legend>
-						<div class="gllacy-filter-wrapper">
-
+						<div class="gllacy-filter-style"> 
 							<div class="range-controls">
 								<div class="scale">
 									<div class="bar"></div>
@@ -145,9 +143,8 @@
 					</fieldset> 
 
 					<fieldset class="gllacy-fieldset gllacy-fieldset-fatness">
-						<legend class="gllacy-fieldset-legend">Жирность:</legend>
-						<div class="gllacy-filter-wrapper">
-							<ul class="filter-section filter-radios" data-title="Жирность:">
+						<legend class="gllacy-fieldset-legend">Жирность:</legend>					
+							<ul class="filter-section filter-radios gllacy-filter-style" data-title="Жирность:">
 								<li class="filter-option">						
 									<input class="filter-radio visually-hidden" type="radio" id="id-radio-1" name="fatness">
 									<label for="id-radio-1">0%</label>
@@ -164,16 +161,14 @@
 									<input class="filter-radio visually-hidden" type="radio" id="id-radio-4" name="fatness">
 									<label for="id-radio-4">выше 30%</label>
 								</li>										
-							</ul>
-						</div>
+							</ul>					
 					</fieldset>		
 				</div>		
 
 				<div class="filter-row">
 					<fieldset class="gllacy-fieldset gllacy-fieldset-fillers">
-						<legend class="gllacy-fieldset-legend">Наполнители:</legend>
-						<div class="gllacy-filter-wrapper">
-							<ul class="filter-section filter-checkboxes fillers" data-title="Наполнители:">
+						<legend class="gllacy-fieldset-legend">Наполнители:</legend>				
+							<ul class="filter-section filter-checkboxes fillers gllacy-filter-style" data-title="Наполнители:">
 								<li class="filter-option">						
 									<input class="filter-checkbox visually-hidden" type="checkbox" id="id-check-1" name="filler-1" checked>
 									<label for="id-check-1">шоколадные</label>
@@ -195,12 +190,8 @@
 									<label for="id-check-5">джемы</label>
 								</li>				
 							</ul>
-						</div>
 					</fieldset>
-					<fieldset class="gllacy-fieldset">
-						<legend class="gllacy-fieldset-legend">&nbsp;</legend> 
-						<button class="filter-apply btn btn-white-bordered btn-narrow" type="submit" name="apply" title="Применить выбранные фильтры">Применить</button>
-					</fieldset>
+		 				<button class="filter-apply btn btn-white-bordered btn-narrow" type="submit" name="apply" title="Применить выбранные фильтры">Применить</button>		
 				</div>		
 			</form>
 
@@ -209,13 +200,13 @@
 				<ul class="catalog-items">
 					<li class="catalog-item">
 						<p class="catalog-item-img-wrapper">
-							<img class="catalog-item-img" src="img/1.jpg" width="267" height="267" alt="Фото: мороженое Сливочное с апельсиновым джемом и цитрусовой стружкой">					
+							<img class="catalog-item-img" src="img/1.jpg" width="267" height="267" alt="Фото: мороженое Сливочное с апельсиновым джемом и цитрусовой стружкой">
 						</p>	
-						<p class="catalog-item-price">
+						 <p class="catalog-item-price">
 							<span class="catalog-item-price-cost">310</span>
 							<span class="catalog-item-price-currency"></span>		
 							<span class="catalog-item-price-unit">/кг</span>
-						</p>
+						</p>	
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></p>			
 						<a class="catalog-item-btn btn btn-red btn-normal btn-hidden" href="quick-view.html">Быстрый просмотр</a>
 					</li>

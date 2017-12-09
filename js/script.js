@@ -1,19 +1,11 @@
-//на случай, если верну браузерные input-range
-function RedrawOutput() {
-	document.getElementById('id-filter-range-output').value='Цена: '+
-	Math.min(document.getElementById('id-filter-range-1').value, document.getElementById('id-filter-range-2').value)+' руб. - '+
-	Math.max(document.getElementById('id-filter-range-1').value, document.getElementById('id-filter-range-2').value)+' руб.';	 	
-}
-
 function isLocalStorageAvailable() {
-    try {
-        return 'localStorage' in window && window['localStorage'] !== null;
-    } catch (e) {
-        return false;
-    }
+	try {
+		return 'localStorage' in window && window['localStorage'] !== null;
+	} catch (e) {
+		return false;
+	}
 }
 
-//Адский ад. Нельзя ж так-то. Но разбираться с JS прямо сейчас времени точно нет. 
 var mapLink = document.querySelector(".map-link");
 var mapIFrame = document.querySelector(".map-iframe");
 var mapImg = document.querySelector(".map-img");
@@ -28,12 +20,17 @@ window.addEventListener("keydown", function (e) {
 		
 		if (!(feedbackForm === null)) {
 			if (feedbackForm.classList.contains("gllacy-flex-show")) {
-			feedbackForm.classList.remove("gllacy-flex-show");   
-			darkenArea.parentNode.removeChild(darkenArea);
+				feedbackForm.classList.remove("gllacy-flex-show");   
+				if (!(darkenArea === null)) {
+					darkenArea.parentNode.removeChild(darkenArea);
+				}
 			}  
 			
 			if (feedbackForm.classList.contains("effect")) {
-					feedbackForm.classList.remove("effect");     					
+				feedbackForm.classList.remove("effect");     					
+			}		
+			if (feedbackForm.classList.contains("error")) {
+				feedbackForm.classList.remove("error");     					
 			}		
 		}
 
@@ -53,34 +50,41 @@ if (!(mapLink === null) && !(mapIFrame === null)  && !(mapImg === null))  {
 
 
 if (!(feedbackLink === null) && !(feedbackForm === null))  {
-	 
-	 var feedbackClose = feedbackForm.querySelector(".form-feedback-close"); 
-	 if  (!(feedbackClose === null))  {
-			feedbackClose.addEventListener("click", function (e) {
-				e.preventDefault();
-				if (feedbackForm.classList.contains("gllacy-flex-show")) {
-					feedbackForm.classList.remove("gllacy-flex-show");     
-					darkenArea.parentNode.removeChild(darkenArea);
-				}		
-				if (feedbackForm.classList.contains("effect")) {
-					feedbackForm.classList.remove("effect");     					
-				}		
-			});
-		}
-  
 
-   //учебный код просто для того, чтобы был, ибо в форме поля required и мну это нравится больше кода, который может написать JS-чайник.	
-		feedbackForm.addEventListener("submit", function (e) {
-			if (!feedbackForm['id-feedback-name'].value || !feedbackForm['id-feedback-email'].value || !feedbackForm['id-feedback-text'].value ) {
-				e.preventDefault();
-				console.log("Перед отправкой необходимо заполнить все поля формы: имя, адрес электронной почты и текст сообщения!");				
-			} else { 				
-				if (isLocalStorageAvailable()) {
-				 localStorage.setItem("gllacy-name", feedbackForm['id-feedback-name'].value);				
-				 localStorage.setItem("gllacy-email", feedbackForm['id-feedback-email'].value);							
-				} 
-			}
-		});	 
+	var feedbackClose = feedbackForm.querySelector(".form-feedback-close"); 
+	if  (!(feedbackClose === null))  {
+		feedbackClose.addEventListener("click", function (e) {
+			e.preventDefault();
+			if (feedbackForm.classList.contains("gllacy-flex-show")) {
+				feedbackForm.classList.remove("gllacy-flex-show");     
+				if (!(darkenArea === null)) {
+					darkenArea.parentNode.removeChild(darkenArea);
+				}
+			}		
+			if (feedbackForm.classList.contains("effect")) {
+				feedbackForm.classList.remove("effect");     					
+			}		
+			if (feedbackForm.classList.contains("error")) {
+				feedbackForm.classList.remove("error");     					
+			}		
+		});
+	}
+
+	feedbackForm.addEventListener("submit", function (e) {
+		if (!feedbackForm['id-feedback-name'].value || !feedbackForm['id-feedback-email'].value || !feedbackForm['id-feedback-text'].value ) {
+			e.preventDefault();	
+			feedbackForm.classList.remove("error");
+			feedbackForm.offsetWidth = feedbackForm.offsetWidth;		
+			feedbackForm.classList.add("error");		
+			feedbackForm['id-feedback-text'].focus();	
+			// сonsole.log("Перед отправкой необходимо заполнить все поля формы: имя, адрес электронной почты и текст сообщения!");			
+		} else { 				
+			if (isLocalStorageAvailable()) {
+				localStorage.setItem("gllacy-name", feedbackForm['id-feedback-name'].value);				
+				localStorage.setItem("gllacy-email", feedbackForm['id-feedback-email'].value);							
+			} 
+		}
+	});	 
 
 	feedbackLink.addEventListener("click", function (e) {	
 		e.preventDefault();	    
@@ -110,4 +114,3 @@ if (!(feedbackLink === null) && !(feedbackForm === null))  {
 	});
 
 }
-
