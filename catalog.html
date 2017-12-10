@@ -37,21 +37,21 @@
 							<a class="menu-link link-search btn" href="search.html" title="Поиск"><span class="visually-hidden">Поиск</span></a>
 							<form class="form-search gllacy-form gllacy-block-hide" id="id-search-form" method="post" action="https://echo.htmlacademy.ru">
 								<label class="visually-hidden" for="id-search-text">Текст для поиска</label>
-								<input class="form-search-text gllacy-field" type="search" id="id-search-text" placeholder="Что ищем" title="Введите текст для поиска" required>
+								<input class="form-search-text gllacy-field" type="search" id="id-search-text" name="search-text" placeholder="Что ищем" title="Введите текст для поиска" required>
 							</form>		
 						</li>		
 						<li class="personal-menu-item link-entrance-item">		
 							<a class="menu-link link-entrance btn" href="entrance.html" title="Авторизация">Вход</a>
 							<form class="form-entrance gllacy-form gllacy-block-hide" id="id-form-entrance" method="post" action="https://echo.htmlacademy.ru">
 								<label class="visually-hidden" for="id-entrance-email">Электронная почта</label>
-								<input class="form-entrance-email gllacy-field" type="email" id="id-entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
+								<input class="form-entrance-email gllacy-field" type="email" id="id-entrance-email" name="entrance-email" placeholder="Электронная почта" title="Введите адрес электронной почты"  required>		
 								<label class="visually-hidden" for="id-entrance-password">Пароль</label>
-								<input class="form-entrance-password gllacy-field" type="password" id="id-entrance-password" placeholder="Пароль" title="Введите пароль" required>								
+								<input class="form-entrance-password gllacy-field" type="password" id="id-entrance-password"  name="entrance-password" placeholder="Пароль" title="Введите пароль" required>								
 								<div class="form-entrance-controls">
 									<button class="form-entrance-button btn btn-red btn-normal" type="submit" title="Выполнить вход">Войти</button>
 									<div class="form-entrance-link-wrapper vertical">
-										<a class="form-entrance-link on-light" href="#" title="Восстановление забытого пароля">Забыли пароль?</a>
-										<a class="form-entrance-link on-light" href="#" title="Новая регистрация">Новая регистрация</a>							
+										<a class="form-entrance-link on-light" href="password-recovery.html" title="Восстановление забытого пароля">Забыли пароль?</a>
+										<a class="form-entrance-link on-light" href="new-registration.html" title="Новая регистрация">Новая регистрация</a>							
 									</div>
 								</div>				
 							</form>		
@@ -105,9 +105,9 @@
 					</div>	
 
 					<ul class="breadcrumbs">
-						<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link" href="index.html">Главная</a></li>
-						<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link" href="#">Каталог</a></li>
-						<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link current">Сливочное</a></li>
+						<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link on-dark" href="index.html">Главная</a></li>
+						<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link on-dark" href="#">Каталог</a></li>
+						<li class="breadcrumbs-item"><a class="breadcrumbs-link inline-link on-dark current">Сливочное</a></li>
 					</ul>
 				</div>
 				<h1 class="page-catalog-title">Сливочное мороженое</h1>	
@@ -204,7 +204,7 @@
 						</p>	
 						 <p class="catalog-item-price">
 							<span class="catalog-item-price-cost">310</span>
-							<span class="catalog-item-price-currency"></span>		
+							<span class="catalog-item-price-currency">руб.</span>		
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>	
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></p>			
@@ -216,7 +216,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">380</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочное-кофейное с кусочками шоколада</a></p>
@@ -228,7 +228,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">355</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочно-клубничное с присыпкой из белого шоколада</a></p>
@@ -240,7 +240,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">415</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочное крем-брюле с карамельной подливкой</a></p>
@@ -253,7 +253,7 @@
 						</p>					
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">325</span>
-							<span class="catalog-item-price-currency"></span>		
+							<span class="catalog-item-price-currency">руб.</span>		
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочное с брусничным джемом</a></p>			
@@ -265,7 +265,7 @@
 						</p>					
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">410</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочно-черничное с цельными ягодами черники</a></p>
@@ -277,7 +277,7 @@
 						</p>				
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">375</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочно-лимонное с карамельной присыпкой</a></p>
@@ -289,7 +289,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">320</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочное с шоколадной стружкой</a></p>
@@ -302,7 +302,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">440</span>
-							<span class="catalog-item-price-currency"></span>		
+							<span class="catalog-item-price-currency">руб.</span>		
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочно-ванильное с кусочками шоколада</a></p>			
@@ -314,7 +314,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">435</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочноe с ментоловым сиропом</a></p>
@@ -326,7 +326,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">355</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочное с кусочками черного шоколада</a></p>
@@ -338,7 +338,7 @@
 						</p>	
 						<p class="catalog-item-price">
 							<span class="catalog-item-price-cost">420</span>
-							<span class="catalog-item-price-currency"></span>						
+							<span class="catalog-item-price-currency">руб.</span>						
 							<span class="catalog-item-price-unit">/кг</span>
 						</p>
 						<p class="catalog-item-name"><a class="on-dark" href="catalog-item.html">Сливочноe с мятным сиропом</a></p>
@@ -379,7 +379,7 @@
 						</a>
 						<p class="footer-copyright">Сделано в 
 							<a  class="on-dark" href="https://htmlacademy.ru/intensive/htmlcss" title="HTML Академия">HTML Academy</a>
-							<span>@</span>
+							<span>&copy;</span>
 							<time datetime="2017">2017</time>
 						</p>
 					</div>

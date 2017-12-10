@@ -31,8 +31,7 @@ input[type="radio"].visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -47,7 +46,9 @@ img {
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -63,7 +64,9 @@ body {
 }
 
 * {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .on-dark {
@@ -71,7 +74,7 @@ body {
   color: white;
   background-image: linear-gradient(to bottom,transparent 0, rgba(255, 255, 255, 0.7) 100%);
   background-repeat: repeat-x;
-  background-position: 0 90%;
+  background-position: 0 100%;
   background-size: 1px 1px;
 }
 
@@ -80,7 +83,7 @@ body {
   color: rgba(50, 50, 50, 1);
   background-image: linear-gradient(to bottom,transparent 0, rgba(50, 50, 50, 0.7) 100%);
   background-repeat: repeat-x;
-  background-position: 0 90%;
+  background-position: 0 100%;
   background-size: 2px 2px;
 }
 
@@ -91,7 +94,7 @@ body {
   color: rgba(232, 77, 55, 1);
   background-image: linear-gradient(to bottom, transparent 0, rgba(232, 77, 55, 1) 100%);
   background-repeat: repeat-x;
-  background-position: 0 90%;
+  background-position: 0 100%;
   background-size: 1px 1px;
 }
 
@@ -107,8 +110,6 @@ body {
 }
 .page-catalog-body {
   background-color: rgba(132, 157, 143, 1);
-  /*background-color: rgba(137, 150, 166, 1);
-    background-color: rgba(157, 139, 132, 1);*/
 }
 
 .gllacy-wrapper-wide {
@@ -167,7 +168,6 @@ body {
 
 .gllacy-flex-show {
   right: 0;
-  display: -webkit-box;
   display: flex;
   margin-top: 10px;
 }
@@ -192,7 +192,7 @@ body {
   text-decoration: none;
   word-wrap: break-word;
   border: none;
-  border-radius: 50px;
+  border-radius: 44px;
   color: white;
 }
 
@@ -205,23 +205,18 @@ body {
 }
 
 .btn-red {
+  color: white;
   background-color: #f26843;
   background-image: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
-  box-shadow: 0 2px 2px 0 rgba(172, 16, 0, 0.64);
 }
 
 .btn-red:hover,
 .btn-red:focus {
-  /*~~~ - убрать белый цвет, если все-таки выяснится, что при наведении они должны окрашиваться в оранжевый вместе со всеми ссылками в макете*/
-  color: white;
-  /*~~~*/
   background-color: rgba(255, 255, 255, 0.2);
   background-image: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
-  box-shadow: 0 2px 2px rgba(172, 16, 0, 1);
 }
 
 .btn-red:active {
-  color: white;
   background-color: rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
 }
@@ -231,6 +226,8 @@ body {
   font-size: 32px;
   font-weight: bold;
   line-height: 40px;
+  box-shadow: 0 2px 2px 0 rgba(172, 16, 0, 0.64);
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
 }
 
 .btn-normal {
@@ -238,13 +235,28 @@ body {
   font-size: 18px;
   font-weight: bold;
   line-height: 24px;
+  box-shadow: 0 2px 2px 0 rgba(85, 8, 0, 0.54);
+}
+
+.btn-red.btn-large:hover {
+  box-shadow: 0 2px 2px 0 #ac1000;
+}
+
+.btn-red.btn-normal:hover {
+  box-shadow: 0 1px 2px 0 #ac1000;
+}
+
+.btn-red.btn-normal:active,
+.btn-red.btn-large:active {
+  background-color: rgba(0, 0, 0, 0.07);
+  background-image: linear-gradient(0deg, #f26843 0%, #e74a35 100%);
+  box-shadow: none;
 }
 
 .btn-narrow {
   font-size: 16px;
   font-weight: 600;
   line-height: 18px;
-  border-radius: 50px;
 }
 
 .btn-white-bordered {
@@ -262,6 +274,7 @@ body {
   border: 2px solid rgba(237, 237, 237, 1);
   color: rgba(50, 50, 50, 1);
   background-color: rgba(237, 237, 237, 1);
+  box-shadow: 0 1px 2px 0 rgba(105, 105, 105, 1) inset;
 }
 
 .btn-hidden {
@@ -298,36 +311,26 @@ body {
   cursor: pointer;
   /*столько кривых костылей, чтобы подчеркнуть ссылки в ИЕ нужным цветом. */
   text-decoration: none;
-  background-image: linear-gradient(to bottom,transparent 0, rgba(255, 255, 255, 0.5) 100%);
+  background-image: linear-gradient(to bottom, transparent 0, rgba(255, 255, 255, 0.5) 100%);
   background-repeat: repeat-x;
   background-position: 0 100%;
   background-size: 1px 1px;
 }
 
 .header {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-          align-items: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   min-height: 630px;
   padding-top: 5px;
 }
 
 .header-navigation {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: nowrap;
   width: 100%;
   min-height: 64px;
@@ -341,13 +344,9 @@ body {
 
 .main-menu,
 .personal-menu {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -355,15 +354,13 @@ body {
 }
 
 .main-menu {
-  -webkit-box-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   max-width: 45%;
   margin-left: 5px;
 }
 
 .personal-menu {
-  -webkit-box-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   max-width: 40%;
   margin-left: auto;
 }
@@ -400,12 +397,14 @@ body {
 }
 
 .main-menu .menu-link:hover,
-.main-menu .menu-link:focus,
-.main-menu .menu-link:active {
-  text-decoration: none;
-  border-bottom: none;
+.main-menu .menu-link:focus {
   color: rgba(50, 50, 50, 1);
   background-color: rgba(255, 255, 255, 1);
+}
+
+.main-menu .menu-link:active {
+  color: rgba(50, 50, 50, 1);
+  background-color: #ededed;
 }
 
 .submenu-entrance::after,
@@ -521,7 +520,6 @@ body {
 }
 
 .link-basket-full-item:hover > .form-basket {
-  display: -webkit-box;
   display: flex;
 }
 
@@ -571,7 +569,7 @@ body {
 .personal-menu .link-basket-full {
   color: black;
   background-color: white;
-  /* background-image: url("../img/menu-basket-full-white.svg");*/
+  /*background-image: url("../img/menu-basket-full-white.svg");*/
   background-image: url("../img/menu-basket-full-black.svg");
 }
 
@@ -604,14 +602,14 @@ body {
 }
 
 .page-catalog-header-info > p:nth-of-type(2) {
-  line-height: 24px;
+  line-height: 25px;
 }
 
 .slider {
   position: relative;
   align-self: center;
-  margin-top: 270px;
   width: 100%; /*Привет Мелкософту, у которого в отличие от других очень загадочно рассчитывается ширина секции*/
+  margin-top: 270px;
 }
 
 .slider-items {
@@ -640,15 +638,10 @@ body {
 }
 
 .promo-items {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-          align-items: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
   flex-wrap: nowrap;
   margin: 0;
   padding: 0;
@@ -656,16 +649,11 @@ body {
 }
 
 .promo-item {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   flex-basis: 46.6%;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-          align-items: stretch;
+  justify-content: flex-start;
+  align-items: stretch;
   max-width: 46.6%;
   min-height: 230px;
   padding: 21px;
@@ -711,13 +699,9 @@ body {
 }
 
 .catalog-items {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -726,14 +710,10 @@ body {
 
 .catalog-item {
   position: relative;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   flex-basis: 22.2%;
-  -webkit-box-pack: stretch;
-          justify-content: stretch;
+  justify-content: stretch;
   width: 22.2%;
   max-width: 22.2%; /* в этот раз для ФФ из-за пустой картинки, которая 267px, a 22.22% - это 266.х */
   margin: 23px 2.2% 0 0;
@@ -773,6 +753,10 @@ body {
 
 .catalog-item-price-cost {
   font-size: 45px;
+}
+
+.catalog-item-price-currency {
+  font-size: 0;
 }
 
 .catalog-item-price-currency::before {
@@ -822,13 +806,12 @@ body {
   content: "";
   position: absolute;
   z-index: 1;
-  top: -13px;
+  top: 9px;
   left: -13px;
   display: none;
   width: 100%;
   height: 100%;
-  padding: 13px;
-  padding-bottom: 55px;
+  padding: 6px 13px 60px;
   background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -847,7 +830,7 @@ body {
   z-index: 5;
   left: 0;
   right: 0;
-  bottom: -2.6em;
+  bottom: -54px;
   display: inline-block;
   overflow: hidden; /*здесь не та кнопка, чтобы ....*/
   width: 200px;
@@ -874,15 +857,10 @@ body {
 }
 
 .about-items {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-          align-items: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -944,25 +922,17 @@ body {
 }
 
 .other {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-          align-items: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
   flex-wrap: wrap;
   margin: 40px 0;
 }
 
 .other-item {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   flex-basis: 46.6%;
   max-width: 46.6%;
   min-height: 220px;
@@ -1002,9 +972,7 @@ body {
 }
 
 .other-item-subscribe {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
   flex-wrap: wrap;
   margin: 0;
   padding: 5px; /*для отрисовки конверта c помощью фонов*/
@@ -1028,12 +996,10 @@ body {
 }
 
 .other-item-subscribe-email {
-  flex-basis: 63%;
-  max-width: 63%;
-  /*min-height: 44px;*/
+  flex-basis: 62%;
+  max-width: 62%;
   margin: auto 0 35px 21px;
   padding: 1.5em;
-  flex-shrink: 1;
   flex-shrink: 1;
   font-size: 16px;
   font-weight: normal;
@@ -1042,25 +1008,18 @@ body {
 }
 
 .other-item-subscribe-button {
-  /*height: 44px;*/
-  flex-basis: 25%;
+  flex-basis: 24.5%;
   margin: auto 21px 35px auto;
   padding: 0.3em;
   font-size: 18px;
-  white-space: normal;
-  border-radius: 36px;
 }
 
 .map {
   position: relative;
-  display: -webkit-box;
   display: flex;
   overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   min-height: 430px;
   text-align: center; /*на случай, если изображение не загрузится.*/
   color: rgba(50, 50, 50, 1);
@@ -1076,7 +1035,8 @@ body {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /*для растягивания карт при растягивании блока с информацией по сравнению с первоначальными размерами*/
+  border: none;
 }
 
 .map-hide {
@@ -1092,9 +1052,7 @@ body {
 }
 
 .map-info-wrapper {
-  position: static;
   z-index: 2;
-  display: -webkit-box;
   display: flex;
   width: 100%;
   min-width: 900px;
@@ -1104,7 +1062,6 @@ body {
 }
 
 .map-info {
-  position: static;
   z-index: 3;
   width: 302px;
   min-height: 305px;
@@ -1143,15 +1100,10 @@ body {
 }
 
 .footer {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: nowrap;
   min-height: 103px;
   padding-top: 16px;
@@ -1161,11 +1113,8 @@ body {
 }
 
 .footer-social {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
   flex-basis: 22.2%;
   flex-wrap: wrap;
   max-width: 22.2%;
@@ -1176,28 +1125,20 @@ body {
 }
 
 .footer-center {
-  display: -webkit-box;
   display: flex;
   flex-basis: 46.6%;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   max-width: 46.6%;
   margin-left: 2.2%;
 }
 
 .footer-info {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   flex-basis: 22.2%;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-          align-items: flex-end;
+  justify-content: center;
+  align-items: flex-end;
   flex-wrap: nowrap;
   max-width: 22.2%;
   margin-left: 2.2%;
@@ -1211,12 +1152,13 @@ body {
   cursor: pointer;
   vertical-align: middle;
   text-decoration: none;
-  border: 1px solid white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0);
   background-color: inherit;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 32px 32px;
+  opacity: 0.8;
 }
 
 .social-item-tw {
@@ -1237,22 +1179,20 @@ body {
 
 .social-item:hover,
 .social-item:focus {
-  opacity: 0.7;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  opacity: 1;
 }
 
 .social-item:active {
-  box-shadow: 1px 1px 0 2px rgba(136, 136, 136, 1) inset;
+  box-shadow: 1px 1px 0 2px rgba(233, 233, 233, 0.7) inset;
+  opacity: 1;
 }
 
 .footer-menu {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
   flex-basis: 62%;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
   min-width: 62%;
   margin: 0;
@@ -1267,7 +1207,6 @@ body {
 }
 
 .footer-menu-link {
-  display: inline; /*А то IE на какой-то стадии  иногда забывает это. А подчеривание градиентом только для него и делалось.*/
   font-size: 13px;
   font-weight: normal;
   line-height: 18px;
@@ -1296,35 +1235,23 @@ body {
 }
 
 .page-catalog-header {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-          align-items: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   min-height: 40px;
   padding-top: 5px;
 }
 
 .page-catalog-design-wrapper {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .breadcrumbs {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
   align-self: flex-end;
   max-width: 66.6%;
   margin: 0;
@@ -1352,9 +1279,11 @@ body {
   left: -0.5em;
 }
 
+.breadcrumbs-link.current,
 .breadcrumbs-link.current:hover,
 .breadcrumbs-link.current:focus {
   color: white;
+  background-image: none;
 }
 
 .page-catalog-title {
@@ -1365,25 +1294,16 @@ body {
 }
 
 .filter {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .filter-row {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: end;
-          align-items: flex-end;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
   margin-top: 10px;
 }
 
@@ -1392,17 +1312,12 @@ body {
 }
 
 .filter-section {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  justify-content: space-around;
-  /*align-items: center;*/
+  flex-direction: row;
+  justify-content: space-around; 
   margin: 0;
   padding: 0.4em;
-  -webkit-box-flex: 0;
-          flex-grow: 0;
+  flex-grow: 0;
   list-style: none;
   font-size: 16px;
   font-weight: 600;
@@ -1509,6 +1424,7 @@ body {
   min-height: 37px;
 }
 
+
 .filter-option label {
   position: relative;
   z-index: 1;
@@ -1547,6 +1463,7 @@ body {
   height: 25px;
 }
 
+/*градиенты - это на случай, если отвалятся изобажения стилизованных ЭУ*/
 .filter-checkbox:checked + label::before {
   background-image: url("../img/checkbox-on.svg"),
   linear-gradient(to bottom,  rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px, transparent),
@@ -1587,10 +1504,11 @@ body {
 }
 
 .filter-radio:checked + label::before {
-  background-image: url("../img/radio-on.svg") ,
+  background-image: url("../img/radio-on.svg"),
   radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 2px, transparent 2px,  transparent 46%, rgba(255, 255, 255, 0.8) 46%, rgba(255, 255, 255, 0.8) 50%, transparent 50%, transparent);
   opacity: 0.8;
 }
+
 
 .filter-radio:checked:disabled + label::before {
   opacity: 0.4;
@@ -1599,6 +1517,10 @@ body {
 .filter-radio:not(:disabled):hover + label::before,
 .filter-radio:not(:disabled):focus + label::before {
   opacity: 1;
+}
+
+.filter-radio:not(:disabled):focus + label::before,
+.filter-checkbox:not(:disabled):focus + label::before {
 }
 
 .footer-logo {
@@ -1624,14 +1546,10 @@ body {
 }
 
 .form-entrance-controls {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
+  flex-direction: row;
   flex-basis: 100%;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0.2em;
 }
 
@@ -1642,9 +1560,7 @@ body {
 }
 
 .form-entrance-link-wrapper {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   flex-basis: 65%;
   max-width: 65%;
   margin-left: 2%;
@@ -1664,11 +1580,8 @@ body {
 
 .form-basket {
   right: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-align: end;
-          align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   width: 541px;
   min-height: 242px;
   margin-top: 10px;
@@ -1717,13 +1630,9 @@ body {
 
 .pagination {
   position: relative;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
+  flex-direction: row;
+  justify-content: flex-end;
   margin: 80px 0 35px;
   list-style: none;
 }
@@ -1733,8 +1642,12 @@ body {
 }
 
 .pagination-link {
+  width: 25px;
+  height: 25px;
   margin-left: auto;
-  padding: 0.2em 0.5em;
+  line-height: 25px;
+  text-align: center;
+  vertical-align: middle;
   border-radius: 50%;
 }
 
@@ -1794,7 +1707,8 @@ body {
   border: 2px  solid rgba(46, 136, 228, 1);
 }
 
-.gllacy-field:valid {
+.gllacy-field:valid,
+.gllacy-textarea:valid {
   font-weight: bold;
   color: rgba(50, 50, 50, 1);
 }
@@ -1808,11 +1722,8 @@ body {
   z-index: 10;
   top: 50%;
   left: 50%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -webkit-box-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   width: 478px;
   min-height: 366px;
   margin-top: -183px;
@@ -1912,13 +1823,13 @@ body {
 }
 
 .range-controls .scale {
-  height: 2px;
+  height: 4px;
   background: rgba(255, 255, 255, 0.4);
 }
 
 .range-controls .bar {
   width: 50%;
-  height: 2px;
+  height: 4px;
   margin-left: 15%;
   background-color: white;
 }
@@ -1934,6 +1845,10 @@ body {
   border: 8px solid white;
   border-radius: 50%;
   background-color: rgba(172, 172, 172, 1);
+}
+
+.range-controls .toggle:hover {
+  border: 9px solid white;
 }
 
 .range-controls .toggle-min {
@@ -1954,40 +1869,16 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-  }
-  to {
-    -webkit-transform: rotateY(-360deg);
-            transform: rotateY(-360deg);
-  }
-}
-
 @keyframes spin {
   from {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+     -ms-transform: rotateY(0deg);
+         transform: rotateY(0deg);
   }
   to {
-    -webkit-transform: rotateY(-360deg);
-            transform: rotateY(-360deg);
-  }
-}
-
-@-webkit-keyframes movement {
-  from {
-    top: 99%;
-    left: 99%;
-    margin-top: 0;
-    margin-left: 0;
-  }
-  100% {
-    top: 50%;
-    left: 50%;
-    margin-top: -183px;
-    margin-left: -239px;
+    -moz-transform: rotateY(-360deg);
+     -ms-transform: rotateY(-360deg);
+         transform: rotateY(-360deg);
   }
 }
 
@@ -2006,18 +1897,6 @@ body {
   }
 }
 
-@-webkit-keyframes coloration {
-  from {
-    background-color: rgba(50, 50, 50, 1);
-  }
-  90% {
-    background-color: rgba(50, 50, 50, 0.3);
-  }
-  100% {
-    background-color: rgba(248, 247, 244, 1);
-  }
-}
-
 @keyframes coloration {
   from {
     background-color: rgba(50, 50, 50, 1);
@@ -2030,36 +1909,10 @@ body {
   }
 }
 
-@-webkit-keyframes shake {
-  0%,
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
-  }
-
-  20%,
-  40%,
-  60%,
-  80% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
-  }
-}
-
 @keyframes shake {
   0%,
   100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 
   10%,
@@ -2067,34 +1920,27 @@ body {
   50%,
   70%,
   90% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    transform: translateX(-10px);
   }
 
   20%,
   40%,
   60%,
   80% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    transform: translateX(10px);
   }
 }
 
 .effect {
   position: fixed;
-  -webkit-animation-name: movement, spin, coloration;
-          animation-name: movement, spin, coloration;
-  -webkit-animation-duration: 1.3s, 1.3s, 1.5s;
-          animation-duration: 1.3s, 1.3s, 1.5s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
+  animation-name: movement, spin, coloration;
+  animation-duration: 1.3s, 1.3s, 1.5s;
+  animation-fill-mode: backwards;
 }
 
 .error {
-  -webkit-animation-name: shake;
-          animation-name: shake;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s; 
+  animation-name: shake;
+  animation-duration: 0.5s;
 }
 
 
@@ -2111,7 +1957,6 @@ body {
     top: 170px;  
   }
 }
-
 
 @media screen and (max-width: 900px) {
   .footer-menu {
