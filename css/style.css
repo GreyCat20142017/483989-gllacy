@@ -1279,13 +1279,6 @@ body {
   left: -0.5em;
 }
 
-.breadcrumbs-link.current,
-.breadcrumbs-link.current:hover,
-.breadcrumbs-link.current:focus {
-  color: white;
-  background-image: none;
-}
-
 .page-catalog-title {
   margin: 5px 0 0;
   font-size: 35px;
@@ -1423,7 +1416,6 @@ body {
   min-width: 144px;
   min-height: 37px;
 }
-
 
 .filter-option label {
   position: relative;
